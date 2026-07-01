@@ -1,0 +1,76 @@
+{
+  "HORIZONTAL_PUSH": {
+    "score": 3,
+    "description": "Moderate systemic fatigue. Recovery depends on load and volume."
+  },
+
+  "VERTICAL_PUSH": {
+    "score": 3,
+    "description": "Moderate fatigue due to shoulder and triceps involvement."
+  },
+
+  "HORIZONTAL_PULL": {
+    "score": 3,
+    "description": "Moderate fatigue with relatively good recovery capacity."
+  },
+
+  "VERTICAL_PULL": {
+    "score": 3,
+    "description": "Moderate fatigue affecting the upper back and grip."
+  },
+
+  "SQUAT": {
+    "score": 5,
+    "description": "Very high systemic fatigue. Large muscle mass and axial loading."
+  },
+
+  "HINGE": {
+    "score": 5,
+    "description": "Very high fatigue due to posterior chain loading and spinal demand."
+  },
+
+  "LUNGE": {
+    "score": 4,
+    "description": "High fatigue because of unilateral balance and lower-body demand."
+  },
+
+  "ELBOW_FLEXION": {
+    "score": 1,
+    "description": "Minimal systemic fatigue."
+  },
+
+  "ELBOW_EXTENSION": {
+    "score": 1,
+    "description": "Minimal systemic fatigue."
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "score": 1,
+    "description": "Low fatigue with primarily local muscular demand."
+  },
+
+  "CALF": {
+    "score": 1,
+    "description": "Minimal systemic fatigue."
+  },
+
+  "CORE_FLEXION": {
+    "score": 2,
+    "description": "Low fatigue with localized abdominal work."
+  },
+
+  "ANTI_EXTENSION": {
+    "score": 2,
+    "description": "Low fatigue with emphasis on trunk stability."
+  },
+
+  "ROTATION": {
+    "score": 2,
+    "description": "Low fatigue when performed with proper control."
+  },
+
+  "CARRY": {
+    "score": 4,
+    "description": "High whole-body fatigue due to grip, core and conditioning demands."
+  }
+}

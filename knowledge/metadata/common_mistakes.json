@@ -1,0 +1,99 @@
+{
+  "HORIZONTAL_PUSH": [
+    "Using excessive momentum",
+    "Incomplete range of motion",
+    "Flaring the elbows excessively",
+    "Bouncing the weight",
+    "Losing upper-back tightness"
+  ],
+
+  "VERTICAL_PUSH": [
+    "Overarching the lower back",
+    "Pressing in front of the body",
+    "Using excessive leg drive",
+    "Poor lockout control"
+  ],
+
+  "HORIZONTAL_PULL": [
+    "Shrugging the shoulders",
+    "Using momentum",
+    "Partial range of motion",
+    "Rounding the back"
+  ],
+
+  "VERTICAL_PULL": [
+    "Pulling behind the neck",
+    "Swinging the torso",
+    "Incomplete stretch",
+    "Leading with the hands instead of elbows"
+  ],
+
+  "SQUAT": [
+    "Knees collapsing inward",
+    "Rounding the lower back",
+    "Heels lifting off the floor",
+    "Insufficient squat depth"
+  ],
+
+  "HINGE": [
+    "Rounding the spine",
+    "Bar drifting away from the body",
+    "Bending the knees too much",
+    "Losing core tension"
+  ],
+
+  "LUNGE": [
+    "Poor balance",
+    "Front knee collapsing inward",
+    "Taking steps that are too short",
+    "Leaning excessively forward"
+  ],
+
+  "ELBOW_FLEXION": [
+    "Swinging the body",
+    "Moving the elbows",
+    "Using excessive weight"
+  ],
+
+  "ELBOW_EXTENSION": [
+    "Moving the upper arm",
+    "Locking out aggressively",
+    "Using momentum"
+  ],
+
+  "SHOULDER_ABDUCTION": [
+    "Swinging the dumbbells",
+    "Shrugging the shoulders",
+    "Using excessive weight"
+  ],
+
+  "CALF": [
+    "Bouncing repetitions",
+    "Skipping the stretch",
+    "Moving too quickly"
+  ],
+
+  "CORE_FLEXION": [
+    "Pulling on the neck",
+    "Using momentum",
+    "Holding the breath"
+  ],
+
+  "ANTI_EXTENSION": [
+    "Sagging hips",
+    "Raised hips",
+    "Relaxing the core"
+  ],
+
+  "ROTATION": [
+    "Twisting too fast",
+    "Using momentum",
+    "Rotating through the lower back"
+  ],
+
+  "CARRY": [
+    "Leaning sideways",
+    "Poor posture",
+    "Walking too quickly"
+  ]
+}

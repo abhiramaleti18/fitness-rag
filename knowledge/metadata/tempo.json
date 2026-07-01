@@ -1,0 +1,76 @@
+{
+  "HORIZONTAL_PUSH": {
+    "tempo": "2-0-1-0",
+    "description": "Controlled eccentric, explosive but controlled press."
+  },
+
+  "VERTICAL_PUSH": {
+    "tempo": "2-0-1-0",
+    "description": "Controlled lowering with powerful overhead press."
+  },
+
+  "HORIZONTAL_PULL": {
+    "tempo": "2-1-1-1",
+    "description": "Pause briefly at peak contraction before controlled return."
+  },
+
+  "VERTICAL_PULL": {
+    "tempo": "2-1-1-1",
+    "description": "Emphasize scapular control and full stretch."
+  },
+
+  "SQUAT": {
+    "tempo": "3-1-1-0",
+    "description": "Slow descent, brief pause at the bottom, controlled ascent."
+  },
+
+  "HINGE": {
+    "tempo": "3-1-1-0",
+    "description": "Controlled eccentric emphasizing posterior chain loading."
+  },
+
+  "LUNGE": {
+    "tempo": "2-1-1-0",
+    "description": "Controlled lowering while maintaining balance."
+  },
+
+  "ELBOW_FLEXION": {
+    "tempo": "2-1-2-0",
+    "description": "Avoid swinging and maximize muscle tension."
+  },
+
+  "ELBOW_EXTENSION": {
+    "tempo": "2-1-2-0",
+    "description": "Controlled extension with full lockout avoided unless appropriate."
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "tempo": "2-1-2-0",
+    "description": "Raise under control, lower slowly without momentum."
+  },
+
+  "CALF": {
+    "tempo": "2-1-2-1",
+    "description": "Pause at both the stretched and contracted positions."
+  },
+
+  "CORE_FLEXION": {
+    "tempo": "2-1-2-0",
+    "description": "Controlled trunk movement with minimal momentum."
+  },
+
+  "ANTI_EXTENSION": {
+    "tempo": "STATIC",
+    "description": "Maintain isometric tension throughout the hold."
+  },
+
+  "ROTATION": {
+    "tempo": "2-1-2-0",
+    "description": "Rotate under control and avoid excessive speed."
+  },
+
+  "CARRY": {
+    "tempo": "WALK",
+    "description": "Maintain steady cadence while preserving posture."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "HORIZONTAL_PUSH": [
+    "HYPERTROPHY",
+    "STRENGTH"
+  ],
+
+  "VERTICAL_PUSH": [
+    "HYPERTROPHY",
+    "STRENGTH"
+  ],
+
+  "HORIZONTAL_PULL": [
+    "HYPERTROPHY",
+    "STRENGTH",
+    "POSTURE"
+  ],
+
+  "VERTICAL_PULL": [
+    "HYPERTROPHY",
+    "STRENGTH"
+  ],
+
+  "SQUAT": [
+    "HYPERTROPHY",
+    "STRENGTH",
+    "ATHLETIC_PERFORMANCE"
+  ],
+
+  "HINGE": [
+    "HYPERTROPHY",
+    "STRENGTH",
+    "ATHLETIC_PERFORMANCE"
+  ],
+
+  "LUNGE": [
+    "HYPERTROPHY",
+    "GENERAL_FITNESS",
+    "BALANCE"
+  ],
+
+  "ELBOW_FLEXION": [
+    "HYPERTROPHY"
+  ],
+
+  "ELBOW_EXTENSION": [
+    "HYPERTROPHY"
+  ],
+
+  "SHOULDER_ABDUCTION": [
+    "HYPERTROPHY"
+  ],
+
+  "CALF": [
+    "HYPERTROPHY"
+  ],
+
+  "CORE_FLEXION": [
+    "CORE_STRENGTH",
+    "GENERAL_FITNESS"
+  ],
+
+  "ANTI_EXTENSION": [
+    "CORE_STRENGTH",
+    "INJURY_PREVENTION"
+  ],
+
+  "ROTATION": [
+    "CORE_STRENGTH",
+    "SPORT_PERFORMANCE"
+  ],
+
+  "CARRY": [
+    "GENERAL_STRENGTH",
+    "CONDITIONING",
+    "GRIP_STRENGTH"
+  ]
+}

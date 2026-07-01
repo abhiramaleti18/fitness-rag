@@ -1,0 +1,99 @@
+{
+  "HORIZONTAL_PUSH": [
+    "Retract your shoulder blades.",
+    "Keep your wrists stacked over your forearms.",
+    "Lower under control.",
+    "Drive through the palms."
+  ],
+
+  "VERTICAL_PUSH": [
+    "Brace your core.",
+    "Avoid excessive lower-back arching.",
+    "Press in a straight path.",
+    "Lock out under control."
+  ],
+
+  "HORIZONTAL_PULL": [
+    "Lead with your elbows.",
+    "Squeeze your shoulder blades.",
+    "Avoid shrugging.",
+    "Control the eccentric."
+  ],
+
+  "VERTICAL_PULL": [
+    "Pull your elbows toward your ribs.",
+    "Avoid swinging.",
+    "Reach a full stretch at the top.",
+    "Control the lowering phase."
+  ],
+
+  "SQUAT": [
+    "Brace before descending.",
+    "Keep your chest up.",
+    "Drive through the mid-foot.",
+    "Maintain a neutral spine."
+  ],
+
+  "HINGE": [
+    "Push your hips back.",
+    "Keep the bar close.",
+    "Maintain a neutral spine.",
+    "Brace throughout the lift."
+  ],
+
+  "LUNGE": [
+    "Keep your torso upright.",
+    "Control your balance.",
+    "Drive through the front foot.",
+    "Keep your knee tracking naturally."
+  ],
+
+  "ELBOW_FLEXION": [
+    "Keep your elbows still.",
+    "Avoid swinging.",
+    "Control the lowering phase."
+  ],
+
+  "ELBOW_EXTENSION": [
+    "Keep your upper arm fixed.",
+    "Fully extend under control.",
+    "Avoid locking aggressively."
+  ],
+
+  "SHOULDER_ABDUCTION": [
+    "Raise with your elbows.",
+    "Avoid using momentum.",
+    "Lower slowly."
+  ],
+
+  "CALF": [
+    "Pause at the top.",
+    "Reach a full stretch.",
+    "Move under control."
+  ],
+
+  "CORE_FLEXION": [
+    "Brace your core.",
+    "Avoid pulling on your neck.",
+    "Move slowly."
+  ],
+
+  "ANTI_EXTENSION": [
+    "Maintain a straight line.",
+    "Brace continuously.",
+    "Do not let your hips sag."
+  ],
+
+  "ROTATION": [
+    "Rotate from the torso.",
+    "Avoid excessive momentum.",
+    "Control every repetition."
+  ],
+
+  "CARRY": [
+    "Stand tall.",
+    "Keep your shoulders down.",
+    "Brace your core.",
+    "Walk with controlled steps."
+  ]
+}

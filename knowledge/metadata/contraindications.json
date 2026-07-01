@@ -1,0 +1,101 @@
+{
+  "HORIZONTAL_PUSH": {
+    "flags": [
+      "SHOULDER_PAIN",
+      "PECTORAL_INJURY",
+      "WRIST_PAIN"
+    ]
+  },
+
+  "VERTICAL_PUSH": {
+    "flags": [
+      "SHOULDER_IMPINGEMENT",
+      "SHOULDER_PAIN",
+      "NECK_PAIN"
+    ]
+  },
+
+  "HORIZONTAL_PULL": {
+    "flags": [
+      "LOWER_BACK_PAIN",
+      "ELBOW_PAIN"
+    ]
+  },
+
+  "VERTICAL_PULL": {
+    "flags": [
+      "SHOULDER_PAIN",
+      "ELBOW_PAIN"
+    ]
+  },
+
+  "SQUAT": {
+    "flags": [
+      "KNEE_PAIN",
+      "LOWER_BACK_PAIN",
+      "HIP_PAIN"
+    ]
+  },
+
+  "HINGE": {
+    "flags": [
+      "LOWER_BACK_PAIN",
+      "HAMSTRING_STRAIN"
+    ]
+  },
+
+  "LUNGE": {
+    "flags": [
+      "KNEE_PAIN",
+      "HIP_PAIN"
+    ]
+  },
+
+  "ELBOW_FLEXION": {
+    "flags": [
+      "ELBOW_TENDINITIS"
+    ]
+  },
+
+  "ELBOW_EXTENSION": {
+    "flags": [
+      "ELBOW_TENDINITIS"
+    ]
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "flags": [
+      "SHOULDER_IMPINGEMENT"
+    ]
+  },
+
+  "CALF": {
+    "flags": [
+      "ACHILLES_INJURY"
+    ]
+  },
+
+  "CORE_FLEXION": {
+    "flags": [
+      "DISC_HERNIATION",
+      "LOWER_BACK_PAIN"
+    ]
+  },
+
+  "ANTI_EXTENSION": {
+    "flags": []
+  },
+
+  "ROTATION": {
+    "flags": [
+      "LOWER_BACK_PAIN"
+    ]
+  },
+
+  "CARRY": {
+    "flags": [
+      "LOWER_BACK_PAIN",
+      "SHOULDER_PAIN"
+    ]
+  }
+}

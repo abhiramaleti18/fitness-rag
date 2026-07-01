@@ -1,0 +1,76 @@
+{
+  "HORIZONTAL_PUSH": {
+    "level": "BEGINNER",
+    "description": "Suitable for beginners with basic instruction. Free-weight variations require moderate coordination."
+  },
+
+  "VERTICAL_PUSH": {
+    "level": "INTERMEDIATE",
+    "description": "Requires shoulder mobility, core stability and overhead coordination."
+  },
+
+  "HORIZONTAL_PULL": {
+    "level": "BEGINNER",
+    "description": "Generally beginner-friendly with emphasis on scapular control."
+  },
+
+  "VERTICAL_PULL": {
+    "level": "BEGINNER",
+    "description": "Requires basic scapular control and full range of motion."
+  },
+
+  "SQUAT": {
+    "level": "INTERMEDIATE",
+    "description": "Requires proper bracing, mobility and movement mechanics."
+  },
+
+  "HINGE": {
+    "level": "ADVANCED",
+    "description": "Hip hinge mechanics are commonly performed incorrectly. Neutral spine and proper bracing are essential."
+  },
+
+  "LUNGE": {
+    "level": "INTERMEDIATE",
+    "description": "Requires unilateral balance and lower-body coordination."
+  },
+
+  "ELBOW_FLEXION": {
+    "level": "BEGINNER",
+    "description": "Simple isolation movement with minimal coordination requirements."
+  },
+
+  "ELBOW_EXTENSION": {
+    "level": "BEGINNER",
+    "description": "Generally easy to learn while maintaining elbow control."
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "level": "BEGINNER",
+    "description": "Requires controlled shoulder movement without momentum."
+  },
+
+  "CALF": {
+    "level": "BEGINNER",
+    "description": "Very easy movement pattern."
+  },
+
+  "CORE_FLEXION": {
+    "level": "BEGINNER",
+    "description": "Requires controlled trunk movement."
+  },
+
+  "ANTI_EXTENSION": {
+    "level": "BEGINNER",
+    "description": "Requires maintaining spinal position under tension."
+  },
+
+  "ROTATION": {
+    "level": "INTERMEDIATE",
+    "description": "Requires rotational control and trunk stability."
+  },
+
+  "CARRY": {
+    "level": "BEGINNER",
+    "description": "Easy movement but requires posture awareness and grip endurance."
+  }
+}

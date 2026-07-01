@@ -1,0 +1,76 @@
+{
+  "HORIZONTAL_PUSH": {
+    "rir": "1-3",
+    "description": "Compound upper-body pressing movements benefit from staying 1–3 reps from failure."
+  },
+
+  "VERTICAL_PUSH": {
+    "rir": "1-3",
+    "description": "Maintain technical quality while training close to failure."
+  },
+
+  "HORIZONTAL_PULL": {
+    "rir": "1-3",
+    "description": "Focus on quality contractions while avoiding excessive fatigue."
+  },
+
+  "VERTICAL_PULL": {
+    "rir": "1-3",
+    "description": "Pull close to failure while maintaining full range of motion."
+  },
+
+  "SQUAT": {
+    "rir": "2-3",
+    "description": "Large lower-body compounds typically benefit from slightly more reserve for recovery."
+  },
+
+  "HINGE": {
+    "rir": "2-4",
+    "description": "Hip hinge movements create high systemic fatigue; avoid frequent failure."
+  },
+
+  "LUNGE": {
+    "rir": "1-3",
+    "description": "Train close to failure while maintaining balance and control."
+  },
+
+  "ELBOW_FLEXION": {
+    "rir": "0-2",
+    "description": "Isolation movements can safely be taken closer to failure."
+  },
+
+  "ELBOW_EXTENSION": {
+    "rir": "0-2",
+    "description": "Isolation work is well suited to low RIR training."
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "rir": "0-2",
+    "description": "Lateral raises respond well to training near failure."
+  },
+
+  "CALF": {
+    "rir": "0-2",
+    "description": "Calves generally tolerate training very close to failure."
+  },
+
+  "CORE_FLEXION": {
+    "rir": "1-3",
+    "description": "Maintain movement quality and spinal control."
+  },
+
+  "ANTI_EXTENSION": {
+    "rir": "TIME_BASED",
+    "description": "Hold until the prescribed duration while maintaining proper posture."
+  },
+
+  "ROTATION": {
+    "rir": "1-3",
+    "description": "Prioritize controlled movement over fatigue."
+  },
+
+  "CARRY": {
+    "rir": "DISTANCE_BASED",
+    "description": "Progress by increasing load, distance, or duration rather than RIR."
+  }
+}

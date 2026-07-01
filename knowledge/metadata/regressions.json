@@ -1,0 +1,79 @@
+{
+  "HORIZONTAL_PUSH": [
+    "Wall Push-Up",
+    "Incline Push-Up",
+    "Machine Chest Press"
+  ],
+
+  "VERTICAL_PUSH": [
+    "Seated Machine Shoulder Press",
+    "Seated Dumbbell Press"
+  ],
+
+  "HORIZONTAL_PULL": [
+    "Resistance Band Row",
+    "Machine Row",
+    "Chest Supported Row"
+  ],
+
+  "VERTICAL_PULL": [
+    "Resistance Band Pulldown",
+    "Assisted Pull-Up",
+    "Lat Pulldown"
+  ],
+
+  "SQUAT": [
+    "Chair Squat",
+    "Bodyweight Squat",
+    "Goblet Squat"
+  ],
+
+  "HINGE": [
+    "Hip Hinge Drill",
+    "Glute Bridge",
+    "Romanian Deadlift (Light)"
+  ],
+
+  "LUNGE": [
+    "Static Split Squat",
+    "Supported Reverse Lunge"
+  ],
+
+  "ELBOW_FLEXION": [
+    "Resistance Band Curl",
+    "Light Dumbbell Curl"
+  ],
+
+  "ELBOW_EXTENSION": [
+    "Resistance Band Pushdown",
+    "Light Cable Pushdown"
+  ],
+
+  "SHOULDER_ABDUCTION": [
+    "Light Dumbbell Raise",
+    "Cable Raise"
+  ],
+
+  "CALF": [
+    "Bodyweight Calf Raise"
+  ],
+
+  "CORE_FLEXION": [
+    "Partial Crunch",
+    "Dead Bug"
+  ],
+
+  "ANTI_EXTENSION": [
+    "Bird Dog",
+    "Modified Plank"
+  ],
+
+  "ROTATION": [
+    "Standing Band Rotation"
+  ],
+
+  "CARRY": [
+    "Light Farmer Carry",
+    "Suitcase Carry"
+  ]
+}

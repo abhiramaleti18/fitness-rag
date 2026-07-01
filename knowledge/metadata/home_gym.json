@@ -1,0 +1,62 @@
+{
+  "HORIZONTAL_PUSH": {
+    "compatible": true,
+    "notes": "Can usually be performed with dumbbells, barbells or bodyweight."
+  },
+  "VERTICAL_PUSH": {
+    "compatible": true,
+    "notes": "Requires dumbbells or barbell."
+  },
+  "HORIZONTAL_PULL": {
+    "compatible": true,
+    "notes": "Rows can be performed with dumbbells, barbells or resistance bands."
+  },
+  "VERTICAL_PULL": {
+    "compatible": false,
+    "notes": "Usually requires a pull-up bar or lat pulldown."
+  },
+  "SQUAT": {
+    "compatible": true,
+    "notes": "Bodyweight and goblet squat variations exist."
+  },
+  "HINGE": {
+    "compatible": true,
+    "notes": "Can be performed using dumbbells, kettlebells or barbells."
+  },
+  "LUNGE": {
+    "compatible": true,
+    "notes": "Requires minimal equipment."
+  },
+  "ELBOW_FLEXION": {
+    "compatible": true,
+    "notes": "Requires only dumbbells or resistance bands."
+  },
+  "ELBOW_EXTENSION": {
+    "compatible": true,
+    "notes": "Can be performed with bands or dumbbells."
+  },
+  "SHOULDER_ABDUCTION": {
+    "compatible": true,
+    "notes": "Requires light dumbbells or bands."
+  },
+  "CALF": {
+    "compatible": true,
+    "notes": "Can be trained using bodyweight or dumbbells."
+  },
+  "CORE_FLEXION": {
+    "compatible": true,
+    "notes": "No equipment required."
+  },
+  "ANTI_EXTENSION": {
+    "compatible": true,
+    "notes": "Bodyweight exercise."
+  },
+  "ROTATION": {
+    "compatible": true,
+    "notes": "Can be performed using bands or cables."
+  },
+  "CARRY": {
+    "compatible": true,
+    "notes": "Requires dumbbells, kettlebells or similar objects."
+  }
+}

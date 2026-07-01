@@ -1,0 +1,166 @@
+{
+  "HORIZONTAL_PUSH": {
+    "description": "Horizontal pressing movement primarily targeting the chest, anterior deltoids and triceps.",
+    "primaryMuscles": ["CHEST"],
+    "secondaryMuscles": ["SHOULDERS", "TRICEPS"],
+    "typicalGoals": ["HYPERTROPHY", "STRENGTH"],
+    "defaultTempo": "2-0-1-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "MODERATE"
+  },
+
+  "VERTICAL_PUSH": {
+    "description": "Vertical pressing movement emphasizing the shoulders and triceps.",
+    "primaryMuscles": ["SHOULDERS"],
+    "secondaryMuscles": ["TRICEPS", "UPPER_CHEST"],
+    "typicalGoals": ["HYPERTROPHY", "STRENGTH"],
+    "defaultTempo": "2-0-1-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "MODERATE"
+  },
+
+  "HORIZONTAL_PULL": {
+    "description": "Horizontal pulling movement for the upper and mid back.",
+    "primaryMuscles": ["MIDDLE_BACK", "LATS"],
+    "secondaryMuscles": ["BICEPS", "REAR_DELTS"],
+    "typicalGoals": ["HYPERTROPHY", "STRENGTH"],
+    "defaultTempo": "2-1-1-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "MODERATE"
+  },
+
+  "VERTICAL_PULL": {
+    "description": "Vertical pulling movement emphasizing the latissimus dorsi.",
+    "primaryMuscles": ["LATS"],
+    "secondaryMuscles": ["BICEPS", "MIDDLE_BACK"],
+    "typicalGoals": ["HYPERTROPHY", "STRENGTH"],
+    "defaultTempo": "2-1-1-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "MODERATE"
+  },
+
+  "SQUAT": {
+    "description": "Knee-dominant lower body movement.",
+    "primaryMuscles": ["QUADRICEPS"],
+    "secondaryMuscles": ["GLUTES", "HAMSTRINGS"],
+    "typicalGoals": ["HYPERTROPHY", "STRENGTH"],
+    "defaultTempo": "3-1-1-0",
+    "defaultRIR": "1-3",
+    "romImportance": "CRITICAL",
+    "stability": "LOW"
+  },
+
+  "HINGE": {
+    "description": "Hip-dominant posterior chain movement.",
+    "primaryMuscles": ["HAMSTRINGS", "GLUTES"],
+    "secondaryMuscles": ["LOWER_BACK"],
+    "typicalGoals": ["HYPERTROPHY", "STRENGTH"],
+    "defaultTempo": "3-1-1-0",
+    "defaultRIR": "2-3",
+    "romImportance": "HIGH",
+    "stability": "LOW"
+  },
+
+  "LUNGE": {
+    "description": "Single-leg lower body movement emphasizing balance and unilateral strength.",
+    "primaryMuscles": ["QUADRICEPS", "GLUTES"],
+    "secondaryMuscles": ["HAMSTRINGS"],
+    "typicalGoals": ["HYPERTROPHY", "GENERAL_FITNESS"],
+    "defaultTempo": "2-1-1-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "LOW"
+  },
+
+  "ELBOW_FLEXION": {
+    "description": "Isolation movement for the elbow flexors.",
+    "primaryMuscles": ["BICEPS"],
+    "secondaryMuscles": ["FOREARMS"],
+    "typicalGoals": ["HYPERTROPHY"],
+    "defaultTempo": "2-1-2-0",
+    "defaultRIR": "0-2",
+    "romImportance": "HIGH",
+    "stability": "HIGH"
+  },
+
+  "ELBOW_EXTENSION": {
+    "description": "Isolation movement for the triceps.",
+    "primaryMuscles": ["TRICEPS"],
+    "secondaryMuscles": [],
+    "typicalGoals": ["HYPERTROPHY"],
+    "defaultTempo": "2-1-2-0",
+    "defaultRIR": "0-2",
+    "romImportance": "HIGH",
+    "stability": "HIGH"
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "description": "Isolation movement for the lateral deltoids.",
+    "primaryMuscles": ["SHOULDERS"],
+    "secondaryMuscles": [],
+    "typicalGoals": ["HYPERTROPHY"],
+    "defaultTempo": "2-1-2-0",
+    "defaultRIR": "0-2",
+    "romImportance": "HIGH",
+    "stability": "HIGH"
+  },
+
+  "CALF": {
+    "description": "Ankle plantarflexion movement.",
+    "primaryMuscles": ["CALVES"],
+    "secondaryMuscles": [],
+    "typicalGoals": ["HYPERTROPHY"],
+    "defaultTempo": "2-1-2-1",
+    "defaultRIR": "0-2",
+    "romImportance": "CRITICAL",
+    "stability": "HIGH"
+  },
+
+  "CORE_FLEXION": {
+    "description": "Dynamic trunk flexion movement.",
+    "primaryMuscles": ["ABDOMINALS"],
+    "secondaryMuscles": [],
+    "typicalGoals": ["CORE_STRENGTH", "GENERAL_FITNESS"],
+    "defaultTempo": "2-1-2-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "HIGH"
+  },
+
+  "ANTI_EXTENSION": {
+    "description": "Core stabilization movement resisting lumbar extension.",
+    "primaryMuscles": ["ABDOMINALS"],
+    "secondaryMuscles": ["OBLIQUES"],
+    "typicalGoals": ["CORE_STRENGTH", "INJURY_PREVENTION"],
+    "defaultTempo": "STATIC",
+    "defaultRIR": "N/A",
+    "romImportance": "N/A",
+    "stability": "HIGH"
+  },
+
+  "ROTATION": {
+    "description": "Rotational core movement.",
+    "primaryMuscles": ["OBLIQUES"],
+    "secondaryMuscles": ["ABDOMINALS"],
+    "typicalGoals": ["CORE_STRENGTH", "SPORT_PERFORMANCE"],
+    "defaultTempo": "2-1-2-0",
+    "defaultRIR": "1-3",
+    "romImportance": "HIGH",
+    "stability": "MODERATE"
+  },
+
+  "CARRY": {
+    "description": "Loaded carry emphasizing grip, core and posture.",
+    "primaryMuscles": ["FOREARMS", "TRAPS"],
+    "secondaryMuscles": ["CORE", "SHOULDERS"],
+    "typicalGoals": ["GENERAL_STRENGTH", "CONDITIONING"],
+    "defaultTempo": "WALK",
+    "defaultRIR": "N/A",
+    "romImportance": "N/A",
+    "stability": "LOW"
+  }
+}

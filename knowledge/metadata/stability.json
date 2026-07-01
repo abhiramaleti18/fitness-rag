@@ -1,0 +1,62 @@
+{
+  "HORIZONTAL_PUSH": {
+    "level": "MODERATE",
+    "description": "Requires upper-body stability and scapular control."
+  },
+  "VERTICAL_PUSH": {
+    "level": "LOW",
+    "description": "High demand on shoulder and core stability."
+  },
+  "HORIZONTAL_PULL": {
+    "level": "MODERATE",
+    "description": "Requires scapular control with moderate trunk stability."
+  },
+  "VERTICAL_PULL": {
+    "level": "MODERATE",
+    "description": "Requires shoulder stability during overhead pulling."
+  },
+  "SQUAT": {
+    "level": "LOW",
+    "description": "Requires full-body stabilization and balance."
+  },
+  "HINGE": {
+    "level": "LOW",
+    "description": "High spinal and hip stability requirements."
+  },
+  "LUNGE": {
+    "level": "VERY_LOW",
+    "description": "Unilateral movement requiring significant balance."
+  },
+  "ELBOW_FLEXION": {
+    "level": "HIGH",
+    "description": "Stable isolation movement."
+  },
+  "ELBOW_EXTENSION": {
+    "level": "HIGH",
+    "description": "Stable isolation movement."
+  },
+  "SHOULDER_ABDUCTION": {
+    "level": "HIGH",
+    "description": "Generally stable with light loads."
+  },
+  "CALF": {
+    "level": "VERY_HIGH",
+    "description": "Minimal stabilization demand."
+  },
+  "CORE_FLEXION": {
+    "level": "HIGH",
+    "description": "Stable controlled trunk movement."
+  },
+  "ANTI_EXTENSION": {
+    "level": "MODERATE",
+    "description": "Requires sustained core stabilization."
+  },
+  "ROTATION": {
+    "level": "MODERATE",
+    "description": "Requires rotational control."
+  },
+  "CARRY": {
+    "level": "LOW",
+    "description": "Requires whole-body stabilization while moving."
+  }
+}

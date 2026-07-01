@@ -1,0 +1,76 @@
+{
+  "HORIZONTAL_PUSH": {
+    "importance": "HIGH",
+    "description": "Use the largest pain-free range of motion possible. Full ROM improves muscle recruitment and hypertrophy."
+  },
+
+  "VERTICAL_PUSH": {
+    "importance": "HIGH",
+    "description": "Lower the weight under control and press through the complete overhead range without compromising shoulder position."
+  },
+
+  "HORIZONTAL_PULL": {
+    "importance": "HIGH",
+    "description": "Allow the shoulder blades to protract during the eccentric and fully retract during the concentric."
+  },
+
+  "VERTICAL_PULL": {
+    "importance": "HIGH",
+    "description": "Reach a full stretch overhead before pulling through the entire range."
+  },
+
+  "SQUAT": {
+    "importance": "CRITICAL",
+    "description": "Use the deepest pain-free squat depth that maintains proper technique and spinal neutrality."
+  },
+
+  "HINGE": {
+    "importance": "CRITICAL",
+    "description": "Maintain a full hip hinge while preserving a neutral spine and hamstring tension."
+  },
+
+  "LUNGE": {
+    "importance": "HIGH",
+    "description": "Lower until both knees achieve appropriate depth while maintaining balance."
+  },
+
+  "ELBOW_FLEXION": {
+    "importance": "HIGH",
+    "description": "Fully extend the elbow without losing tension and curl through the complete range."
+  },
+
+  "ELBOW_EXTENSION": {
+    "importance": "HIGH",
+    "description": "Allow full elbow flexion before extending without using momentum."
+  },
+
+  "SHOULDER_ABDUCTION": {
+    "importance": "MEDIUM",
+    "description": "Raise the arms through a comfortable range while avoiding excessive shoulder elevation."
+  },
+
+  "CALF": {
+    "importance": "CRITICAL",
+    "description": "Pause at both the fully stretched and fully contracted positions for maximum stimulus."
+  },
+
+  "CORE_FLEXION": {
+    "importance": "HIGH",
+    "description": "Move through controlled spinal flexion while avoiding momentum."
+  },
+
+  "ANTI_EXTENSION": {
+    "importance": "N/A",
+    "description": "Static exercise—focus on maintaining posture rather than movement range."
+  },
+
+  "ROTATION": {
+    "importance": "HIGH",
+    "description": "Rotate under control through a comfortable range while maintaining core stability."
+  },
+
+  "CARRY": {
+    "importance": "N/A",
+    "description": "Loaded carries are distance/time-based rather than ROM-dependent."
+  }
+}

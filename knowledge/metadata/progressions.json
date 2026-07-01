@@ -1,0 +1,90 @@
+{
+  "HORIZONTAL_PUSH": [
+    "Dumbbell Bench Press",
+    "Machine Chest Press",
+    "Push-Up",
+    "Smith Machine Bench Press"
+  ],
+
+  "VERTICAL_PUSH": [
+    "Dumbbell Shoulder Press",
+    "Machine Shoulder Press",
+    "Landmine Press"
+  ],
+
+  "HORIZONTAL_PULL": [
+    "Chest Supported Row",
+    "Cable Row",
+    "Machine Row"
+  ],
+
+  "VERTICAL_PULL": [
+    "Lat Pulldown",
+    "Assisted Pull-Up",
+    "Band Pulldown"
+  ],
+
+  "SQUAT": [
+    "Goblet Squat",
+    "Hack Squat",
+    "Leg Press"
+  ],
+
+  "HINGE": [
+    "Romanian Deadlift",
+    "Hip Thrust",
+    "Glute Bridge"
+  ],
+
+  "LUNGE": [
+    "Step-Up",
+    "Split Squat",
+    "Bulgarian Split Squat"
+  ],
+
+  "ELBOW_FLEXION": [
+    "Hammer Curl",
+    "Cable Curl",
+    "Preacher Curl"
+  ],
+
+  "ELBOW_EXTENSION": [
+    "Triceps Pushdown",
+    "Overhead Extension",
+    "Skull Crusher"
+  ],
+
+  "SHOULDER_ABDUCTION": [
+    "Cable Lateral Raise",
+    "Machine Lateral Raise"
+  ],
+
+  "CALF": [
+    "Standing Calf Raise",
+    "Seated Calf Raise"
+  ],
+
+  "CORE_FLEXION": [
+    "Cable Crunch",
+    "Reverse Crunch",
+    "Decline Crunch"
+  ],
+
+  "ANTI_EXTENSION": [
+    "Dead Bug",
+    "Ab Wheel Rollout",
+    "Bird Dog"
+  ],
+
+  "ROTATION": [
+    "Russian Twist",
+    "Cable Wood Chop",
+    "Landmine Rotation"
+  ],
+
+  "CARRY": [
+    "Suitcase Carry",
+    "Front Rack Carry",
+    "Overhead Carry"
+  ]
+}
