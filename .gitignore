@@ -1,29 +1,30 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
+# Node
+node_modules/
+npm-debug.log*
 
-# Virtual environments
+# Python
 venv/
 .venv/
-env/
+__pycache__/
+*.pyc
+
+# Environment
+.env
 
 # VS Code
 .vscode/
 
-# Logs
-*.log
-
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
-# Environment variables
-.env
+# Build
+dist/
+build/
 
-# Temporary outputs
-data/processed/exercises.json
-data/processed/exercises_normalized.json
-data/processed/exercises_enriched.json
+# Logs
+logs/
+*.log
 
-data/reports/*.json
+# Coverage
+coverage/
