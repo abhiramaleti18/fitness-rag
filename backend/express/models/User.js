@@ -28,6 +28,20 @@ const userSchema = new mongoose.Schema({
     },
     equipmentAccess: [{
         type: String
+    }],
+    weight: {
+        type: Number, // kg
+        default: null
+    },
+    height: {
+        type: Number, // cm
+        default: null
+    },
+    personalRecords: [{
+        exerciseName: { type: String, required: true },
+        weight: { type: Number, required: true }, // kg
+        reps: { type: Number, default: 1 },
+        date: { type: Date, default: Date.now }
     }]
 }, { timestamps: true });
 
@@ -35,5 +49,6 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
     const bcrypt = require('bcryptjs');
     return await bcrypt.compare(candidatePassword, this.password);
 };
+
 
 module.exports = mongoose.model('User', userSchema);

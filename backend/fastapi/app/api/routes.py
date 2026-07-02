@@ -64,3 +64,19 @@ def get_exercise(exercise_id: str):
     if not exercise:
         raise HTTPException(status_code=404, detail="Exercise not found")
     return exercise
+
+@router.get("/exercises")
+def list_exercises(category: str | None = None, equipment: str | None = None, level: str | None = None, limit: int = 30, skip: int = 0):
+    query = {}
+    if category:
+        query["category"] = category
+    if equipment:
+        query["equipment"] = equipment
+    if level:
+        query["level"] = level
+
+    cursor = exercises_collection.find(query, {"_id": 0}).skip(skip).limit(limit)
+    results = list(cursor)
+    total = exercises_collection.count_documents(query)
+
+    return {"results": results, "total": total, "limit": limit, "skip": skip}

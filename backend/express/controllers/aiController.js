@@ -57,3 +57,13 @@ exports.getExercise = async (req, res) => {
         res.status(502).json({ message: 'AI service unavailable', error: error.message });
     }
 };
+
+exports.listExercises = async (req, res) => {
+    try {
+        const response = await axios.get(`${FASTAPI_URL}/api/exercises`, { params: req.query });
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error('FastAPI list exercises error:', error.message);
+        res.status(502).json({ message: 'AI service unavailable', error: error.message });
+    }
+};

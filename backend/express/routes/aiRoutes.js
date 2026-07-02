@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { search, recommend, getExercise } = require('../controllers/aiController');
 const { protect } = require('../middleware/auth');
+const { search, recommend, getExercise, listExercises } = require('../controllers/aiController');
 
 router.post('/search', protect, search);
 router.post('/recommend', protect, recommend);
 router.get('/exercise/:id', protect, getExercise);
+router.get('/exercises', protect, listExercises);
 
 module.exports = router;

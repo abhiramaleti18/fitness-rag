@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Hero from './pages/Hero';
+import Profile from './pages/Profile';
+import Exercises from './pages/Exercises';
 import './App.css';
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/exercises" element={<Exercises />} />
       </Routes>
     </BrowserRouter>
   );

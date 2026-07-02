@@ -24,6 +24,9 @@ app.use('/api/auth', authRoutes);
 const aiRoutes = require('./routes/aiRoutes');
 app.use('/api/ai', aiRoutes);
 
+const profileRoutes = require('./routes/profileRoutes');
+app.use('/api/profile', profileRoutes);
+
 mongoose.connect(process.env.EXPRESS_MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');
