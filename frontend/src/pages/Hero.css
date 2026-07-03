@@ -5,23 +5,16 @@
 .hero-banner {
     position: relative;
     padding: 3.5rem 3rem 4.5rem;
-    background:
-        linear-gradient(180deg, rgba(10,10,12,0.55) 0%, rgba(10,10,12,0.88) 85%),
-        radial-gradient(circle at 20% 20%, rgba(255,46,62,0.12), transparent 45%),
-        var(--surface);
+    background: url('/gym_img.png') center / cover no-repeat;
+    filter: brightness(1.25);
     border-bottom: 1px solid var(--border);
     overflow: hidden;
 }
 
 .hero-banner-overlay {
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, var(--red-glow) 0%, transparent 65%);
-    filter: blur(70px);
-    opacity: 0.4;
+    position: absolute; 
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
     pointer-events: none;
 }
 
@@ -235,6 +228,11 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.app-layout-content-centered .hero-result-answer,
+.app-layout-content-centered .hero-result-card {
+    text-align: left;
 }
 
 .app-layout-content-centered .hero-pills,

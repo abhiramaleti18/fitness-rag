@@ -66,17 +66,19 @@ def get_exercise(exercise_id: str):
     return exercise
 
 @router.get("/exercises")
-def list_exercises(category: str | None = None, equipment: str | None = None, level: str | None = None, limit: int = 30, skip: int = 0):
+def list_exercises(category: str | None = None, equipment: str | None = None, level: str | None = None, name: str | None = None, limit: int = 30, skip: int = 0):
     query = {}
     if category:
-        query["category"] = category
+        query["category"] = {"$regex": f"^{category}$", "$options": "i"}
     if equipment:
-        query["equipment"] = equipment
+        query["equipment"] = {"$regex": f"^{equipment}$", "$options": "i"}
     if level:
-        query["level"] = level
+        query["level"] = {"$regex": f"^{level}$", "$options": "i"}
+    if name:
+        query["name"] = {"$regex": name, "$options": "i"}
 
     cursor = exercises_collection.find(query, {"_id": 0}).skip(skip).limit(limit)
     results = list(cursor)
     total = exercises_collection.count_documents(query)
 
-    return {"results": results, "total": total, "limit": limit, "skip": skip}
+    return {"results": results, "total": total, "limit": limit, "skip": skip}   

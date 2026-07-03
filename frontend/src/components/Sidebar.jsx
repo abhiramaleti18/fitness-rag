@@ -4,7 +4,7 @@ import './Sidebar.css';
 
 const NAV_ITEMS = [
     { to: '/', label: 'Home', icon: HomeIcon },
-    { to: '/exercises', label: 'Exercise Library', icon: DumbbellIcon },
+    { to: '/exercises', label: 'Exercises', icon: DumbbellIcon },
     { to: '/profile', label: 'Profile', icon: UserIcon },
 ];
 
@@ -25,13 +25,22 @@ export default function Sidebar() {
             <aside className={`sidebar ${collapsed ? 'sidebar-collapsed' : ''}`}>
                 <div className="sidebar-top">
                     <Link to="/" className="sidebar-brand">
-                        <span className="sidebar-brand-icon"><DumbbellIcon /></span>
-                        FIT<span>BOT</span>
+                        fit<span>bot</span>
                     </Link>
                     <button className="sidebar-toggle" onClick={toggle} aria-label="Close sidebar">
                         <CollapseIcon />
                     </button>
                 </div>
+
+                <p className="sidebar-tagline">Your AI Fitness Coach</p>
+                <p className="sidebar-desc">
+                    FitBot is your intelligent fitness companion. Get personalized exercise guidance,
+                    expert coaching cues, and instant answers to your fitness questions.
+                </p>
+
+                <div className="sidebar-divider" />
+
+                <span className="sidebar-section-label">Pages &amp; Navigation</span>
 
                 <nav className="sidebar-nav">
                     {NAV_ITEMS.map(({ to, label, icon: Icon }) => (

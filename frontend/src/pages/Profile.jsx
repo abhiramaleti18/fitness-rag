@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import api from '../api/api';
 import './Profile.css';
+import ConfirmModal from '../components/ConfirmModal';
 
 const GOALS = ['muscle gain', 'strength', 'fat loss', 'endurance', 'mobility'];
 const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'full gym'];
 
 export default function Profile() {
+    const [pendingDelete, setPendingDelete] = useState(null);
     const [user, setUser] = useState(null);
     const [form, setForm] = useState({ weight: '', height: '', experienceLevel: 'beginner' });
     const [goals, setGoals] = useState([]);
@@ -16,6 +18,8 @@ export default function Profile() {
 
     const [prForm, setPrForm] = useState({ exerciseName: '', weight: '', reps: '' });
     const [prError, setPrError] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
     const loadProfile = async () => {
         try {
@@ -63,6 +67,23 @@ export default function Profile() {
         }
     };
 
+    const handleExerciseNameChange = async (value) => {
+        setPrForm({ ...prForm, exerciseName: value });
+
+        if (value.trim().length < 2) {
+            setSuggestions([]);
+            return;
+        }
+
+        try {
+            const res = await api.get('/ai/exercises', { params: { name: value, limit: 6 } });
+            setSuggestions(res.data.results || []);
+            setShowSuggestions(true);
+        } catch (err) {
+            console.error('Autocomplete failed', err);
+        }
+    };
+
     const handleAddPR = async (e) => {
         e.preventDefault();
         setPrError('');
@@ -80,17 +101,21 @@ export default function Profile() {
             });
             setUser({ ...user, personalRecords: res.data.personalRecords });
             setPrForm({ exerciseName: '', weight: '', reps: '' });
+            setSuggestions([]);
         } catch (err) {
             setPrError(err.response?.data?.message || 'Failed to add record');
         }
     };
 
-    const handleDeletePR = async (recordId) => {
+    const confirmDeletePR = async () => {
+        if (!pendingDelete) return;
         try {
-            const res = await api.delete(`/profile/records/${recordId}`);
+            const res = await api.delete(`/profile/records/${pendingDelete.id}`);
             setUser({ ...user, personalRecords: res.data.personalRecords });
         } catch (err) {
             console.error('Failed to delete record', err);
+        } finally {
+            setPendingDelete(null);
         }
     };
 
@@ -177,11 +202,34 @@ export default function Profile() {
 
                         <form onSubmit={handleAddPR} className="pr-form">
                             {prError && <p className="profile-error">{prError}</p>}
-                            <input
-                                placeholder="Exercise (e.g. Bench Press)"
-                                value={prForm.exerciseName}
-                                onChange={(e) => setPrForm({ ...prForm, exerciseName: e.target.value })}
-                            />
+
+                            <div className="pr-autocomplete">
+                                <input
+                                    placeholder="Exercise (e.g. Bench Press)"
+                                    value={prForm.exerciseName}
+                                    onChange={(e) => handleExerciseNameChange(e.target.value)}
+                                    onFocus={() => prForm.exerciseName.length >= 2 && setShowSuggestions(true)}
+                                    onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+                                />
+                                {showSuggestions && suggestions.length > 0 && (
+                                    <div className="pr-suggestions">
+                                        {suggestions.map((ex) => (
+                                            <button
+                                                key={ex.id}
+                                                type="button"
+                                                className="pr-suggestion-item"
+                                                onMouseDown={() => {
+                                                    setPrForm({ ...prForm, exerciseName: ex.name });
+                                                    setShowSuggestions(false);
+                                                }}
+                                            >
+                                                {ex.name}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
                             <div className="pr-form-row">
                                 <input
                                     type="number"
@@ -210,13 +258,20 @@ export default function Profile() {
                                         <strong>{pr.exerciseName}</strong>
                                         <span className="pr-item-detail">{pr.weight}kg &times; {pr.reps}</span>
                                     </div>
-                                    <button onClick={() => handleDeletePR(pr._id)} className="pr-delete" aria-label="Delete record">&times;</button>
+                                    <button onClick={() => setPendingDelete({ id: pr._id, name: pr.exerciseName })} className="pr-delete" aria-label="Delete record">&times;</button>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
+            <ConfirmModal
+                open={!!pendingDelete}
+                title="Delete personal record?"
+                message={pendingDelete ? `This will permanently remove your record for "${pendingDelete.name}".` : ''}
+                onConfirm={confirmDeletePR}
+                onCancel={() => setPendingDelete(null)}
+            />
         </Layout>
     );
 }

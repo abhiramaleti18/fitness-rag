@@ -30,11 +30,33 @@ exports.addPersonalRecord = async (req, res) => {
             return res.status(400).json({ message: 'Exercise name and weight are required' });
         }
 
-        const user = await User.findByIdAndUpdate(
-            req.user.id,
-            { $push: { personalRecords: { exerciseName, weight, reps: reps || 1 } } },
-            { new: true, runValidators: true }
-        ).select('-password');
+        const newReps = reps || 1;
+        const user = await User.findById(req.user.id);
+
+        const existingIndex = user.personalRecords.findIndex(
+            pr => pr.exerciseName.toLowerCase() === exerciseName.toLowerCase()
+        );
+
+        if (existingIndex !== -1) {
+            const existing = user.personalRecords[existingIndex];
+            const isBetter = weight > existing.weight || (weight === existing.weight && newReps > existing.reps);
+
+            if (!isBetter) {
+                return res.status(200).json({
+                    success: true,
+                    message: 'Existing record is equal or better — not updated',
+                    personalRecords: user.personalRecords
+                });
+            }
+
+            user.personalRecords[existingIndex].weight = weight;
+            user.personalRecords[existingIndex].reps = newReps;
+            user.personalRecords[existingIndex].date = new Date();
+        } else {
+            user.personalRecords.push({ exerciseName, weight, reps: newReps });
+        }
+
+        await user.save();
 
         res.status(201).json({ success: true, personalRecords: user.personalRecords });
     } catch (error) {

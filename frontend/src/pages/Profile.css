@@ -136,6 +136,40 @@
     padding: 0.65rem 0.85rem;
     color: var(--text);
     font-size: 0.9rem;
+    width: 100%;
+}
+
+.pr-autocomplete {
+    position: relative;
+}
+
+.pr-suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+.pr-suggestion-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 0.6rem 0.85rem;
+    font-size: 0.85rem;
+}
+
+.pr-suggestion-item:hover {
+    background: var(--surface);
+    color: var(--red);
 }
 
 .pr-form-row {
