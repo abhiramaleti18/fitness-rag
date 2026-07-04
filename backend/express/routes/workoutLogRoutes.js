@@ -11,5 +11,6 @@ router.get('/progress/:exerciseName', protect, getExerciseProgress);
 router.get('/:id', protect, getLog);
 router.put('/:id', protect, updateLog);
 router.delete('/:id', protect, deleteLog);
+router.get('/consistency', protect, getConsistency);
 
 module.exports = router;

@@ -3,11 +3,13 @@ import Layout from '../components/Layout';
 import api from '../api/api';
 import './Profile.css';
 import ConfirmModal from '../components/ConfirmModal';
+import ConsistencyHeatmap from '../components/ConsistencyHeatmap';
 
 const GOALS = ['muscle gain', 'strength', 'fat loss', 'endurance', 'mobility'];
 const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'full gym'];
 
 export default function Profile() {
+    const [editing, setEditing] = useState(false);
     const [pendingDelete, setPendingDelete] = useState(null);
     const [user, setUser] = useState(null);
     const [form, setForm] = useState({ weight: '', height: '', experienceLevel: 'beginner' });
@@ -45,27 +47,28 @@ export default function Profile() {
     };
 
     const handleSaveProfile = async (e) => {
-        e.preventDefault();
-        setSaving(true);
-        setSaved(false);
-        try {
-            const res = await api.put('/profile', {
-                weight: form.weight ? Number(form.weight) : null,
-                height: form.height ? Number(form.height) : null,
-                experienceLevel: form.experienceLevel,
-                fitnessGoals: goals,
-                equipmentAccess: equipment
-            });
-            setUser(res.data.user);
-            localStorage.setItem('user', JSON.stringify({ ...JSON.parse(localStorage.getItem('user')), ...res.data.user }));
-            setSaved(true);
-            setTimeout(() => setSaved(false), 2500);
-        } catch (err) {
-            console.error('Failed to save profile', err);
-        } finally {
-            setSaving(false);
-        }
-    };
+    e.preventDefault();
+    setSaving(true);
+    setSaved(false);
+    try {
+        const res = await api.put('/profile', {
+            weight: form.weight ? Number(form.weight) : null,
+            height: form.height ? Number(form.height) : null,
+            experienceLevel: form.experienceLevel,
+            fitnessGoals: goals,
+            equipmentAccess: equipment
+        });
+        setUser(res.data.user);
+        localStorage.setItem('user', JSON.stringify({ ...JSON.parse(localStorage.getItem('user')), ...res.data.user }));
+        setSaved(true);
+        setEditing(false);
+        setTimeout(() => setSaved(false), 2500);
+    } catch (err) {
+        console.error('Failed to save profile', err);
+    } finally {
+        setSaving(false);
+    }
+};
 
     const handleExerciseNameChange = async (value) => {
         setPrForm({ ...prForm, exerciseName: value });
@@ -136,65 +139,78 @@ export default function Profile() {
             <div className="profile-page">
                 <h1 className="profile-title">Your Profile</h1>
                 <p className="profile-sub">Body stats and equipment help FitBot tailor what it recommends.</p>
-
+                <ConsistencyHeatmap />
                 <div className="profile-grid">
                     <form onSubmit={handleSaveProfile} className="profile-card">
-                        <h2>Body & Preferences</h2>
+                        <div className="profile-card-header">
+                            <h2>Body & Preferences</h2>
+                            <button
+                                type="button"
+                                className="profile-edit-toggle"
+                                onClick={() => setEditing(!editing)}
+                            >
+                                {editing ? 'Cancel' : 'Edit'}
+                            </button>
+                        </div>
 
-                        <div className="profile-row">
-                            <div>
-                                <label>Weight (kg)</label>
-                                <input
-                                    type="number"
-                                    step="0.1"
-                                    value={form.weight}
-                                    onChange={(e) => setForm({ ...form, weight: e.target.value })}
-                                />
+                        <fieldset disabled={!editing} className="profile-fieldset">
+                            <div className="profile-row">
+                                <div>
+                                    <label>Weight (kg)</label>
+                                    <input
+                                        type="number"
+                                        step="0.1"
+                                        value={form.weight}
+                                        onChange={(e) => setForm({ ...form, weight: e.target.value })}
+                                    />
+                                </div>
+                                <div>
+                                    <label>Height (cm)</label>
+                                    <input
+                                        type="number"
+                                        step="0.1"
+                                        value={form.height}
+                                        onChange={(e) => setForm({ ...form, height: e.target.value })}
+                                    />
+                                </div>
                             </div>
-                            <div>
-                                <label>Height (cm)</label>
-                                <input
-                                    type="number"
-                                    step="0.1"
-                                    value={form.height}
-                                    onChange={(e) => setForm({ ...form, height: e.target.value })}
-                                />
+
+                            {bmi && <p className="profile-bmi">BMI: <strong>{bmi}</strong></p>}
+
+                            <label>Experience level</label>
+                            <select
+                                value={form.experienceLevel}
+                                onChange={(e) => setForm({ ...form, experienceLevel: e.target.value })}
+                            >
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+
+                            <label>Goals</label>
+                            <div className="chip-group">
+                                {GOALS.map(g => (
+                                    <button type="button" key={g} className={`chip ${goals.includes(g) ? 'chip-active' : ''}`} onClick={() => toggle(goals, setGoals, g)}>
+                                        {g}
+                                    </button>
+                                ))}
                             </div>
-                        </div>
 
-                        {bmi && <p className="profile-bmi">BMI: <strong>{bmi}</strong></p>}
+                            <label>Equipment access</label>
+                            <div className="chip-group">
+                                {EQUIPMENT.map(e => (
+                                    <button type="button" key={e} className={`chip ${equipment.includes(e) ? 'chip-active' : ''}`} onClick={() => toggle(equipment, setEquipment, e)}>
+                                        {e}
+                                    </button>
+                                ))}
+                            </div>
+                        </fieldset>
 
-                        <label>Experience level</label>
-                        <select
-                            value={form.experienceLevel}
-                            onChange={(e) => setForm({ ...form, experienceLevel: e.target.value })}
-                        >
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-
-                        <label>Goals</label>
-                        <div className="chip-group">
-                            {GOALS.map(g => (
-                                <button type="button" key={g} className={`chip ${goals.includes(g) ? 'chip-active' : ''}`} onClick={() => toggle(goals, setGoals, g)}>
-                                    {g}
-                                </button>
-                            ))}
-                        </div>
-
-                        <label>Equipment access</label>
-                        <div className="chip-group">
-                            {EQUIPMENT.map(e => (
-                                <button type="button" key={e} className={`chip ${equipment.includes(e) ? 'chip-active' : ''}`} onClick={() => toggle(equipment, setEquipment, e)}>
-                                    {e}
-                                </button>
-                            ))}
-                        </div>
-
-                        <button type="submit" className="profile-save" disabled={saving}>
-                            {saving ? 'Saving...' : saved ? 'Saved ✓' : 'Save changes'}
-                        </button>
+                        {editing && (
+                            <button type="submit" className="profile-save" disabled={saving}>
+                                {saving ? 'Saving...' : saved ? 'Saved ✓' : 'Save changes'}
+                            </button>
+                        )}
                     </form>
 
                     <div className="profile-card">

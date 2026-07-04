@@ -98,3 +98,26 @@ exports.getExerciseProgress = async (req, res) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
+
+exports.getConsistency = async (req, res) => {
+    try {
+        const oneYearAgo = new Date();
+        oneYearAgo.setDate(oneYearAgo.getDate() - 365);
+
+        const logs = await WorkoutLog.find({
+            userId: req.user.id,
+            date: { $gte: oneYearAgo }
+        }).select('date');
+
+        // Count sessions per calendar day (YYYY-MM-DD)
+        const counts = {};
+        logs.forEach(log => {
+            const key = log.date.toISOString().split('T')[0];
+            counts[key] = (counts[key] || 0) + 1;
+        });
+
+        res.status(200).json({ success: true, counts });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
