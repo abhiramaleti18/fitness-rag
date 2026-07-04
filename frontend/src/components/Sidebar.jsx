@@ -5,6 +5,7 @@ import './Sidebar.css';
 const NAV_ITEMS = [
     { to: '/', label: 'Home', icon: HomeIcon },
     { to: '/exercises', label: 'Exercises', icon: DumbbellIcon },
+    { to: '/logs', label: 'My Workouts', icon: LogIcon },
     { to: '/profile', label: 'Profile', icon: UserIcon },
 ];
 
@@ -90,4 +91,7 @@ function CollapseIcon() {
 }
 function ExpandIcon() {
     return <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+function LogIcon() {
+    return <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 }

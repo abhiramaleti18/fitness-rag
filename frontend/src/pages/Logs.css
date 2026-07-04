@@ -1,0 +1,251 @@
+.logs-page {
+    padding: 2.5rem 3rem;
+    max-width: 800px;
+}
+
+.logs-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+}
+
+.logs-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    margin-bottom: 2rem;
+}
+
+.logs-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.logs-form-header {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.logs-date-input,
+.logs-label-input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.logs-exercise-block {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.logs-exercise-header {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+}
+
+.logs-exercise-header .pr-autocomplete {
+    flex: 1;
+}
+
+.logs-exercise-name-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.logs-remove-exercise {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 0.78rem;
+    padding: 0.6rem 0.2rem;
+    white-space: nowrap;
+}
+
+.logs-remove-exercise:hover {
+    color: #ff8891;
+}
+
+.logs-set-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.logs-set-number {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+}
+
+.logs-set-row input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.55rem 0.75rem;
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.logs-remove-set {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0 0.3rem;
+}
+
+.logs-remove-set:hover {
+    color: #ff8891;
+}
+
+.logs-add-set {
+    background: none;
+    border: none;
+    color: var(--red);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0;
+}
+
+.logs-add-exercise {
+    background: var(--surface-raised);
+    border: 1px dashed var(--border);
+    color: var(--text-muted);
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.logs-add-exercise:hover {
+    border-color: var(--red-dim);
+    color: var(--text);
+}
+
+.logs-save {
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.logs-save:disabled {
+    opacity: 0.7;
+}
+
+.logs-error {
+    color: #ff8891;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.logs-history h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+}
+
+.logs-loading, .logs-empty {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.logs-history-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.logs-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+}
+
+.logs-history-header strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+.logs-history-date {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+}
+
+.logs-history-delete {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.logs-history-delete:hover {
+    color: #ff8891;
+}
+
+.logs-history-exercise {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+}
+
+.logs-history-exercise:first-child {
+    border-top: none;
+}
+
+.logs-history-exercise-name {
+    font-weight: 600;
+}
+
+.logs-history-sets {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+    .logs-page {
+        padding: 1.5rem;
+    }
+    .logs-form-header {
+        grid-template-columns: 1fr;
+    }
+    .logs-set-row {
+        grid-template-columns: 50px 1fr 1fr auto;
+    }
+}

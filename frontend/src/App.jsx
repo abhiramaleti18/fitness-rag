@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import Hero from './pages/Hero';
 import Profile from './pages/Profile';
 import Exercises from './pages/Exercises';
+import Logs from './pages/Logs';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/exercises" element={<Exercises />} />
+        <Route path="/logs" element={<Logs />} />
       </Routes>
     </BrowserRouter>
   );
