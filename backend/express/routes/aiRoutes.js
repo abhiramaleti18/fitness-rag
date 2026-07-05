@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { protect } = require('../middleware/auth');
-const { search, recommend, getExercise, listExercises } = require('../controllers/aiController');
+const { search, recommend, getExercise, listExercises, plan } = require('../controllers/aiController');
 
 router.post('/search', protect, search);
 router.post('/recommend', protect, recommend);
