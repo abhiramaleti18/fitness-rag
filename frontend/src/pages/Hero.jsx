@@ -38,10 +38,13 @@ const WHY = [
     },
 ];
 
+const PLAN_KEYWORDS = ['plan', 'schedule', 'program', 'routine', 'days a week', 'split'];
+const isPlanQuery = (q) => PLAN_KEYWORDS.some(kw => q.toLowerCase().includes(kw));
+
 export default function Hero() {
-    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
+    const [planResult, setPlanResult] = useState(null);
     const [error, setError] = useState('');
 
     const runQuery = async (query) => {
@@ -52,9 +55,16 @@ export default function Hero() {
         setLoading(true);
         setError('');
         setResult(null);
+        setPlanResult(null);
+
         try {
-            const res = await api.post('/ai/recommend', { query, top_k: 5 });
-            setResult(res.data);
+            if (isPlanQuery(query)) {
+                const res = await api.post('/ai/plan', { query });
+                setPlanResult(res.data);
+            } else {
+                const res = await api.post('/ai/recommend', { query, top_k: 5 });
+                setResult(res.data);
+            }
         } catch (err) {
             setError(err.response?.data?.message || 'Something went wrong. Try again.');
         } finally {
@@ -126,8 +136,25 @@ export default function Hero() {
                             )}
                         </div>
                     )}
-
-                    {!result && !loading && (
+                    {planResult && (
+                        <div className="hero-result">
+                            <p className="hero-plan-meta">{planResult.days}-day plan{planResult.equipmentFilter ? ' · bodyweight/home-friendly' : ''}</p>
+                            {planResult.plan.map((day) => (
+                                <div key={day.day} className="hero-plan-day">
+                                    <h3>Day {day.day} — {day.focus}</h3>
+                                    <div className="hero-result-list">
+                                        {day.exercises.map((ex) => (
+                                            <div key={ex.id} className="hero-result-card">
+                                                <h3>{ex.name}</h3>
+                                                <p className="hero-result-meta">{ex.category} &middot; {ex.equipment}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {!result && !planResult && !loading && (
                         <section className="hero-why">
                             <h2>Why <span>FitBot</span></h2>
                             <div className="hero-why-grid">

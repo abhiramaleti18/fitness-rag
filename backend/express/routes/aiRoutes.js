@@ -7,5 +7,6 @@ router.post('/search', protect, search);
 router.post('/recommend', protect, recommend);
 router.get('/exercise/:id', protect, getExercise);
 router.get('/exercises', protect, listExercises);
+router.post('/plan', protect, plan);
 
 module.exports = router;

@@ -67,3 +67,16 @@ exports.listExercises = async (req, res) => {
         res.status(502).json({ message: 'AI service unavailable', error: error.message });
     }
 };
+
+exports.plan = async (req, res) => {
+    try {
+        const { query } = req.body;
+        if (!query) return res.status(400).json({ message: 'Query is required' });
+
+        const response = await axios.post(`${FASTAPI_URL}/api/plan`, { query });
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error('FastAPI plan error:', error.message);
+        res.status(502).json({ message: 'AI service unavailable', error: error.message });
+    }
+};

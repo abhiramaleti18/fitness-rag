@@ -248,3 +248,18 @@
 .app-layout-content-centered .hero-why-grid {
     text-align: left;
 }
+
+.hero-plan-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.hero-plan-day {
+    margin-bottom: 1.75rem;
+}
+
+.hero-plan-day h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}

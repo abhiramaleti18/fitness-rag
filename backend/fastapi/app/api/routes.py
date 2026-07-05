@@ -7,6 +7,8 @@ from app.services.llm_provider import get_completion
 from app.services.response_formatter import format_response
 from app.core.database import exercises_collection
 from app.core.config import settings
+from app.services.query_classifier import is_plan_request, extract_days, extract_equipment
+from app.services.plan_builder import build_plan
 
 router = APIRouter()
 
@@ -20,6 +22,8 @@ class RecommendRequest(BaseModel):
     query: str
     top_k: int | None = None
 
+class PlanRequest(BaseModel):
+    query: str
 
 @router.get("/health")
 def health_check():
@@ -82,3 +86,18 @@ def list_exercises(category: str | None = None, equipment: str | None = None, le
     total = exercises_collection.count_documents(query)
 
     return {"results": results, "total": total, "limit": limit, "skip": skip}   
+
+@router.post("/plan")
+def plan(request: PlanRequest):
+    try:
+        days = extract_days(request.query)
+        equipment_filter = extract_equipment(request.query)
+        plan_days = build_plan(days, equipment_filter)
+
+        return {
+            "days": days,
+            "equipmentFilter": equipment_filter,
+            "plan": plan_days
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
