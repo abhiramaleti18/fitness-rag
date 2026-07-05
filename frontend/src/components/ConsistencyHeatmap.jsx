@@ -25,15 +25,22 @@ function buildWeeks(counts) {
 // Figures out which weeks should get a month label above them —
 // only the first week where a new month appears gets labeled, to avoid repeats.
 function getMonthLabels(weeks) {
-    const labels = [];
+    // First, find every month transition point
+    const transitions = [];
     let lastMonth = null;
 
     weeks.forEach((week, index) => {
         const firstDayOfWeek = week[0];
         if (firstDayOfWeek.month !== lastMonth) {
-            labels.push({ weekIndex: index, label: MONTH_NAMES[firstDayOfWeek.month] });
+            transitions.push({ weekIndex: index, label: MONTH_NAMES[firstDayOfWeek.month] });
             lastMonth = firstDayOfWeek.month;
         }
+    });
+
+    // Only keep a label if its month spans at least 3 weeks before the next one starts
+    const labels = transitions.filter((t, i) => {
+        const nextIndex = transitions[i + 1]?.weekIndex ?? weeks.length;
+        return (nextIndex - t.weekIndex) >= 3;
     });
 
     return labels;
@@ -94,14 +101,15 @@ export default function ConsistencyHeatmap() {
 
             <div className="heatmap-scroll">
                 <div className="heatmap-months">
-                    {weeks.map((_, wi) => {
-                        const found = monthLabels.find(m => m.weekIndex === wi);
-                        return (
-                            <span key={wi} className="heatmap-month-label">
-                                {found ? found.label : ''}
-                            </span>
-                        );
-                    })}
+                    {monthLabels.map((m) => (
+                        <span
+                            key={m.weekIndex}
+                            className="heatmap-month-label"
+                            style={{ left: `${m.weekIndex * 14}px` }}
+                        >
+                            {m.label}
+                        </span>
+                    ))}
                 </div>
 
                 <div className="heatmap-grid">

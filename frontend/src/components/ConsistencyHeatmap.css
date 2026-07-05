@@ -41,7 +41,6 @@
 .heatmap-grid {
     display: flex;
     gap: 3px;
-    overflow-x: auto;
     padding-bottom: 0.25rem;
 }
 
@@ -84,16 +83,15 @@
 }
 
 .heatmap-months {
-    display: flex;
-    gap: 3px;
+    position: relative;
+    height: 14px;
     margin-bottom: 4px;
 }
 
 .heatmap-month-label {
-    width: 11px;
-    flex-shrink: 0;
+    position: absolute;
+    top: 0;
     font-size: 0.65rem;
     color: var(--text-faint);
     white-space: nowrap;
-    overflow: visible;
 }

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {
-    createLog, getLogs, getLog, updateLog, deleteLog, getExerciseProgress
+    createLog, getLogs, getLog, updateLog, deleteLog, getExerciseProgress, getConsistency
 } = require('../controllers/workoutLogController');
 const { protect } = require('../middleware/auth');
 
