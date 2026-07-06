@@ -122,7 +122,7 @@ export default function Hero() {
                         <div className="hero-result">
                             <p className="hero-result-answer">{result.answer}</p>
 
-                            {result.recommendedExercises?.length > 0 && (
+                            {!result.needsClarification && result.recommendedExercises?.length > 0 && (
                                 <div className="hero-result-list">
                                     {result.recommendedExercises.map((ex) => (
                                         <div key={ex.id} className="hero-result-card">

@@ -2,6 +2,8 @@ const axios = require('axios');
 
 const FASTAPI_URL = process.env.FASTAPI_URL || 'http://localhost:8000';
 
+const User = require('../models/User');
+
 exports.search = async (req, res) => {
     try {
         const { query, top_k } = req.body;
@@ -26,18 +28,23 @@ exports.search = async (req, res) => {
 exports.recommend = async (req, res) => {
     try {
         const { query, top_k } = req.body;
+        if (!query) return res.status(400).json({ message: 'Query is required' });
 
-        if (!query) {
-            return res.status(400).json({ message: 'Query is required' });
-        }
+        const user = await User.findById(req.user.id).select('-password');
 
         const response = await axios.post(`${FASTAPI_URL}/api/recommend`, {
             query,
-            top_k
+            top_k,
+            userContext: {
+                experienceLevel: user.experienceLevel,
+                equipmentAccess: user.equipmentAccess,
+                fitnessGoals: user.fitnessGoals,
+                weight: user.weight,
+                recentPRs: user.personalRecords?.slice(-5) || []
+            }
         });
 
         res.status(200).json(response.data);
-
     } catch (error) {
         console.error('FastAPI recommend error:', error.message);
         res.status(502).json({ message: 'AI service unavailable', error: error.message });
@@ -73,7 +80,17 @@ exports.plan = async (req, res) => {
         const { query } = req.body;
         if (!query) return res.status(400).json({ message: 'Query is required' });
 
-        const response = await axios.post(`${FASTAPI_URL}/api/plan`, { query });
+        const user = await User.findById(req.user.id).select('-password');
+
+        const response = await axios.post(`${FASTAPI_URL}/api/plan`, {
+            query,
+            userContext: {
+                experienceLevel: user.experienceLevel,
+                equipmentAccess: user.equipmentAccess,
+                fitnessGoals: user.fitnessGoals
+            }
+        });
+
         res.status(200).json(response.data);
     } catch (error) {
         console.error('FastAPI plan error:', error.message);

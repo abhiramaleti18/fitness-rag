@@ -9,6 +9,7 @@ from app.core.database import exercises_collection
 from app.core.config import settings
 from app.services.query_classifier import is_plan_request, extract_days, extract_equipment
 from app.services.plan_builder import build_plan
+from app.services.query_classifier import is_plan_request, extract_days, extract_equipment, is_query_too_vague
 
 router = APIRouter()
 
@@ -24,6 +25,26 @@ class RecommendRequest(BaseModel):
 
 class PlanRequest(BaseModel):
     query: str
+
+class UserContext(BaseModel):
+    experienceLevel: str | None = None
+    equipmentAccess: list[str] | None = None
+    fitnessGoals: list[str] | None = None
+    weight: float | None = None
+    recentPRs: list[dict] | None = None
+
+
+class RecommendRequest(BaseModel):
+    query: str
+    top_k: int | None = None
+    userContext: UserContext | None = None
+
+
+class PlanRequest(BaseModel):
+    query: str
+    userContext: UserContext | None = None
+
+DEFAULT_EXCLUDED_CATEGORIES = ["STRETCHING", "CARDIO", "PLYOMETRICS"]
 
 @router.get("/health")
 def health_check():
@@ -53,9 +74,17 @@ def search(request: SearchRequest):
 @router.post("/recommend")
 def recommend(request: RecommendRequest):
     try:
-        results = vector_search(request.query, top_k=request.top_k)
+        if is_query_too_vague(request.query):
+            return {
+                "answer": "Could you be a bit more specific? For example, tell me a muscle group (like chest, back, or legs), a goal (like building strength or muscle), or a particular exercise you want to know about.",
+                "recommendedExercises": [],
+                "sources": [],
+                "needsClarification": True
+            }
+
+        results = vector_search(request.query, top_k=request.top_k, exclude_categories=DEFAULT_EXCLUDED_CATEGORIES)
         context = build_context(results)
-        messages = build_prompt(request.query, context)
+        messages = build_prompt(request.query, context, request.userContext)
         answer = get_completion(messages)
         return format_response(answer, results)
     except Exception as e:
@@ -92,10 +121,16 @@ def plan(request: PlanRequest):
     try:
         days = extract_days(request.query)
         equipment_filter = extract_equipment(request.query)
-        plan_days = build_plan(days, equipment_filter)
+
+        # Fall back to the user's actual equipment access if the query didn't specify
+        if not equipment_filter and request.userContext and request.userContext.equipmentAccess:
+            equipment_filter = [e.upper().replace(" ", "_") for e in request.userContext.equipmentAccess]
+
+        level = request.userContext.experienceLevel if request.userContext else None
+        plan_days = build_plan(request.query, days, equipment_filter, level)
 
         return {
-            "days": days,
+            "days": len(plan_days),
             "equipmentFilter": equipment_filter,
             "plan": plan_days
         }

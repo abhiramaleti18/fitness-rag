@@ -1,31 +1,73 @@
-from app.services.vector_search_service import vector_search
+import random
+import re
+from app.core.database import exercises_collection
 
-# Common day splits by number of training days
-SPLITS = {
-    1: ["full body"],
-    2: ["upper body", "lower body"],
-    3: ["push", "pull", "legs"],
-    4: ["upper body", "lower body", "push", "pull"],
-    5: ["chest", "back", "legs", "shoulders", "arms"],
-    6: ["push", "pull", "legs", "push", "pull", "legs"],
-    7: ["push", "pull", "legs", "upper body", "lower body", "full body", "active recovery"],
-}
-
-EXERCISES_PER_DAY = 5
+STRENGTH_CATEGORIES = ["STRENGTH", "POWERLIFTING", "OLYMPIC_WEIGHTLIFTING"]
 
 
-def build_plan(days: int, equipment_filter: list[str] = None) -> list[dict]:
-    split = SPLITS.get(days, SPLITS[3])
+def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set) -> dict | None:
+    query = {
+        "primaryMuscles": slot_def["muscle"],
+        "category": {"$in": STRENGTH_CATEGORIES}
+    }
+    if slot_def.get("pattern"):
+        query["movementPattern"] = slot_def["pattern"]
+    if equipment_filter:
+        query["equipment"] = {"$in": [e.upper() for e in equipment_filter]}
+    if level:
+        query["level"] = {"$regex": f"^{level}$", "$options": "i"}
+
+    candidates = list(exercises_collection.find(query, {"_id": 0}))
+    candidates = [c for c in candidates if c["name"] not in exclude_names]
+
+    # Apply keyword filtering if this slot targets a sub-muscle (e.g. "lateral raise")
+    keywords = slot_def.get("keywords")
+    if keywords:
+        keyword_matches = [
+            c for c in candidates
+            if any(re.search(kw, c["name"], re.IGNORECASE) for kw in keywords)
+        ]
+        if keyword_matches:
+            candidates = keyword_matches
+        # if no keyword match exists in the data, fall back to any exercise for that muscle
+        # rather than leaving the slot empty
+
+    if not candidates:
+        return None
+
+    random.shuffle(candidates)
+    return candidates[0]
+
+
+def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None) -> dict:
+    selected = []
+    seen_names = set()
+
+    for slot_def in day_def["slots"]:
+        count = slot_def.get("count", 1)
+        for _ in range(count):
+            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names)
+            if exercise:
+                selected.append(exercise)
+                seen_names.add(exercise["name"])
+
+    return {
+        "day": None,
+        "focus": day_def["label"],
+        "exercises": selected
+    }
+
+
+def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None) -> list[dict]:
+    from app.services.split_definitions import get_split_by_name, get_split_by_days
+
+    split = get_split_by_name(query) or get_split_by_days(days)
+    day_defs = split[:days] if len(split) >= days else split
+
     plan = []
-
-    for i, focus in enumerate(split):
-        query = f"{focus} exercises"
-        results = vector_search(query, top_k=EXERCISES_PER_DAY, equipment_filter=equipment_filter)
-
-        plan.append({
-            "day": i + 1,
-            "focus": focus.title(),
-            "exercises": results
-        })
+    for i, day_def in enumerate(day_defs):
+        day_result = _build_day(day_def, equipment_filter, level)
+        day_result["day"] = i + 1
+        plan.append(day_result)
 
     return plan

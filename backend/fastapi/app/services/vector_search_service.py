@@ -12,14 +12,12 @@ def generate_query_embedding(query: str) -> list[float]:
     return embedding.tolist()
 
 
-def vector_search(query: str, top_k: int = None, equipment_filter: list[str] = None) -> list[dict]:
+def vector_search(query: str, top_k: int = None, equipment_filter: list[str] = None, exclude_categories: list[str] = None) -> list[dict]:
     if top_k is None:
         top_k = settings.TOP_K
 
     query_vector = generate_query_embedding(query)
-
-    # Over-fetch so post-filtering by equipment still leaves enough results
-    fetch_limit = top_k * 6 if equipment_filter else top_k
+    fetch_limit = top_k * 6 if (equipment_filter or exclude_categories) else top_k
 
     pipeline = [
         {
@@ -46,5 +44,9 @@ def vector_search(query: str, top_k: int = None, equipment_filter: list[str] = N
     if equipment_filter:
         allowed = {e.upper() for e in equipment_filter}
         results = [r for r in results if r.get("equipment", "").upper() in allowed]
+
+    if exclude_categories:
+        excluded = {c.upper() for c in exclude_categories}
+        results = [r for r in results if r.get("category", "").upper() not in excluded]
 
     return results[:top_k]
