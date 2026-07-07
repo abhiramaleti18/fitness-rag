@@ -1,0 +1,267 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "templates": {
+
+    "PUSH": {
+      "description": "Chest, shoulders and triceps focused workout.",
+
+      "recommendedExercises": "6-8",
+
+      "order": [
+        {
+          "slot": 1,
+          "role": "Primary Horizontal Press",
+          "movementPattern": "HORIZONTAL_PUSH",
+          "muscleGroup": "CHEST"
+        },
+        {
+          "slot": 2,
+          "role": "Secondary Press",
+          "movementPattern": "HORIZONTAL_PUSH",
+          "muscleGroup": "CHEST"
+        },
+        {
+          "slot": 3,
+          "role": "Vertical Press",
+          "movementPattern": "VERTICAL_PUSH",
+          "muscleGroup": "SHOULDERS"
+        },
+        {
+          "slot": 4,
+          "role": "Chest Isolation",
+          "movementPattern": "HORIZONTAL_PUSH",
+          "muscleGroup": "CHEST"
+        },
+        {
+          "slot": 5,
+          "role": "Lateral Delts",
+          "movementPattern": "SHOULDER_ABDUCTION",
+          "muscleGroup": "SHOULDERS"
+        },
+        {
+          "slot": 6,
+          "role": "Compound Triceps",
+          "movementPattern": "ELBOW_EXTENSION",
+          "muscleGroup": "TRICEPS"
+        },
+        {
+          "slot": 7,
+          "role": "Isolation Triceps",
+          "movementPattern": "ELBOW_EXTENSION",
+          "muscleGroup": "TRICEPS"
+        }
+      ]
+    },
+
+    "PULL": {
+
+      "description": "Back, rear delts, traps and biceps.",
+
+      "recommendedExercises": "6-8",
+
+      "order": [
+        {
+          "slot": 1,
+          "role": "Primary Horizontal Pull",
+          "movementPattern": "HORIZONTAL_PULL",
+          "muscleGroup": "BACK"
+        },
+        {
+          "slot": 2,
+          "role": "Primary Vertical Pull",
+          "movementPattern": "VERTICAL_PULL",
+          "muscleGroup": "BACK"
+        },
+        {
+          "slot": 3,
+          "role": "Secondary Row",
+          "movementPattern": "HORIZONTAL_PULL",
+          "muscleGroup": "BACK"
+        },
+        {
+          "slot": 4,
+          "role": "Rear Delts",
+          "movementPattern": "HORIZONTAL_PULL",
+          "muscleGroup": "SHOULDERS"
+        },
+        {
+          "slot": 5,
+          "role": "Upper Traps",
+          "movementPattern": "CARRY",
+          "muscleGroup": "BACK"
+        },
+        {
+          "slot": 6,
+          "role": "Primary Curl",
+          "movementPattern": "ELBOW_FLEXION",
+          "muscleGroup": "BICEPS"
+        },
+        {
+          "slot": 7,
+          "role": "Secondary Curl",
+          "movementPattern": "ELBOW_FLEXION",
+          "muscleGroup": "BICEPS"
+        }
+      ]
+    },
+
+    "LEGS": {
+
+      "description": "Complete lower body workout.",
+
+      "recommendedExercises": "6-8",
+
+      "order": [
+        {
+          "slot": 1,
+          "role": "Primary Squat",
+          "movementPattern": "SQUAT",
+          "muscleGroup": "QUADS"
+        },
+        {
+          "slot": 2,
+          "role": "Primary Hinge",
+          "movementPattern": "HINGE",
+          "muscleGroup": "HAMSTRINGS"
+        },
+        {
+          "slot": 3,
+          "role": "Unilateral Movement",
+          "movementPattern": "LUNGE",
+          "muscleGroup": "GLUTES"
+        },
+        {
+          "slot": 4,
+          "role": "Quad Isolation",
+          "movementPattern": "SQUAT",
+          "muscleGroup": "QUADS"
+        },
+        {
+          "slot": 5,
+          "role": "Hamstring Isolation",
+          "movementPattern": "HINGE",
+          "muscleGroup": "HAMSTRINGS"
+        },
+        {
+          "slot": 6,
+          "role": "Calves",
+          "movementPattern": "CALF",
+          "muscleGroup": "CALVES"
+        },
+        {
+          "slot": 7,
+          "role": "Core",
+          "movementPattern": "ANTI_EXTENSION",
+          "muscleGroup": "CORE"
+        }
+      ]
+    },
+
+    "UPPER": {
+
+      "description": "Balanced upper-body session.",
+
+      "exerciseDistribution": {
+        "Chest": 2,
+        "Back": 2,
+        "Shoulders": 1,
+        "Biceps": 1,
+        "Triceps": 1
+      }
+    },
+
+    "LOWER": {
+
+      "description": "Balanced lower-body session.",
+
+      "exerciseDistribution": {
+        "Quads": 2,
+        "Hamstrings": 2,
+        "Glutes": 1,
+        "Calves": 1,
+        "Core": 1
+      }
+    },
+
+    "FULL_BODY": {
+
+      "description": "Train every major movement pattern in one workout.",
+
+      "priorityOrder": [
+        "SQUAT",
+        "HORIZONTAL_PUSH",
+        "VERTICAL_PULL",
+        "HINGE",
+        "VERTICAL_PUSH",
+        "CORE"
+      ]
+    },
+
+    "BRO_SPLIT": {
+
+      "days": {
+        "Monday": "CHEST",
+        "Tuesday": "BACK",
+        "Wednesday": "SHOULDERS",
+        "Thursday": "ARMS",
+        "Friday": "LEGS"
+      }
+    },
+
+    "ARNOLD_SPLIT": {
+
+      "days": {
+        "Day1": "Chest + Back",
+        "Day2": "Shoulders + Arms",
+        "Day3": "Legs",
+        "Repeat": true
+      }
+    },
+
+    "PPL": {
+
+      "days": {
+        "Day1": "Push",
+        "Day2": "Pull",
+        "Day3": "Legs",
+        "Repeat": true
+      }
+    }
+  },
+
+  "generalTemplateRules": [
+
+    "Always perform warm-up before working sets.",
+
+    "Compound exercises always precede isolation exercises.",
+
+    "Heaviest movement is performed first.",
+
+    "Train large muscle groups before small muscle groups.",
+
+    "Exercises should follow a logical fatigue progression.",
+
+    "Do not schedule excessive overlap between consecutive workout days.",
+
+    "Core is optional for upper-body sessions but recommended for lower-body and full-body sessions."
+  ],
+
+  "llmGuidelines": {
+
+    "alwaysFollowTemplate": true,
+
+    "allowPersonalization": true,
+
+    "respectEquipmentConstraints": true,
+
+    "respectInjuryConstraints": true,
+
+    "fillSlotsUsingTierSystem": true,
+
+    "neverBreakExerciseOrder": true,
+
+    "explanation": "Workout templates define the structure of a session. Individual exercises should be selected using the exercise tier system, user goals, equipment availability and constraints."
+  }
+}

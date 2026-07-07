@@ -1,0 +1,360 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "generalWarmup": {
+    "purpose": "Increase core temperature, improve blood flow, activate the nervous system, enhance joint mobility and prepare the body for resistance training while reducing injury risk.",
+
+    "duration": {
+      "minimum": "5 minutes",
+      "optimal": "8-12 minutes",
+      "heavyStrengthSessions": "10-15 minutes"
+    },
+
+    "generalCardio": [
+      {
+        "exercise": "Treadmill Walk",
+        "duration": "5-10 min",
+        "purpose": "Increase body temperature with minimal fatigue."
+      },
+      {
+        "exercise": "Incline Treadmill Walk",
+        "duration": "5-8 min",
+        "purpose": "Elevate heart rate while activating glutes and calves."
+      },
+      {
+        "exercise": "Stationary Bike",
+        "duration": "5-10 min",
+        "purpose": "Prepare lower body joints with low impact."
+      },
+      {
+        "exercise": "Rowing Machine",
+        "duration": "3-5 min",
+        "purpose": "Full-body warm-up emphasizing back, shoulders and hips."
+      },
+      {
+        "exercise": "Elliptical",
+        "duration": "5-8 min",
+        "purpose": "General cardiovascular preparation."
+      },
+      {
+        "exercise": "Jump Rope",
+        "duration": "2-5 min",
+        "purpose": "Increase coordination and ankle stiffness."
+      },
+      {
+        "exercise": "Light Jog",
+        "duration": "3-5 min",
+        "purpose": "General warm-up before athletic sessions."
+      },
+      {
+        "exercise": "Air Bike",
+        "duration": "3-5 min",
+        "purpose": "Prepare upper and lower body simultaneously."
+      }
+    ]
+  },
+
+  "dynamicStretchLibrary": [
+
+    {
+      "exercise": "Arm Circles",
+      "targets": [
+        "Shoulders"
+      ],
+      "duration": "20 forward + 20 backward",
+      "category": "Upper Body Mobility"
+    },
+
+    {
+      "exercise": "Cross Body Arm Swings",
+      "targets": [
+        "Chest",
+        "Rear Delts"
+      ],
+      "duration": "20 reps",
+      "category": "Upper Body Mobility"
+    },
+
+    {
+      "exercise": "PVC Pass Through",
+      "targets": [
+        "Shoulders",
+        "Chest"
+      ],
+      "duration": "12-15 reps",
+      "category": "Shoulder Mobility"
+    },
+
+    {
+      "exercise": "Band Shoulder Dislocations",
+      "targets": [
+        "Shoulders"
+      ],
+      "duration": "15 reps",
+      "category": "Shoulder Mobility"
+    },
+
+    {
+      "exercise": "Wall Slides",
+      "targets": [
+        "Shoulders",
+        "Scapula"
+      ],
+      "duration": "12 reps",
+      "category": "Scapular Mobility"
+    },
+
+    {
+      "exercise": "Scapular Wall Slides",
+      "targets": [
+        "Shoulders"
+      ],
+      "duration": "12 reps",
+      "category": "Scapular Mobility"
+    },
+
+    {
+      "exercise": "Cat Camel",
+      "targets": [
+        "Thoracic Spine",
+        "Lumbar Spine"
+      ],
+      "duration": "10 reps",
+      "category": "Spinal Mobility"
+    },
+
+    {
+      "exercise": "Thoracic Rotation",
+      "targets": [
+        "Thoracic Spine"
+      ],
+      "duration": "10 each side",
+      "category": "Thoracic Mobility"
+    },
+
+    {
+      "exercise": "Open Book Stretch",
+      "targets": [
+        "Thoracic Spine"
+      ],
+      "duration": "10 each side",
+      "category": "Thoracic Mobility"
+    },
+
+    {
+      "exercise": "World's Greatest Stretch",
+      "targets": [
+        "Hip Flexors",
+        "Hamstrings",
+        "Thoracic Spine"
+      ],
+      "duration": "6 each side",
+      "category": "Full Body Mobility"
+    },
+
+    {
+      "exercise": "Leg Swings (Front to Back)",
+      "targets": [
+        "Hamstrings",
+        "Hip Flexors"
+      ],
+      "duration": "15 each leg",
+      "category": "Hip Mobility"
+    },
+
+    {
+      "exercise": "Leg Swings (Side to Side)",
+      "targets": [
+        "Glutes",
+        "Adductors"
+      ],
+      "duration": "15 each leg",
+      "category": "Hip Mobility"
+    },
+
+    {
+      "exercise": "Hip Circles",
+      "targets": [
+        "Hip Joint"
+      ],
+      "duration": "10 each direction",
+      "category": "Hip Mobility"
+    },
+
+    {
+      "exercise": "Hip CARs",
+      "targets": [
+        "Hip Joint"
+      ],
+      "duration": "5 each side",
+      "category": "Hip Mobility"
+    },
+
+    {
+      "exercise": "Walking Lunges",
+      "targets": [
+        "Quads",
+        "Glutes",
+        "Hip Flexors"
+      ],
+      "duration": "10 each leg",
+      "category": "Dynamic Stretch"
+    },
+
+    {
+      "exercise": "Reverse Lunges",
+      "targets": [
+        "Glutes",
+        "Quads"
+      ],
+      "duration": "10 each leg",
+      "category": "Dynamic Stretch"
+    },
+
+    {
+      "exercise": "Lateral Lunges",
+      "targets": [
+        "Adductors",
+        "Glutes"
+      ],
+      "duration": "10 each side",
+      "category": "Dynamic Stretch"
+    },
+
+    {
+      "exercise": "Deep Squat Hold",
+      "targets": [
+        "Ankles",
+        "Hips"
+      ],
+      "duration": "30 sec",
+      "category": "Mobility"
+    },
+
+    {
+      "exercise": "Toe Sweep",
+      "targets": [
+        "Hamstrings"
+      ],
+      "duration": "10 each side",
+      "category": "Dynamic Stretch"
+    },
+
+    {
+      "exercise": "Frankenstein Walk",
+      "targets": [
+        "Hamstrings"
+      ],
+      "duration": "15 steps",
+      "category": "Dynamic Stretch"
+    },
+
+    {
+      "exercise": "High Knees",
+      "targets": [
+        "Hip Flexors"
+      ],
+      "duration": "30 sec",
+      "category": "Dynamic Warm-up"
+    },
+
+    {
+      "exercise": "Butt Kicks",
+      "targets": [
+        "Quadriceps"
+      ],
+      "duration": "30 sec",
+      "category": "Dynamic Warm-up"
+    },
+
+    {
+      "exercise": "Inchworm",
+      "targets": [
+        "Hamstrings",
+        "Core",
+        "Shoulders"
+      ],
+      "duration": "8 reps",
+      "category": "Full Body Mobility"
+    },
+
+    {
+      "exercise": "Squat To Stand",
+      "targets": [
+        "Hips",
+        "Hamstrings",
+        "Thoracic Spine"
+      ],
+      "duration": "10 reps",
+      "category": "Full Body Mobility"
+    }
+  ],
+
+  "generalRules": {
+    "dynamicBeforeStatic": "Perform dynamic stretching before resistance training. Reserve prolonged static stretching for after training.",
+    "movementSpecific": "Warm-up movements should resemble the exercises performed during the workout.",
+    "increaseTemperature": "Always elevate heart rate before heavy lifting.",
+    "neverSkipWarmup": "Every workout should begin with a structured warm-up.",
+    "individualize": "Adjust warm-up duration based on training intensity, experience and joint restrictions."
+  },
+
+  "beginnerGuidelines": [
+    "Spend additional time learning movement patterns.",
+    "Use lighter warm-up loads than experienced lifters.",
+    "Do not rush through mobility drills.",
+    "Prioritize movement quality over speed.",
+    "Warm-up sets are practice, not working sets."
+  ],
+
+  "safetyGuidelines": [
+    "Warm-up should never cause pain.",
+    "Stop any drill that causes sharp discomfort.",
+    "Increase range of motion gradually.",
+    "Dynamic stretching should remain controlled.",
+    "Do not perform maximal lifts without progressive warm-up sets.",
+    "If a joint feels restricted, spend additional time mobilizing before loading."
+  ],
+
+  "goalAdjustments": {
+    "STRENGTH": {
+      "cardio": "5-8 min",
+      "mobility": "5-8 min",
+      "activation": "5 min",
+      "rampUp": "Extensive"
+    },
+    "HYPERTROPHY": {
+      "cardio": "5 min",
+      "mobility": "5 min",
+      "activation": "3-5 min",
+      "rampUp": "Moderate"
+    },
+    "ENDURANCE": {
+      "cardio": "8-10 min",
+      "mobility": "5 min",
+      "activation": "3 min",
+      "rampUp": "Minimal"
+    },
+    "WEIGHT_LOSS": {
+      "cardio": "8-10 min",
+      "mobility": "5 min",
+      "activation": "3-5 min",
+      "rampUp": "Moderate"
+    },
+    "GENERAL_FITNESS": {
+      "cardio": "5-8 min",
+      "mobility": "5 min",
+      "activation": "3 min",
+      "rampUp": "Moderate"
+    }
+  },
+
+  "llmGuidelines": {
+    "alwaysIncludeWarmup": true,
+    "recommendDynamicStretching": true,
+    "recommendRampUpSets": true,
+    "neverRecommendStaticStretchingBeforeHeavyLifting": true,
+    "warmupShouldMatchWorkout": true,
+    "explanation": "Warm-ups should be tailored to the workout type, movement patterns and training goal rather than recommending generic cardio."
+  }
+}

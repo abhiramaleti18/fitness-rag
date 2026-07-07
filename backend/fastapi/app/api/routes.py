@@ -14,6 +14,8 @@ from app.services.query_classifier import (
     is_plan_request, extract_days, extract_equipment,
     is_query_too_vague, extract_excluded_categories, map_user_equipment_to_filter
 )
+from app.services.constraint_service import get_active_constraints, get_avoid_list, get_prefer_list, get_coaching_notes
+
 router = APIRouter()
 
 
@@ -35,6 +37,7 @@ class UserContext(BaseModel):
     fitnessGoals: list[str] | None = None
     weight: float | None = None
     recentPRs: list[dict] | None = None
+    injuries: list[str] | None = None
 
 
 class RecommendRequest(BaseModel):
@@ -136,12 +139,21 @@ def plan(request: PlanRequest):
             equipment_filter = map_user_equipment_to_filter(request.userContext.equipmentAccess)
 
         level = request.userContext.experienceLevel if request.userContext else None
-        plan_days = build_plan(request.query, days, equipment_filter, level, excluded_categories)
+
+        user_injuries = getattr(request.userContext, "injuries", None) if request.userContext else None
+        active_constraints = get_active_constraints(request.query, user_injuries)
+        avoid_list = get_avoid_list(active_constraints)
+        prefer_list = get_prefer_list(active_constraints)
+        coaching_notes = get_coaching_notes(active_constraints)
+
+        plan_days = build_plan(request.query, days, equipment_filter, level, excluded_categories, avoid_list, prefer_list)
 
         return {
             "days": len(plan_days),
             "equipmentFilter": equipment_filter,
             "excludedCategories": excluded_categories,
+            "activeConstraints": active_constraints,
+            "coachingNotes": coaching_notes,
             "plan": plan_days
         }
     except Exception as e:

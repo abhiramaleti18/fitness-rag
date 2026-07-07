@@ -1,0 +1,79 @@
+{
+  "version":"1.0",
+  "lastUpdated":"2026-07-08",
+
+  "FULL_BODY":{
+
+    "description":"Universal warm-up protocol suitable for full body workouts, athletic training and general conditioning.",
+
+    "generalWarmup":{
+      "duration":"8-10 min",
+      "recommendations":[
+        "Rowing Machine",
+        "Air Bike",
+        "Light Jog",
+        "Jump Rope"
+      ]
+    },
+
+    "dynamicCircuit":[
+      {"exercise":"Arm Circles","reps":"20"},
+      {"exercise":"Cross Body Arm Swings","reps":"20"},
+      {"exercise":"Cat Camel","reps":"10"},
+      {"exercise":"World's Greatest Stretch","reps":"5 each"},
+      {"exercise":"Leg Swings Front/Back","reps":"15"},
+      {"exercise":"Leg Swings Side/Side","reps":"15"},
+      {"exercise":"Walking Lunges","reps":"10 each"},
+      {"exercise":"Bodyweight Squats","reps":"15"},
+      {"exercise":"Inchworm","reps":"8"},
+      {"exercise":"High Knees","duration":"30 sec"},
+      {"exercise":"Butt Kicks","duration":"30 sec"},
+      {"exercise":"Bear Crawl","distance":"10 m"},
+      {"exercise":"Crab Walk","distance":"10 m"},
+      {"exercise":"Mountain Climbers","duration":"30 sec"}
+    ],
+
+    "activation":[
+      "Band Pull Apart",
+      "Scapular Push-Up",
+      "Glute Bridge",
+      "Monster Walk",
+      "Bird Dog",
+      "Dead Bug",
+      "Plank"
+    ],
+
+    "movementReadiness":[
+      "Horizontal Push",
+      "Vertical Push",
+      "Horizontal Pull",
+      "Vertical Pull",
+      "Squat",
+      "Hinge",
+      "Lunge",
+      "Carry"
+    ],
+
+    "universalRampUp":[
+      "Movement Pattern Practice",
+      "Very Light Set",
+      "50% Working Weight",
+      "70% Working Weight",
+      "Working Sets"
+    ],
+
+    "coolDownRecommendation":[
+      "5 min walk",
+      "Light breathing exercises",
+      "Static stretching after training"
+    ],
+
+    "llmInstructions":{
+      "defaultWarmup":true,
+      "alwaysRecommendMovementSpecificWarmup":true,
+      "alwaysIncludeRampUp":true,
+      "preferDynamicMobility":true,
+      "avoidStaticStretchingBeforeHeavyLifting":true
+    }
+  }
+}

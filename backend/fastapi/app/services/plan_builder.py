@@ -17,7 +17,7 @@ def _allowed_levels(user_level: str) -> list[str] | None:
     return [lvl.upper() for lvl in LEVEL_ORDER[:max_index + 1]]
 
 
-def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set, excluded_categories: list[str] = None) -> dict | None:
+def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None) -> dict | None:
     allowed_categories = [c for c in STRENGTH_CATEGORIES if not excluded_categories or c not in excluded_categories]
 
     query = {
@@ -36,8 +36,19 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
     candidates = list(exercises_collection.find(query, {"_id": 0}))
     candidates = [c for c in candidates if c["name"] not in exclude_names]
 
+    # --- Constraint filtering: remove anything that conflicts with stated injuries ---
+    if avoid_list:
+        candidates = [c for c in candidates if not any(term in c["name"].lower() for term in avoid_list)]
+
     if not candidates:
         return None
+
+    # --- Constraint preference: boost preferred substitutes to the front ---
+    if prefer_list:
+        preferred = [c for c in candidates if any(term in c["name"].lower() for term in prefer_list)]
+        if preferred:
+            random.shuffle(preferred)
+            return preferred[0]
 
     # --- Tier-based ranking (real coaching priority) ---
     role = slot_def.get("role")
@@ -53,17 +64,13 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
             if tier_matches:
                 random.shuffle(tier_matches)
                 return tier_matches[0]
-        # No tier match found at all — fall through to fundamental/keyword/random below
 
-    # --- Fundamental fallback (roles with no hand-curated tier list yet) ---
     if not tiers:
         fundamental_matches = [c for c in candidates if is_fundamental(c["name"])]
-        print(f"DEBUG FUNDAMENTAL: role={role}, candidates={len(candidates)}, fundamental_matches={[c['name'] for c in fundamental_matches]}")
         if fundamental_matches:
             random.shuffle(fundamental_matches)
             return fundamental_matches[0]
 
-    # --- Existing keyword matching (fallback) ---
     keywords = slot_def.get("keywords")
     if keywords:
         keyword_matches = [
@@ -77,18 +84,15 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
     return candidates[0]
 
 
-def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None) -> dict:
+def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None) -> dict:
     selected = []
     seen_names = set()
-
-    print(f"DEBUG DAY: {day_def['label']} | excluded_categories={excluded_categories}")
 
     for slot_def in day_def["slots"]:
         count = slot_def.get("count", 1)
         for _ in range(count):
-            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names, excluded_categories)
+            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names, excluded_categories, avoid_list, prefer_list)
             if exercise:
-                print(f"DEBUG SLOT: {slot_def['muscle']} -> {exercise['name']} (category={exercise.get('category')})")
                 selected.append(annotate_exercise(exercise))
                 seen_names.add(exercise["name"])
 
@@ -99,7 +103,7 @@ def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = N
     }
 
 
-def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None) -> list[dict]:
+def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None) -> list[dict]:
     from app.services.split_definitions import get_split_by_name, get_split_by_days
 
     split = get_split_by_name(query) or get_split_by_days(days)
@@ -107,7 +111,7 @@ def build_plan(query: str, days: int, equipment_filter: list[str] = None, level:
 
     plan = []
     for i, day_def in enumerate(day_defs):
-        day_result = _build_day(day_def, equipment_filter, level, excluded_categories)
+        day_result = _build_day(day_def, equipment_filter, level, excluded_categories, avoid_list, prefer_list)
         day_result["day"] = i + 1
         plan.append(day_result)
 

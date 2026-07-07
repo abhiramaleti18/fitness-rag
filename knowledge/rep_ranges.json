@@ -1,0 +1,172 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "compound": {
+    "STRENGTH": {
+      "recommended": "3-6",
+      "acceptable": "1-8",
+      "notes": "Heavy compound lifts prioritize low repetitions for maximal force production."
+    },
+    "HYPERTROPHY": {
+      "recommended": "6-10",
+      "acceptable": "5-12",
+      "notes": "Mechanical tension and progressive overload are the primary drivers."
+    },
+    "ENDURANCE": {
+      "recommended": "12-20",
+      "acceptable": "12-25",
+      "notes": "Higher repetitions improve muscular endurance."
+    },
+    "WEIGHT_LOSS": {
+      "recommended": "8-12",
+      "acceptable": "8-15",
+      "notes": "Moderate repetitions maximize calorie expenditure while preserving strength."
+    },
+    "GENERAL_FITNESS": {
+      "recommended": "8-12",
+      "acceptable": "8-15",
+      "notes": "Balanced loading for long-term health and movement quality."
+    }
+  },
+
+  "isolation": {
+    "STRENGTH": {
+      "recommended": "6-10",
+      "acceptable": "5-12",
+      "notes": "Isolation exercises support compound strength but are rarely trained maximally."
+    },
+    "HYPERTROPHY": {
+      "recommended": "10-15",
+      "acceptable": "8-20",
+      "notes": "Higher repetitions reduce joint stress while maximizing muscle stimulus."
+    },
+    "ENDURANCE": {
+      "recommended": "15-25",
+      "acceptable": "15-30",
+      "notes": "Isolation movements tolerate higher repetitions well."
+    },
+    "WEIGHT_LOSS": {
+      "recommended": "12-15",
+      "acceptable": "10-20",
+      "notes": "Higher density training improves caloric expenditure."
+    },
+    "GENERAL_FITNESS": {
+      "recommended": "10-15",
+      "acceptable": "10-20",
+      "notes": "Comfortable repetition ranges for most populations."
+    }
+  },
+
+  "core": {
+    "STRENGTH": {
+      "recommended": "8-12",
+      "acceptable": "6-15",
+      "notes": "Core strength emphasizes controlled bracing over excessive repetitions."
+    },
+    "HYPERTROPHY": {
+      "recommended": "12-20",
+      "acceptable": "10-25",
+      "notes": "Higher repetitions are appropriate for abdominal hypertrophy."
+    },
+    "ENDURANCE": {
+      "recommended": "20-30",
+      "acceptable": "15-40",
+      "notes": "Core endurance benefits from prolonged time under tension."
+    },
+    "WEIGHT_LOSS": {
+      "recommended": "15-20",
+      "acceptable": "12-25",
+      "notes": "Moderate-to-high repetitions fit circuit-style programming."
+    },
+    "GENERAL_FITNESS": {
+      "recommended": "12-20",
+      "acceptable": "10-25",
+      "notes": "Develop trunk stability and control."
+    }
+  },
+
+  "calves": {
+    "STRENGTH": {
+      "recommended": "8-12",
+      "acceptable": "6-15",
+      "notes": "Heavy loading is effective due to the calf's strength capacity."
+    },
+    "HYPERTROPHY": {
+      "recommended": "12-20",
+      "acceptable": "10-25",
+      "notes": "Calves generally respond well to higher repetitions."
+    },
+    "ENDURANCE": {
+      "recommended": "20-30",
+      "acceptable": "15-40",
+      "notes": "High-volume work develops muscular endurance."
+    },
+    "WEIGHT_LOSS": {
+      "recommended": "15-20",
+      "acceptable": "12-25",
+      "notes": "Useful as accessory work in higher-density sessions."
+    },
+    "GENERAL_FITNESS": {
+      "recommended": "12-20",
+      "acceptable": "10-25",
+      "notes": "Balanced development and ankle function."
+    }
+  },
+
+  "explosive": {
+    "STRENGTH": {
+      "recommended": "1-5",
+      "acceptable": "1-6",
+      "notes": "Power movements should prioritize speed and quality over fatigue."
+    },
+    "HYPERTROPHY": {
+      "recommended": "3-6",
+      "acceptable": "3-8",
+      "notes": "Explosive exercises are generally not primary hypertrophy movements."
+    },
+    "ENDURANCE": {
+      "recommended": "Not Recommended",
+      "acceptable": "N/A",
+      "notes": "Explosive lifts lose effectiveness with excessive fatigue."
+    },
+    "WEIGHT_LOSS": {
+      "recommended": "3-6",
+      "acceptable": "3-8",
+      "notes": "Useful only for experienced trainees."
+    },
+    "GENERAL_FITNESS": {
+      "recommended": "3-5",
+      "acceptable": "3-6",
+      "notes": "Focus on movement quality and power development."
+    }
+  },
+
+  "carry": {
+    "STRENGTH": {
+      "recommended": "20-40 meters",
+      "acceptable": "15-50 meters",
+      "notes": "Heavy carries improve grip, trunk stiffness and work capacity."
+    },
+    "HYPERTROPHY": {
+      "recommended": "30-60 seconds",
+      "acceptable": "20-75 seconds",
+      "notes": "Longer carries increase muscular fatigue."
+    },
+    "ENDURANCE": {
+      "recommended": "45-90 seconds",
+      "acceptable": "30-120 seconds",
+      "notes": "Emphasize continuous movement."
+    },
+    "WEIGHT_LOSS": {
+      "recommended": "30-60 seconds",
+      "acceptable": "20-75 seconds",
+      "notes": "Excellent metabolic finisher."
+    },
+    "GENERAL_FITNESS": {
+      "recommended": "30-45 seconds",
+      "acceptable": "20-60 seconds",
+      "notes": "Improves posture, grip and conditioning."
+    }
+  }
+}

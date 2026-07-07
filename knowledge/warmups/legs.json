@@ -1,0 +1,177 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "LEGS": {
+    "description": "Warm-up protocol for lower body training including squat, hinge and lunge dominant sessions.",
+
+    "generalWarmup": {
+      "duration": "5-10 min",
+      "recommendations": [
+        "Incline Treadmill Walk",
+        "Stationary Bike",
+        "Rowing Machine",
+        "Light Jog",
+        "Jump Rope"
+      ]
+    },
+
+    "dynamicMobility": [
+      {"exercise":"Leg Swings (Front to Back)","sets":2,"reps":"15 each"},
+      {"exercise":"Leg Swings (Side to Side)","sets":2,"reps":"15 each"},
+      {"exercise":"World's Greatest Stretch","sets":1,"reps":"6 each side"},
+      {"exercise":"Hip CARs","sets":1,"reps":"5 each side"},
+      {"exercise":"Hip Circles","sets":2,"reps":"10 each direction"},
+      {"exercise":"Walking Lunges","sets":1,"reps":"10 each leg"},
+      {"exercise":"Reverse Lunges","sets":1,"reps":"10 each leg"},
+      {"exercise":"Lateral Lunges","sets":1,"reps":"10 each side"},
+      {"exercise":"Cossack Squat","sets":1,"reps":"8 each side"},
+      {"exercise":"Deep Squat Hold","sets":2,"duration":"30 sec"},
+      {"exercise":"Toe Sweep","sets":1,"reps":"10 each side"},
+      {"exercise":"Frankenstein Walk","sets":1,"reps":"15 steps"},
+      {"exercise":"Walking Quad Stretch","sets":1,"reps":"15 steps"},
+      {"exercise":"Heel To Glute Walk","sets":1,"reps":"15 steps"},
+      {"exercise":"Ankle Circles","sets":2,"reps":"10 each direction"},
+      {"exercise":"Knee Over Toe Rocks","sets":2,"reps":"15"},
+      {"exercise":"Calf Rocks","sets":2,"reps":"15"}
+    ],
+
+    "activation": {
+
+      "glutes":[
+        {"exercise":"Glute Bridge","sets":2,"reps":"15"},
+        {"exercise":"Single Leg Glute Bridge","sets":2,"reps":"10 each"},
+        {"exercise":"Monster Walk","sets":2,"steps":"15"},
+        {"exercise":"Lateral Band Walk","sets":2,"steps":"15"},
+        {"exercise":"Clamshell","sets":2,"reps":"15 each"},
+        {"exercise":"Fire Hydrant","sets":2,"reps":"12 each"}
+      ],
+
+      "core":[
+        {"exercise":"Dead Bug","sets":2,"reps":"10 each"},
+        {"exercise":"Bird Dog","sets":2,"reps":"10 each"},
+        {"exercise":"Plank","sets":2,"duration":"30 sec"}
+      ],
+
+      "hamstrings":[
+        {"exercise":"Bodyweight Romanian Deadlift","sets":2,"reps":"12"},
+        {"exercise":"Banded Good Morning","sets":2,"reps":"15"}
+      ],
+
+      "quads":[
+        {"exercise":"Bodyweight Squat","sets":2,"reps":"15"},
+        {"exercise":"Split Squat","sets":1,"reps":"10 each"}
+      ],
+
+      "calves":[
+        {"exercise":"Standing Calf Raise","sets":2,"reps":"20"}
+      ]
+    },
+
+    "movementPreparation": {
+
+      "SQUAT":[
+        "Bodyweight Squat",
+        "Deep Squat Hold",
+        "Glute Bridge",
+        "Ankle Mobility",
+        "Monster Walk"
+      ],
+
+      "HINGE":[
+        "Bodyweight Romanian Deadlift",
+        "Glute Bridge",
+        "Bird Dog",
+        "Hip CARs",
+        "Hamstring Sweep"
+      ],
+
+      "LUNGE":[
+        "Walking Lunge",
+        "Reverse Lunge",
+        "Lateral Lunge",
+        "Monster Walk",
+        "Single Leg Glute Bridge"
+      ]
+    },
+
+    "rampUpProtocols":{
+
+      "Back Squat":[
+        "Empty Bar ×15",
+        "40% ×8",
+        "60% ×5",
+        "75% ×3",
+        "Working Sets"
+      ],
+
+      "Front Squat":[
+        "Empty Bar ×15",
+        "40% ×8",
+        "60% ×5",
+        "75% ×3",
+        "Working Sets"
+      ],
+
+      "Romanian Deadlift":[
+        "Empty Bar ×15",
+        "50% ×8",
+        "70% ×5",
+        "Working Sets"
+      ],
+
+      "Deadlift":[
+        "40% ×5",
+        "60% ×5",
+        "75% ×3",
+        "85% ×1",
+        "Working Sets"
+      ],
+
+      "Leg Press":[
+        "Light ×15",
+        "Moderate ×10",
+        "Working Sets"
+      ]
+    },
+
+    "goalAdjustments":{
+      "STRENGTH":{
+        "extraRampUpSets":true,
+        "additionalHipPreparation":true
+      },
+      "HYPERTROPHY":{
+        "additionalGluteActivation":true
+      },
+      "ENDURANCE":{
+        "extendedDynamicWarmup":true
+      },
+      "WEIGHT_LOSS":{
+        "extendedCardio":"8-10 min"
+      },
+      "GENERAL_FITNESS":{
+        "balancedPreparation":true
+      }
+    },
+
+    "beginnerNotes":[
+      "Master squat mechanics before increasing load.",
+      "Brace the core before every repetition.",
+      "Warm-up sets are practice sets."
+    ],
+
+    "commonMistakes":[
+      "Skipping ankle mobility.",
+      "Skipping glute activation.",
+      "Jumping directly into heavy squats.",
+      "Ignoring hip mobility."
+    ],
+
+    "safetyGuidelines":[
+      "Maintain a neutral spine.",
+      "Control every repetition.",
+      "Stop immediately if sharp knee or back pain develops.",
+      "Never max out without proper ramp-up."
+    ]
+  }
+}

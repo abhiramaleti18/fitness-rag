@@ -1,0 +1,251 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "PUSH": {
+    "description": "Warm-up protocol for chest, shoulders and triceps focused training sessions.",
+
+    "generalWarmup": {
+      "duration": "5-8 min",
+      "recommendations": [
+        "Incline Treadmill Walk",
+        "Rowing Machine",
+        "Air Bike",
+        "Jump Rope"
+      ],
+      "purpose": "Increase body temperature and prepare the upper body without inducing fatigue."
+    },
+
+    "dynamicMobility": [
+      {
+        "exercise": "Arm Circles",
+        "sets": 1,
+        "reps": "20 forward + 20 backward",
+        "purpose": "Increase shoulder joint mobility."
+      },
+      {
+        "exercise": "Cross Body Arm Swings",
+        "sets": 1,
+        "reps": "20",
+        "purpose": "Mobilize chest and posterior shoulder."
+      },
+      {
+        "exercise": "PVC Pass Through",
+        "sets": 2,
+        "reps": "12",
+        "purpose": "Improve shoulder flexion and overhead mobility."
+      },
+      {
+        "exercise": "Band Shoulder Dislocations",
+        "sets": 2,
+        "reps": "12",
+        "purpose": "Prepare shoulders through full ROM."
+      },
+      {
+        "exercise": "Wall Slides",
+        "sets": 2,
+        "reps": "12",
+        "purpose": "Improve scapular upward rotation."
+      },
+      {
+        "exercise": "Scapular Wall Slides",
+        "sets": 2,
+        "reps": "10",
+        "purpose": "Enhance scapular control."
+      },
+      {
+        "exercise": "Cat Camel",
+        "sets": 1,
+        "reps": "10",
+        "purpose": "Mobilize thoracic spine."
+      },
+      {
+        "exercise": "Thoracic Rotation",
+        "sets": 1,
+        "reps": "10 each side",
+        "purpose": "Increase rotational mobility."
+      },
+      {
+        "exercise": "Open Book Stretch",
+        "sets": 1,
+        "reps": "10 each side",
+        "purpose": "Prepare thoracic extension."
+      }
+    ],
+
+    "activation": {
+      "scapula": [
+        {
+          "exercise": "Scapular Push-Up",
+          "sets": 2,
+          "reps": "10-15"
+        },
+        {
+          "exercise": "Band Pull Apart",
+          "sets": 2,
+          "reps": "15-20"
+        }
+      ],
+
+      "rotatorCuff": [
+        {
+          "exercise": "Band External Rotation",
+          "sets": 2,
+          "reps": "15"
+        },
+        {
+          "exercise": "Band Internal Rotation",
+          "sets": 2,
+          "reps": "15"
+        },
+        {
+          "exercise": "Face Pull",
+          "sets": 2,
+          "reps": "15"
+        }
+      ],
+
+      "serratusAnterior": [
+        {
+          "exercise": "Wall Slide With Lift Off",
+          "sets": 2,
+          "reps": "10"
+        },
+        {
+          "exercise": "Bear Plank Shoulder Tap",
+          "sets": 2,
+          "reps": "10 each side"
+        }
+      ],
+
+      "triceps": [
+        {
+          "exercise": "Light Rope Pushdown",
+          "sets": 1,
+          "reps": "20"
+        }
+      ]
+    },
+
+    "movementPreparation": {
+
+      "HORIZONTAL_PUSH": [
+        "Scapular Push-Up",
+        "Band Pull Apart",
+        "Band External Rotation",
+        "PVC Pass Through"
+      ],
+
+      "VERTICAL_PUSH": [
+        "PVC Pass Through",
+        "Wall Slides",
+        "Band External Rotation",
+        "Face Pull",
+        "Shoulder CARs"
+      ]
+    },
+
+    "rampUpProtocols": {
+
+      "Barbell Bench Press": [
+        "Empty Bar ×15",
+        "40% Working Weight ×8",
+        "60% Working Weight ×5",
+        "75% Working Weight ×3",
+        "Working Sets"
+      ],
+
+      "Incline Barbell Bench Press": [
+        "Empty Bar ×15",
+        "40% ×8",
+        "60% ×5",
+        "75% ×3",
+        "Working Sets"
+      ],
+
+      "Dumbbell Bench Press": [
+        "Light Pair ×15",
+        "50% Working Weight ×10",
+        "75% Working Weight ×5",
+        "Working Sets"
+      ],
+
+      "Overhead Press": [
+        "Empty Bar ×15",
+        "40% ×8",
+        "60% ×5",
+        "75% ×3",
+        "Working Sets"
+      ],
+
+      "Machine Press": [
+        "Very Light ×15",
+        "Moderate ×10",
+        "Working Sets"
+      ]
+    },
+
+    "goalAdjustments": {
+
+      "STRENGTH": {
+        "extraRampUpSets": true,
+        "additionalActivation": true,
+        "notes": "Prioritize nervous system readiness over fatigue."
+      },
+
+      "HYPERTROPHY": {
+        "extraPumpSet": true,
+        "notes": "Increase local blood flow before heavy compounds."
+      },
+
+      "ENDURANCE": {
+        "shorterRampUp": true,
+        "notes": "Avoid excessive warm-up fatigue."
+      },
+
+      "WEIGHT_LOSS": {
+        "extendedCardio": "8-10 min",
+        "notes": "Increase energy expenditure while preserving performance."
+      },
+
+      "GENERAL_FITNESS": {
+        "balancedWarmup": true
+      }
+    },
+
+    "beginnerNotes": [
+      "Practice the pressing movement with very light resistance before loading.",
+      "Focus on shoulder positioning and scapular stability.",
+      "Never skip rotator cuff activation.",
+      "Warm-up sets are for technique, not fatigue."
+    ],
+
+    "advancedNotes": [
+      "Increase ramp-up sets before heavy singles or doubles.",
+      "Use bar speed to determine readiness.",
+      "Terminate warm-up if fatigue begins affecting movement quality."
+    ],
+
+    "commonMistakes": [
+      "Skipping shoulder activation.",
+      "Jumping directly to working weight.",
+      "Using static stretches before heavy pressing.",
+      "Performing too many warm-up repetitions and creating fatigue."
+    ],
+
+    "safetyGuidelines": [
+      "If shoulder pain is present, reduce range of motion and use neutral grip movements where appropriate.",
+      "Warm-up should progressively increase intensity without causing fatigue.",
+      "Never perform maximal pressing without progressive loading.",
+      "Prioritize scapular control before heavy pressing."
+    ],
+
+    "llmInstructions": {
+      "alwaysRecommendActivation": true,
+      "alwaysIncludeRampUp": true,
+      "preferDynamicMobility": true,
+      "avoidStaticStretchingBeforeHeavyPressing": true,
+      "explanation": "Push workouts require preparation of the shoulders, scapulae, rotator cuff and thoracic spine before loading compound pressing movements."
+    }
+  }
+}

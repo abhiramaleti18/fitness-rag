@@ -1,0 +1,238 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+  "goals": {
+    "STRENGTH": {
+      "displayName": "Strength",
+      "primaryObjective": "Increase maximal force production and improve performance on compound lifts.",
+      "trainingFocus": [
+        "Progressive overload",
+        "Heavy compound exercises",
+        "Neural adaptations",
+        "Technique refinement"
+      ],
+      "recommendedRepRange": {
+        "compound": "3-6",
+        "isolation": "6-10"
+      },
+      "recommendedSets": {
+        "compound": "3-6",
+        "isolation": "2-4"
+      },
+      "intensity": {
+        "percent1RM": "80-95%",
+        "rir": "1-3",
+        "rpe": "7-9"
+      },
+      "restPeriods": {
+        "compound": "2-5 min",
+        "isolation": "60-120 sec"
+      },
+      "weeklyVolume": {
+        "perMuscleGroup": "10-15 hard sets"
+      },
+      "recommendedFrequency": "2-3 sessions per muscle group per week",
+      "tempo": "Controlled eccentric, explosive concentric",
+      "progressionStrategy": "Linear progression or double progression",
+      "exercisePriority": [
+        "Compound",
+        "Accessory",
+        "Isolation"
+      ],
+      "warmupRecommendation": "Perform general warm-up, mobility work and progressive ramp-up sets before working sets.",
+      "failureGuidelines": "Avoid failure on heavy compound lifts. Isolation exercises may approach failure occasionally.",
+      "deloadRecommendation": "Every 6-8 weeks or when fatigue accumulates significantly.",
+      "notes": [
+        "Prioritize technique before load.",
+        "Increase weight only after maintaining good form.",
+        "Longer rest periods improve strength output."
+      ]
+    },
+
+    "HYPERTROPHY": {
+      "displayName": "Hypertrophy",
+      "primaryObjective": "Maximize skeletal muscle growth through sufficient volume and progressive overload.",
+      "trainingFocus": [
+        "Mechanical tension",
+        "Progressive overload",
+        "Muscle damage",
+        "Metabolic stress"
+      ],
+      "recommendedRepRange": {
+        "compound": "6-10",
+        "isolation": "10-15"
+      },
+      "recommendedSets": {
+        "compound": "3-5",
+        "isolation": "2-4"
+      },
+      "intensity": {
+        "percent1RM": "65-80%",
+        "rir": "0-2",
+        "rpe": "8-10"
+      },
+      "restPeriods": {
+        "compound": "90-180 sec",
+        "isolation": "45-90 sec"
+      },
+      "weeklyVolume": {
+        "perMuscleGroup": "10-20 hard sets"
+      },
+      "recommendedFrequency": "2 sessions per muscle group per week",
+      "tempo": "Controlled throughout full range of motion",
+      "progressionStrategy": "Double progression",
+      "exercisePriority": [
+        "Compound",
+        "Isolation",
+        "Finisher"
+      ],
+      "warmupRecommendation": "General warm-up followed by activation and ramp-up sets.",
+      "failureGuidelines": "Compound exercises should generally stop 1-2 reps before failure. Isolation movements may safely reach failure.",
+      "deloadRecommendation": "Every 6-10 weeks depending on fatigue and recovery.",
+      "notes": [
+        "Prioritize full range of motion.",
+        "Progressively increase volume over time.",
+        "Nutrition and recovery are essential for growth."
+      ]
+    },
+
+    "ENDURANCE": {
+      "displayName": "Muscular Endurance",
+      "primaryObjective": "Improve the ability of muscles to sustain repeated contractions over time.",
+      "trainingFocus": [
+        "High repetitions",
+        "Short rest periods",
+        "Work capacity"
+      ],
+      "recommendedRepRange": {
+        "compound": "12-20",
+        "isolation": "15-25"
+      },
+      "recommendedSets": {
+        "compound": "2-4",
+        "isolation": "2-3"
+      },
+      "intensity": {
+        "percent1RM": "40-60%",
+        "rir": "1-3",
+        "rpe": "6-8"
+      },
+      "restPeriods": {
+        "compound": "45-90 sec",
+        "isolation": "30-60 sec"
+      },
+      "weeklyVolume": {
+        "perMuscleGroup": "12-20 sets"
+      },
+      "recommendedFrequency": "2-4 sessions per muscle group per week",
+      "tempo": "Controlled, consistent cadence",
+      "progressionStrategy": "Increase repetitions before increasing resistance",
+      "exercisePriority": [
+        "Compound",
+        "Circuit",
+        "Isolation"
+      ],
+      "warmupRecommendation": "General warm-up with dynamic mobility.",
+      "failureGuidelines": "Avoid complete failure to preserve workout quality.",
+      "deloadRecommendation": "Every 8-10 weeks if performance declines.",
+      "notes": [
+        "Maintain exercise quality throughout the session.",
+        "Conditioning can be incorporated between sets."
+      ]
+    },
+
+    "WEIGHT_LOSS": {
+      "displayName": "Fat Loss",
+      "primaryObjective": "Preserve lean muscle mass while increasing overall energy expenditure.",
+      "trainingFocus": [
+        "Compound lifts",
+        "High training density",
+        "Calorie expenditure",
+        "Muscle retention"
+      ],
+      "recommendedRepRange": {
+        "compound": "8-12",
+        "isolation": "12-15"
+      },
+      "recommendedSets": {
+        "compound": "3-4",
+        "isolation": "2-3"
+      },
+      "intensity": {
+        "percent1RM": "60-75%",
+        "rir": "1-2",
+        "rpe": "7-9"
+      },
+      "restPeriods": {
+        "compound": "60-90 sec",
+        "isolation": "30-60 sec"
+      },
+      "weeklyVolume": {
+        "perMuscleGroup": "10-18 sets"
+      },
+      "recommendedFrequency": "2-3 sessions per muscle group per week",
+      "tempo": "Controlled repetitions with consistent pacing",
+      "progressionStrategy": "Maintain strength while gradually increasing workload.",
+      "exercisePriority": [
+        "Compound",
+        "Isolation",
+        "Conditioning"
+      ],
+      "warmupRecommendation": "General warm-up followed by dynamic mobility.",
+      "failureGuidelines": "Avoid excessive failure to maintain recovery while in a calorie deficit.",
+      "deloadRecommendation": "Every 6-8 weeks if fatigue accumulates.",
+      "notes": [
+        "Resistance training should remain the priority.",
+        "Cardio complements but does not replace strength training.",
+        "Protein intake is critical for muscle retention."
+      ]
+    },
+
+    "GENERAL_FITNESS": {
+      "displayName": "General Fitness",
+      "primaryObjective": "Improve overall health, movement quality and long-term physical fitness.",
+      "trainingFocus": [
+        "Balanced development",
+        "Movement quality",
+        "Consistency",
+        "Injury prevention"
+      ],
+      "recommendedRepRange": {
+        "compound": "8-12",
+        "isolation": "10-15"
+      },
+      "recommendedSets": {
+        "compound": "2-4",
+        "isolation": "2-3"
+      },
+      "intensity": {
+        "percent1RM": "60-75%",
+        "rir": "2-3",
+        "rpe": "6-8"
+      },
+      "restPeriods": {
+        "compound": "60-120 sec",
+        "isolation": "45-60 sec"
+      },
+      "weeklyVolume": {
+        "perMuscleGroup": "8-15 sets"
+      },
+      "recommendedFrequency": "2 sessions per muscle group per week",
+      "tempo": "Controlled with full range of motion",
+      "progressionStrategy": "Gradually increase repetitions, load or exercise complexity.",
+      "exercisePriority": [
+        "Compound",
+        "Isolation",
+        "Mobility"
+      ],
+      "warmupRecommendation": "5-10 minutes of light cardio followed by dynamic mobility.",
+      "failureGuidelines": "Avoid failure on most exercises. Focus on quality movement.",
+      "deloadRecommendation": "Every 8-12 weeks or as needed.",
+      "notes": [
+        "Emphasize consistency over intensity.",
+        "Develop all major movement patterns.",
+        "Prioritize long-term adherence."
+      ]
+    }
+  }
+}

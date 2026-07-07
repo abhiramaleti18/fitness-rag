@@ -42,6 +42,9 @@ const userSchema = new mongoose.Schema({
         weight: { type: Number, required: true }, // kg
         reps: { type: Number, default: 1 },
         date: { type: Date, default: Date.now }
+    }],
+    injuries: [{
+    type: String
     }]
 }, { timestamps: true });
 

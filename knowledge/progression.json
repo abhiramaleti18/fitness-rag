@@ -1,0 +1,211 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "progressionMethods": {
+
+    "LINEAR_PROGRESSION": {
+      "displayName": "Linear Progression",
+      "bestFor": [
+        "BEGINNER",
+        "STRENGTH"
+      ],
+      "description": "Increase the load gradually every successful session while maintaining the prescribed repetitions.",
+      "progressionRule": "If all prescribed sets and reps are completed with good technique, increase load by the smallest available increment during the next session.",
+      "typicalLoadIncrease": {
+        "upperBody": "2.5-5%",
+        "lowerBody": "5-10%"
+      },
+      "advantages": [
+        "Simple",
+        "Easy to track",
+        "Fast beginner progress"
+      ]
+    },
+
+    "DOUBLE_PROGRESSION": {
+      "displayName": "Double Progression",
+      "bestFor": [
+        "INTERMEDIATE",
+        "HYPERTROPHY"
+      ],
+      "description": "Increase repetitions within a target range before increasing weight.",
+      "example": {
+        "targetRange": "8-12 reps",
+        "week1": "3 x 8",
+        "week2": "3 x 9",
+        "week3": "3 x 10",
+        "week4": "3 x 11",
+        "week5": "3 x 12",
+        "week6": "Increase weight and return to 8 reps"
+      },
+      "advantages": [
+        "Excellent for muscle growth",
+        "Easy to monitor",
+        "Reduces unnecessary weight jumps"
+      ]
+    },
+
+    "RPE_BASED": {
+      "displayName": "RPE Based Progression",
+      "bestFor": [
+        "ADVANCED",
+        "STRENGTH"
+      ],
+      "description": "Adjust training load based on Rate of Perceived Exertion.",
+      "targetRPE": "7-9",
+      "progressionRule": "Increase load only when prescribed RPE is achieved consistently."
+    },
+
+    "RIR_BASED": {
+      "displayName": "Reps In Reserve",
+      "bestFor": [
+        "HYPERTROPHY",
+        "GENERAL_FITNESS"
+      ],
+      "description": "Progress while maintaining a target number of repetitions in reserve.",
+      "targetRIR": "1-3",
+      "progressionRule": "Increase load when target repetitions are completed while maintaining the desired RIR."
+    }
+  },
+
+  "plateauManagement": {
+
+    "definition": "A plateau occurs when measurable progress stops despite consistent training and recovery.",
+
+    "possibleCauses": [
+      "Insufficient recovery",
+      "Poor nutrition",
+      "Inadequate sleep",
+      "Excessive fatigue",
+      "Lack of progressive overload",
+      "Poor exercise technique"
+    ],
+
+    "recommendations": [
+      "Perform a deload week.",
+      "Improve sleep quality.",
+      "Reduce training volume temporarily.",
+      "Improve exercise technique.",
+      "Increase calorie intake if appropriate.",
+      "Review training intensity."
+    ]
+  },
+
+  "deload": {
+
+    "frequency": "Every 6-10 weeks",
+
+    "volumeReduction": "30-50%",
+
+    "intensityReduction": "10-20% if necessary",
+
+    "duration": "1 week",
+
+    "indicators": [
+      "Performance decreases",
+      "Persistent soreness",
+      "Poor motivation",
+      "Joint discomfort",
+      "Poor sleep quality",
+      "Accumulated fatigue"
+    ]
+  },
+
+  "goalSpecificProgression": {
+
+    "STRENGTH": {
+      "preferredMethod": "LINEAR_PROGRESSION",
+      "progressionPriority": [
+        "Increase Load",
+        "Maintain Technique",
+        "Maintain Rep Range"
+      ]
+    },
+
+    "HYPERTROPHY": {
+      "preferredMethod": "DOUBLE_PROGRESSION",
+      "progressionPriority": [
+        "Increase Repetitions",
+        "Increase Load",
+        "Increase Volume"
+      ]
+    },
+
+    "ENDURANCE": {
+      "preferredMethod": "REPETITION_PROGRESSION",
+      "progressionPriority": [
+        "Increase Repetitions",
+        "Reduce Rest",
+        "Increase Density"
+      ]
+    },
+
+    "WEIGHT_LOSS": {
+      "preferredMethod": "WORKLOAD_PROGRESSION",
+      "progressionPriority": [
+        "Maintain Strength",
+        "Increase Training Density",
+        "Improve Conditioning"
+      ]
+    },
+
+    "GENERAL_FITNESS": {
+      "preferredMethod": "DOUBLE_PROGRESSION",
+      "progressionPriority": [
+        "Technique",
+        "Repetitions",
+        "Load"
+      ]
+    }
+  },
+
+  "exerciseSpecificGuidelines": {
+
+    "COMPOUND": {
+      "progressionFrequency": "Every 1-3 weeks",
+      "priority": "Increase load before adding additional sets."
+    },
+
+    "ISOLATION": {
+      "progressionFrequency": "Every 2-4 weeks",
+      "priority": "Increase repetitions before increasing load."
+    },
+
+    "CORE": {
+      "progressionFrequency": "Every 2-3 weeks",
+      "priority": "Increase exercise difficulty before adding external resistance."
+    },
+
+    "CALVES": {
+      "progressionFrequency": "Every 1-2 weeks",
+      "priority": "Increase repetitions before load."
+    }
+  },
+
+  "weeklyProgressionRules": [
+
+    "Progress only when technique remains consistent.",
+
+    "Never sacrifice range of motion for additional weight.",
+
+    "Small, consistent improvements outperform aggressive load increases.",
+
+    "Missing target repetitions for two consecutive sessions may indicate the need to reduce load.",
+
+    "Recovery quality should influence progression decisions."
+  ],
+
+  "llmGuidelines": {
+
+    "alwaysExplainProgression": true,
+
+    "preferSmallWeightIncreases": true,
+
+    "neverRecommendAggressiveLoadJumps": true,
+
+    "encourageConsistency": true,
+
+    "explanation": "Progression recommendations should consider the user's goal, experience level, recovery status and recent performance instead of recommending arbitrary weight increases."
+  }
+}

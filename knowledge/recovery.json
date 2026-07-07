@@ -1,0 +1,227 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "generalRecoveryPrinciples": {
+    "sleep": {
+      "recommended": "7-9 hours",
+      "importance": "Sleep is the most important recovery factor for performance, muscle growth and hormonal regulation."
+    },
+    "nutrition": {
+      "protein": "1.6-2.2 g/kg bodyweight/day",
+      "hydration": "Maintain adequate hydration before, during and after training.",
+      "carbohydrates": "Support glycogen replenishment after demanding sessions."
+    },
+    "activeRecovery": {
+      "recommended": true,
+      "examples": [
+        "Walking",
+        "Light cycling",
+        "Mobility work",
+        "Stretching"
+      ]
+    }
+  },
+
+  "muscleRecovery": {
+
+    "CHEST": {
+      "minimumRecovery": "48 hours",
+      "optimalRecovery": "48-72 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "10-20 hard sets",
+      "domsLikelihood": "Moderate",
+      "fatigueLevel": "Moderate",
+      "notes": [
+        "Heavy pressing may require additional recovery.",
+        "Shoulder soreness can affect recovery."
+      ]
+    },
+
+    "BACK": {
+      "minimumRecovery": "48 hours",
+      "optimalRecovery": "48-72 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "12-20 hard sets",
+      "domsLikelihood": "Moderate",
+      "fatigueLevel": "High",
+      "notes": [
+        "Deadlifts significantly increase systemic fatigue.",
+        "Grip fatigue may persist longer than muscle soreness."
+      ]
+    },
+
+    "SHOULDERS": {
+      "minimumRecovery": "48 hours",
+      "optimalRecovery": "48-72 hours",
+      "trainingFrequency": "2-3 sessions/week",
+      "weeklyVolume": "12-20 hard sets",
+      "domsLikelihood": "Low-Moderate",
+      "fatigueLevel": "Moderate",
+      "notes": [
+        "Anterior delts often receive indirect work during chest training."
+      ]
+    },
+
+    "BICEPS": {
+      "minimumRecovery": "24-48 hours",
+      "optimalRecovery": "48 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "10-16 hard sets",
+      "domsLikelihood": "Moderate",
+      "fatigueLevel": "Low",
+      "notes": [
+        "Frequently recover faster than larger muscle groups."
+      ]
+    },
+
+    "TRICEPS": {
+      "minimumRecovery": "24-48 hours",
+      "optimalRecovery": "48 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "10-18 hard sets",
+      "domsLikelihood": "Moderate",
+      "fatigueLevel": "Low",
+      "notes": [
+        "Receive significant indirect work during pressing."
+      ]
+    },
+
+    "QUADS": {
+      "minimumRecovery": "48 hours",
+      "optimalRecovery": "48-72 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "12-20 hard sets",
+      "domsLikelihood": "High",
+      "fatigueLevel": "High",
+      "notes": [
+        "Heavy squats create substantial systemic fatigue."
+      ]
+    },
+
+    "HAMSTRINGS": {
+      "minimumRecovery": "48 hours",
+      "optimalRecovery": "48-72 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "10-18 hard sets",
+      "domsLikelihood": "High",
+      "fatigueLevel": "High",
+      "notes": [
+        "Romanian deadlifts commonly produce prolonged soreness."
+      ]
+    },
+
+    "GLUTES": {
+      "minimumRecovery": "48 hours",
+      "optimalRecovery": "48-72 hours",
+      "trainingFrequency": "2 sessions/week",
+      "weeklyVolume": "10-20 hard sets",
+      "domsLikelihood": "Moderate",
+      "fatigueLevel": "Moderate",
+      "notes": [
+        "Heavy hip thrusts and squats require adequate recovery."
+      ]
+    },
+
+    "CALVES": {
+      "minimumRecovery": "24 hours",
+      "optimalRecovery": "24-48 hours",
+      "trainingFrequency": "2-4 sessions/week",
+      "weeklyVolume": "12-20 hard sets",
+      "domsLikelihood": "Moderate",
+      "fatigueLevel": "Low",
+      "notes": [
+        "Generally tolerate higher training frequency."
+      ]
+    },
+
+    "CORE": {
+      "minimumRecovery": "24 hours",
+      "optimalRecovery": "24-48 hours",
+      "trainingFrequency": "2-4 sessions/week",
+      "weeklyVolume": "8-15 hard sets",
+      "domsLikelihood": "Low",
+      "fatigueLevel": "Low",
+      "notes": [
+        "Can usually be trained more frequently than major muscle groups."
+      ]
+    }
+  },
+
+  "systemicFatigue": {
+    "LOW": {
+      "examples": [
+        "Biceps curls",
+        "Triceps pushdowns",
+        "Lateral raises",
+        "Calf raises"
+      ],
+      "recommendedRecovery": "24-48 hours"
+    },
+
+    "MODERATE": {
+      "examples": [
+        "Bench press",
+        "Lat pulldown",
+        "Rows",
+        "Leg press"
+      ],
+      "recommendedRecovery": "48 hours"
+    },
+
+    "HIGH": {
+      "examples": [
+        "Back squat",
+        "Romanian deadlift",
+        "Deadlift",
+        "Heavy lunges"
+      ],
+      "recommendedRecovery": "48-72 hours"
+    }
+  },
+
+  "readinessIndicators": {
+    "readyToTrain": [
+      "Minimal muscle soreness",
+      "Normal joint mobility",
+      "Energy levels feel normal",
+      "Performance is stable or improving",
+      "No sharp pain"
+    ],
+
+    "considerReducingLoad": [
+      "Persistent soreness",
+      "Reduced performance",
+      "Poor sleep",
+      "Joint discomfort",
+      "Excessive fatigue"
+    ],
+
+    "avoidTraining": [
+      "Sharp pain",
+      "Acute injury",
+      "Severe swelling",
+      "Fever or illness",
+      "Significant loss of range of motion"
+    ]
+  },
+
+  "deloadGuidelines": {
+    "frequency": "Every 6-10 weeks depending on training intensity and accumulated fatigue.",
+    "volumeReduction": "Reduce total volume by 30-50%.",
+    "intensityReduction": "Maintain technique while reducing load if necessary.",
+    "purpose": [
+      "Improve recovery",
+      "Reduce accumulated fatigue",
+      "Prepare for the next training block"
+    ]
+  },
+
+  "llmGuidelines": {
+    "alwaysMentionRecovery": true,
+    "neverRecommendTrainingThroughSharpPain": true,
+    "considerSystemicFatigue": true,
+    "prioritizeSleep": true,
+    "explanation": "Recovery recommendations should consider muscle group, exercise selection, training goal, accumulated fatigue and user experience."
+  }
+}

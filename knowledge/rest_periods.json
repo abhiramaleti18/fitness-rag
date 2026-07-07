@@ -1,0 +1,151 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "goals": {
+    "STRENGTH": {
+      "description": "Prioritize complete recovery between heavy sets to maximize force production.",
+      "compound": "2-5 min",
+      "isolation": "60-120 sec",
+      "core": "45-90 sec",
+      "carry": "90-180 sec",
+      "explosive": "2-5 min"
+    },
+
+    "HYPERTROPHY": {
+      "description": "Balance recovery with metabolic stress to maximize muscle growth.",
+      "compound": "90-180 sec",
+      "isolation": "45-90 sec",
+      "core": "30-60 sec",
+      "carry": "60-90 sec",
+      "explosive": "90-180 sec"
+    },
+
+    "ENDURANCE": {
+      "description": "Shorter recovery improves muscular endurance and work capacity.",
+      "compound": "45-90 sec",
+      "isolation": "30-60 sec",
+      "core": "30-45 sec",
+      "carry": "45-60 sec",
+      "explosive": "Not Recommended"
+    },
+
+    "WEIGHT_LOSS": {
+      "description": "Keep workouts dense while maintaining exercise quality.",
+      "compound": "60-90 sec",
+      "isolation": "30-60 sec",
+      "core": "30-45 sec",
+      "carry": "45-60 sec",
+      "explosive": "60-90 sec"
+    },
+
+    "GENERAL_FITNESS": {
+      "description": "Moderate recovery balances performance and workout efficiency.",
+      "compound": "60-120 sec",
+      "isolation": "45-60 sec",
+      "core": "30-45 sec",
+      "carry": "45-60 sec",
+      "explosive": "90-120 sec"
+    }
+  },
+
+  "warmupSets": {
+    "light": {
+      "rest": "30-45 sec",
+      "notes": "Very light preparation sets require minimal recovery."
+    },
+    "moderate": {
+      "rest": "45-60 sec",
+      "notes": "Increase recovery slightly as load increases."
+    },
+    "heavy": {
+      "rest": "60-120 sec",
+      "notes": "Final warm-up sets should allow adequate recovery before the first working set."
+    }
+  },
+
+  "betweenExercises": {
+    "sameMuscleGroup": {
+      "recommended": "60-120 sec",
+      "notes": "Transition after recovering breathing and focus."
+    },
+    "differentMuscleGroup": {
+      "recommended": "30-90 sec",
+      "notes": "Changing movement patterns generally requires less recovery."
+    },
+    "heavyCompoundTransition": {
+      "recommended": "2-3 min",
+      "notes": "Take additional time before another demanding compound exercise."
+    }
+  },
+
+  "advancedMethods": {
+    "superset": {
+      "betweenExercises": "0-15 sec",
+      "betweenRounds": "60-90 sec",
+      "description": "Perform paired exercises consecutively before resting."
+    },
+
+    "giantSet": {
+      "betweenExercises": "0-15 sec",
+      "betweenRounds": "90-120 sec",
+      "description": "Minimal transition between multiple exercises."
+    },
+
+    "dropSet": {
+      "betweenDrops": "0 sec",
+      "betweenRounds": "90-120 sec",
+      "description": "Reduce weight immediately without resting."
+    },
+
+    "restPause": {
+      "miniRest": "15-30 sec",
+      "betweenSets": "2-3 min",
+      "description": "Brief intra-set recovery extends total repetitions."
+    },
+
+    "clusterSet": {
+      "miniRest": "15-30 sec",
+      "betweenSets": "2-4 min",
+      "description": "Short pauses maintain force production during heavy lifting."
+    }
+  },
+
+  "generalRules": {
+    "strength": [
+      "Longer rest generally improves force production.",
+      "Do not shorten rest simply to increase workout intensity."
+    ],
+
+    "hypertrophy": [
+      "Rest long enough to maintain training quality.",
+      "Avoid rushing compound movements."
+    ],
+
+    "endurance": [
+      "Shorter rest intentionally increases cardiovascular demand.",
+      "Exercise technique should remain consistent despite fatigue."
+    ],
+
+    "explosiveTraining": [
+      "Every repetition should be performed explosively.",
+      "Terminate the set if movement speed noticeably decreases."
+    ],
+
+    "compoundExercises": [
+      "Large muscle groups require longer recovery.",
+      "Prioritize performance over workout speed."
+    ],
+
+    "isolationExercises": [
+      "Smaller muscle groups recover more quickly.",
+      "Shorter rest is acceptable if technique remains controlled."
+    ]
+  },
+
+  "llmGuidelines": {
+    "alwaysExplain": true,
+    "explanationTemplate": "Recommended rest periods are based on the training goal, exercise type and desired physiological adaptation rather than a fixed value.",
+    "avoidGenericAdvice": true
+  }
+}

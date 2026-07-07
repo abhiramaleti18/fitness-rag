@@ -1,0 +1,258 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "PULL": {
+    "description": "Warm-up protocol for back, rear delts, biceps, traps and grip intensive workouts.",
+
+    "generalWarmup": {
+      "duration": "5-8 min",
+      "recommendations": [
+        "Rowing Machine",
+        "Air Bike",
+        "Jump Rope",
+        "Incline Treadmill Walk"
+      ],
+      "purpose": "Increase body temperature while activating the upper back and posterior chain."
+    },
+
+    "dynamicMobility": [
+      {
+        "exercise": "Cat Camel",
+        "sets": 1,
+        "reps": "10",
+        "purpose": "Mobilize thoracic and lumbar spine."
+      },
+      {
+        "exercise": "Thoracic Rotation",
+        "sets": 1,
+        "reps": "10 each side",
+        "purpose": "Improve rotational mobility."
+      },
+      {
+        "exercise": "Open Book Stretch",
+        "sets": 1,
+        "reps": "10 each side",
+        "purpose": "Increase thoracic extension."
+      },
+      {
+        "exercise": "PVC Pass Through",
+        "sets": 2,
+        "reps": "12",
+        "purpose": "Improve shoulder mobility."
+      },
+      {
+        "exercise": "Band Shoulder Dislocations",
+        "sets": 2,
+        "reps": "12",
+        "purpose": "Prepare shoulders for pulling movements."
+      },
+      {
+        "exercise": "Dead Hang",
+        "sets": 2,
+        "duration": "20-30 sec",
+        "purpose": "Decompress spine and activate grip."
+      },
+      {
+        "exercise": "Scapular Pull-Up",
+        "sets": 2,
+        "reps": "10",
+        "purpose": "Activate lower traps and scapular depression."
+      },
+      {
+        "exercise": "World's Greatest Stretch",
+        "sets": 1,
+        "reps": "5 each side",
+        "purpose": "Prepare hips and thoracic spine."
+      }
+    ],
+
+    "activation": {
+      "lats": [
+        {
+          "exercise": "Straight Arm Band Pulldown",
+          "sets": 2,
+          "reps": "15"
+        },
+        {
+          "exercise": "Band Lat Prayer",
+          "sets": 2,
+          "reps": "15"
+        }
+      ],
+
+      "midBack": [
+        {
+          "exercise": "Band Row",
+          "sets": 2,
+          "reps": "15"
+        },
+        {
+          "exercise": "Seated Band Row",
+          "sets": 2,
+          "reps": "15"
+        }
+      ],
+
+      "rearDelts": [
+        {
+          "exercise": "Face Pull",
+          "sets": 2,
+          "reps": "15"
+        },
+        {
+          "exercise": "Band Reverse Fly",
+          "sets": 2,
+          "reps": "15"
+        }
+      ],
+
+      "rotatorCuff": [
+        {
+          "exercise": "Band External Rotation",
+          "sets": 2,
+          "reps": "15"
+        }
+      ],
+
+      "grip": [
+        {
+          "exercise": "Farmer Carry (Light)",
+          "sets": 2,
+          "duration": "20 sec"
+        },
+        {
+          "exercise": "Plate Pinch Hold",
+          "sets": 2,
+          "duration": "20 sec"
+        }
+      ],
+
+      "biceps": [
+        {
+          "exercise": "Light Band Curl",
+          "sets": 1,
+          "reps": "20"
+        }
+      ]
+    },
+
+    "movementPreparation": {
+
+      "HORIZONTAL_PULL": [
+        "Band Row",
+        "Face Pull",
+        "Scapular Pull-Up",
+        "Band External Rotation"
+      ],
+
+      "VERTICAL_PULL": [
+        "Dead Hang",
+        "Straight Arm Band Pulldown",
+        "Scapular Pull-Up",
+        "Band Lat Prayer"
+      ]
+    },
+
+    "rampUpProtocols": {
+
+      "Barbell Row": [
+        "Empty Bar ×15",
+        "40% Working Weight ×8",
+        "60% ×5",
+        "75% ×3",
+        "Working Sets"
+      ],
+
+      "Seated Cable Row": [
+        "Very Light ×15",
+        "Moderate ×10",
+        "Working Sets"
+      ],
+
+      "Pull-Up": [
+        "Dead Hang ×20 sec",
+        "Scapular Pull-Up ×10",
+        "Band Assisted Pull-Up ×5",
+        "Working Sets"
+      ],
+
+      "Lat Pulldown": [
+        "Light ×15",
+        "Moderate ×10",
+        "Working Sets"
+      ],
+
+      "T-Bar Row": [
+        "Empty Bar ×15",
+        "50% ×8",
+        "75% ×4",
+        "Working Sets"
+      ]
+    },
+
+    "goalAdjustments": {
+
+      "STRENGTH": {
+        "extraRampUpSets": true,
+        "gripPreparation": true,
+        "notes": "Prepare the nervous system and grip before heavy pulling."
+      },
+
+      "HYPERTROPHY": {
+        "additionalLatActivation": true,
+        "notes": "Increase lat engagement before working sets."
+      },
+
+      "ENDURANCE": {
+        "shorterRampUp": true,
+        "notes": "Maintain movement quality without accumulating fatigue."
+      },
+
+      "WEIGHT_LOSS": {
+        "extendedCardio": "8-10 min",
+        "notes": "Increase calorie expenditure while preserving pulling performance."
+      },
+
+      "GENERAL_FITNESS": {
+        "balancedWarmup": true
+      }
+    },
+
+    "beginnerNotes": [
+      "Learn proper scapular movement before pulling heavy loads.",
+      "Use full range of motion.",
+      "Avoid using momentum.",
+      "Practice dead hangs to improve shoulder control."
+    ],
+
+    "advancedNotes": [
+      "Use explosive intent on concentric pulls.",
+      "Perform additional ramp-up sets before maximal rows.",
+      "Grip readiness is essential before heavy pulling."
+    ],
+
+    "commonMistakes": [
+      "Skipping scapular activation.",
+      "Starting heavy rows with cold shoulders.",
+      "Ignoring grip preparation.",
+      "Using excessive body momentum during warm-up."
+    ],
+
+    "safetyGuidelines": [
+      "Maintain a neutral spine during rowing movements.",
+      "Avoid aggressive jerking during pull-ups.",
+      "If elbows feel irritated, increase forearm and biceps warm-up volume.",
+      "Do not perform maximal pulling without progressive loading."
+    ],
+
+    "llmInstructions": {
+      "alwaysRecommendGripPreparation": true,
+      "alwaysRecommendScapularActivation": true,
+      "alwaysIncludeRampUp": true,
+      "preferDynamicMobility": true,
+      "avoidStaticStretchingBeforeHeavyPulling": true,
+      "explanation": "Pull workouts require preparation of the lats, scapular stabilizers, grip and thoracic spine before heavy pulling movements."
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "constraints": {
+
+    "SHOULDER_PAIN": {
+      "description": "Modify training to minimize shoulder irritation while maintaining upper body strength.",
+
+      "avoidExercises": [
+        "Behind Neck Press",
+        "Behind Neck Pulldown",
+        "Upright Row",
+        "Deep Weighted Dip",
+        "Heavy Dumbbell Fly",
+        "Wide Grip Bench Press"
+      ],
+
+      "preferExercises": [
+        "Neutral Grip Dumbbell Press",
+        "Machine Chest Press",
+        "Landmine Press",
+        "Cable Chest Press",
+        "Machine Shoulder Press",
+        "Face Pull"
+      ],
+
+      "reduceVolume": false,
+
+      "warmupFocus": [
+        "Band External Rotation",
+        "Band Pull Apart",
+        "PVC Pass Through",
+        "Wall Slides",
+        "Scapular Push-Up"
+      ],
+
+      "coachingNotes": [
+        "Train through pain-free ranges of motion.",
+        "Prioritize shoulder stability before increasing load.",
+        "Neutral grips are generally better tolerated."
+      ]
+    },
+
+    "LOWER_BACK_PAIN": {
+
+      "description": "Reduce spinal loading while maintaining lower body training.",
+
+      "avoidExercises": [
+        "Conventional Deadlift",
+        "Good Morning",
+        "Heavy Barbell Row",
+        "Heavy Back Squat"
+      ],
+
+      "preferExercises": [
+        "Leg Press",
+        "Chest Supported Row",
+        "Goblet Squat",
+        "Machine Row",
+        "Hip Thrust",
+        "Cable Pull Through"
+      ],
+
+      "warmupFocus": [
+        "Cat Camel",
+        "Bird Dog",
+        "Dead Bug",
+        "Glute Bridge",
+        "Hip Mobility"
+      ],
+
+      "coachingNotes": [
+        "Maintain a neutral spine.",
+        "Avoid excessive lumbar extension.",
+        "Prioritize core bracing."
+      ]
+    },
+
+    "KNEE_PAIN": {
+
+      "description": "Reduce knee stress while maintaining lower body strength.",
+
+      "avoidExercises": [
+        "Deep Hack Squat",
+        "Heavy Walking Lunge",
+        "Heavy Leg Extension"
+      ],
+
+      "preferExercises": [
+        "Romanian Deadlift",
+        "Hip Thrust",
+        "Box Squat",
+        "Reverse Lunge",
+        "Step Up"
+      ],
+
+      "warmupFocus": [
+        "Terminal Knee Extension",
+        "Glute Activation",
+        "Ankle Mobility",
+        "Bodyweight Squat"
+      ],
+
+      "coachingNotes": [
+        "Control the lowering phase.",
+        "Avoid painful ranges.",
+        "Strengthen surrounding musculature."
+      ]
+    },
+
+    "ELBOW_PAIN": {
+
+      "description": "Reduce repetitive elbow loading.",
+
+      "avoidExercises": [
+        "Heavy Skull Crusher",
+        "Heavy EZ Bar Curl",
+        "Heavy Close Grip Bench Press"
+      ],
+
+      "preferExercises": [
+        "Cable Curl",
+        "Hammer Curl",
+        "Rope Pushdown",
+        "Machine Curl"
+      ],
+
+      "warmupFocus": [
+        "Light Band Curl",
+        "Band Pushdown",
+        "Forearm Mobility"
+      ],
+
+      "coachingNotes": [
+        "Avoid locking the elbows aggressively.",
+        "Use controlled tempo."
+      ]
+    },
+
+    "WRIST_PAIN": {
+
+      "description": "Reduce wrist extension and excessive grip stress.",
+
+      "avoidExercises": [
+        "Straight Bar Curl",
+        "Heavy Front Squat",
+        "Push-Up"
+      ],
+
+      "preferExercises": [
+        "EZ Bar Curl",
+        "Neutral Grip Dumbbell Press",
+        "Machine Press",
+        "Cable Attachments"
+      ],
+
+      "warmupFocus": [
+        "Wrist Circles",
+        "Forearm Stretch",
+        "Light Grip Work"
+      ],
+
+      "coachingNotes": [
+        "Use neutral grips whenever possible.",
+        "Consider wrist wraps for heavy lifts."
+      ]
+    },
+
+    "LIMITED_OVERHEAD_MOBILITY": {
+
+      "description": "Avoid excessive overhead positions until mobility improves.",
+
+      "avoidExercises": [
+        "Barbell Overhead Press",
+        "Behind Neck Press"
+      ],
+
+      "preferExercises": [
+        "Landmine Press",
+        "Machine Shoulder Press",
+        "High Incline Press"
+      ],
+
+      "warmupFocus": [
+        "Thoracic Extension",
+        "PVC Pass Through",
+        "Wall Slides"
+      ],
+
+      "coachingNotes": [
+        "Improve thoracic mobility first.",
+        "Progressively restore overhead range."
+      ]
+    },
+
+    "BEGINNER": {
+
+      "description": "Prioritize learning movement patterns before maximizing intensity.",
+
+      "avoidExercises": [
+        "Maximal Deadlift",
+        "Maximal Squat",
+        "Olympic Lifts"
+      ],
+
+      "preferExercises": [
+        "Goblet Squat",
+        "Machine Press",
+        "Machine Row",
+        "Romanian Deadlift",
+        "Bodyweight Movements"
+      ],
+
+      "coachingNotes": [
+        "Technique before intensity.",
+        "Master basic movement patterns first.",
+        "Leave 2-3 repetitions in reserve."
+      ]
+    },
+
+    "LIMITED_EQUIPMENT": {
+
+      "description": "Generate workouts using available equipment only.",
+
+      "equipmentProfiles": {
+
+        "BODYWEIGHT": [
+          "Push-Up",
+          "Pull-Up",
+          "Air Squat",
+          "Walking Lunge",
+          "Plank"
+        ],
+
+        "DUMBBELLS": [
+          "Dumbbell Bench Press",
+          "Goblet Squat",
+          "Romanian Deadlift",
+          "Shoulder Press",
+          "Rows"
+        ],
+
+        "RESISTANCE_BANDS": [
+          "Band Row",
+          "Band Chest Press",
+          "Band Squat",
+          "Band Curl",
+          "Band Pushdown"
+        ]
+      }
+    }
+  },
+
+  "globalRules": [
+    "Never recommend exercises that cause sharp pain.",
+    "Always provide suitable alternatives.",
+    "Warm-up recommendations should adapt to the user's limitation.",
+    "Maintain training stimulus whenever possible instead of removing an entire muscle group.",
+    "Pain modification should preserve movement quality."
+  ],
+
+  "llmGuidelines": {
+    "alwaysRespectConstraints": true,
+    "alwaysSuggestAlternatives": true,
+    "neverIgnorePain": true,
+    "explanation": "User limitations always take priority over exercise preference. Replace exercises with biomechanically similar alternatives whenever possible."
+  }
+}

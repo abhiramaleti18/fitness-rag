@@ -1,0 +1,452 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "muscles": {
+
+    "CHEST": {
+      "displayName": "Chest (Pectoralis Major)",
+
+      "primaryFunctions": [
+        "Horizontal shoulder adduction",
+        "Shoulder flexion",
+        "Pressing movements"
+      ],
+
+      "secondaryFunctions": [
+        "Shoulder stabilization",
+        "Assists internal shoulder rotation"
+      ],
+
+      "movementPatterns": [
+        "HORIZONTAL_PUSH"
+      ],
+
+      "primaryCompoundExercises": [
+        "Barbell Bench Press",
+        "Dumbbell Bench Press",
+        "Incline Bench Press",
+        "Machine Chest Press",
+        "Weighted Dips"
+      ],
+
+      "primaryIsolationExercises": [
+        "Cable Crossover",
+        "Pec Deck Fly",
+        "Dumbbell Fly"
+      ],
+
+      "recommendedWeeklyVolume": "10-20 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48-72 hours",
+
+      "commonWeaknesses": [
+        "Weak upper chest",
+        "Poor scapular stability",
+        "Limited shoulder mobility"
+      ],
+
+      "coachingNotes": [
+        "Prioritize compound pressing before isolation.",
+        "Use a full range of motion.",
+        "Maintain scapular stability."
+      ]
+    },
+
+    "LATS": {
+
+      "displayName": "Latissimus Dorsi",
+
+      "primaryFunctions": [
+        "Shoulder extension",
+        "Shoulder adduction",
+        "Shoulder internal rotation"
+      ],
+
+      "movementPatterns": [
+        "VERTICAL_PULL"
+      ],
+
+      "primaryCompoundExercises": [
+        "Pull-Up",
+        "Lat Pulldown",
+        "Neutral Grip Pull-Up"
+      ],
+
+      "primaryIsolationExercises": [
+        "Straight Arm Pulldown",
+        "Machine Pullover"
+      ],
+
+      "recommendedWeeklyVolume": "10-18 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48-72 hours",
+
+      "commonWeaknesses": [
+        "Poor scapular depression",
+        "Using arms instead of lats"
+      ],
+
+      "coachingNotes": [
+        "Initiate every pull by depressing the scapula.",
+        "Drive elbows toward the hips."
+      ]
+    },
+
+    "UPPER_BACK": {
+
+      "displayName": "Upper Back",
+
+      "primaryFunctions": [
+        "Scapular retraction",
+        "Postural stability"
+      ],
+
+      "movementPatterns": [
+        "HORIZONTAL_PULL"
+      ],
+
+      "primaryCompoundExercises": [
+        "Barbell Row",
+        "Chest Supported Row",
+        "T-Bar Row",
+        "Cable Row"
+      ],
+
+      "primaryIsolationExercises": [
+        "Face Pull",
+        "Reverse Fly"
+      ],
+
+      "recommendedWeeklyVolume": "12-20 hard sets",
+
+      "trainingFrequency": "2-3 sessions/week",
+
+      "recoveryTime": "48-72 hours",
+
+      "commonWeaknesses": [
+        "Rounded shoulders",
+        "Weak scapular retractors"
+      ],
+
+      "coachingNotes": [
+        "Squeeze shoulder blades together.",
+        "Avoid excessive momentum."
+      ]
+    },
+
+    "SHOULDERS": {
+
+      "displayName": "Deltoids",
+
+      "heads": [
+        "Anterior",
+        "Lateral",
+        "Posterior"
+      ],
+
+      "primaryFunctions": [
+        "Shoulder flexion",
+        "Shoulder abduction",
+        "Shoulder extension"
+      ],
+
+      "movementPatterns": [
+        "VERTICAL_PUSH",
+        "SHOULDER_ABDUCTION"
+      ],
+
+      "primaryCompoundExercises": [
+        "Overhead Press",
+        "Arnold Press",
+        "Machine Shoulder Press"
+      ],
+
+      "primaryIsolationExercises": [
+        "Lateral Raise",
+        "Rear Delt Fly",
+        "Cable Lateral Raise"
+      ],
+
+      "recommendedWeeklyVolume": "12-20 hard sets",
+
+      "trainingFrequency": "2-3 sessions/week",
+
+      "recoveryTime": "48 hours",
+
+      "commonWeaknesses": [
+        "Weak lateral delts",
+        "Limited overhead mobility"
+      ],
+
+      "coachingNotes": [
+        "Control the eccentric.",
+        "Avoid shrugging during lateral raises."
+      ]
+    },
+
+    "TRICEPS": {
+
+      "displayName": "Triceps",
+
+      "heads": [
+        "Long Head",
+        "Lateral Head",
+        "Medial Head"
+      ],
+
+      "primaryFunctions": [
+        "Elbow extension"
+      ],
+
+      "movementPatterns": [
+        "ELBOW_EXTENSION"
+      ],
+
+      "primaryCompoundExercises": [
+        "Close Grip Bench Press",
+        "Weighted Dip"
+      ],
+
+      "primaryIsolationExercises": [
+        "Cable Pushdown",
+        "Overhead Extension",
+        "Skull Crusher"
+      ],
+
+      "recommendedWeeklyVolume": "10-18 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48 hours",
+
+      "coachingNotes": [
+        "Train both overhead and pushdown variations.",
+        "Lock out under control."
+      ]
+    },
+
+    "BICEPS": {
+
+      "displayName": "Biceps",
+
+      "primaryFunctions": [
+        "Elbow flexion",
+        "Forearm supination"
+      ],
+
+      "movementPatterns": [
+        "ELBOW_FLEXION"
+      ],
+
+      "primaryCompoundExercises": [
+        "Barbell Curl",
+        "EZ Bar Curl"
+      ],
+
+      "primaryIsolationExercises": [
+        "Hammer Curl",
+        "Preacher Curl",
+        "Incline Curl"
+      ],
+
+      "recommendedWeeklyVolume": "10-16 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48 hours",
+
+      "coachingNotes": [
+        "Avoid swinging.",
+        "Use full elbow extension."
+      ]
+    },
+
+    "QUADS": {
+
+      "displayName": "Quadriceps",
+
+      "primaryFunctions": [
+        "Knee extension"
+      ],
+
+      "movementPatterns": [
+        "SQUAT"
+      ],
+
+      "primaryCompoundExercises": [
+        "Back Squat",
+        "Front Squat",
+        "Hack Squat",
+        "Leg Press"
+      ],
+
+      "primaryIsolationExercises": [
+        "Leg Extension"
+      ],
+
+      "recommendedWeeklyVolume": "12-20 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48-72 hours",
+
+      "coachingNotes": [
+        "Prioritize depth while maintaining control.",
+        "Drive through the mid-foot."
+      ]
+    },
+
+    "HAMSTRINGS": {
+
+      "displayName": "Hamstrings",
+
+      "primaryFunctions": [
+        "Hip extension",
+        "Knee flexion"
+      ],
+
+      "movementPatterns": [
+        "HINGE"
+      ],
+
+      "primaryCompoundExercises": [
+        "Romanian Deadlift",
+        "Deadlift"
+      ],
+
+      "primaryIsolationExercises": [
+        "Seated Leg Curl",
+        "Lying Leg Curl",
+        "Nordic Curl"
+      ],
+
+      "recommendedWeeklyVolume": "10-18 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48-72 hours",
+
+      "coachingNotes": [
+        "Control the eccentric.",
+        "Maintain a neutral spine."
+      ]
+    },
+
+    "GLUTES": {
+
+      "displayName": "Glutes",
+
+      "primaryFunctions": [
+        "Hip extension",
+        "Hip abduction",
+        "Hip stabilization"
+      ],
+
+      "movementPatterns": [
+        "HINGE",
+        "LUNGE"
+      ],
+
+      "primaryCompoundExercises": [
+        "Hip Thrust",
+        "Romanian Deadlift",
+        "Bulgarian Split Squat"
+      ],
+
+      "primaryIsolationExercises": [
+        "Cable Kickback",
+        "Glute Bridge"
+      ],
+
+      "recommendedWeeklyVolume": "10-20 hard sets",
+
+      "trainingFrequency": "2 sessions/week",
+
+      "recoveryTime": "48-72 hours",
+
+      "coachingNotes": [
+        "Achieve full hip extension.",
+        "Avoid excessive lumbar extension."
+      ]
+    },
+
+    "CALVES": {
+
+      "displayName": "Calves",
+
+      "primaryFunctions": [
+        "Plantar flexion"
+      ],
+
+      "movementPatterns": [
+        "CALF"
+      ],
+
+      "primaryCompoundExercises": [
+        "Standing Calf Raise",
+        "Leg Press Calf Raise"
+      ],
+
+      "primaryIsolationExercises": [
+        "Seated Calf Raise"
+      ],
+
+      "recommendedWeeklyVolume": "12-20 hard sets",
+
+      "trainingFrequency": "2-4 sessions/week",
+
+      "recoveryTime": "24-48 hours",
+
+      "coachingNotes": [
+        "Pause at full stretch.",
+        "Control every repetition."
+      ]
+    },
+
+    "CORE": {
+
+      "displayName": "Core",
+
+      "primaryFunctions": [
+        "Spinal stability",
+        "Trunk flexion",
+        "Rotation",
+        "Anti-extension"
+      ],
+
+      "movementPatterns": [
+        "CORE_FLEXION",
+        "ANTI_EXTENSION",
+        "ROTATION"
+      ],
+
+      "primaryCompoundExercises": [
+        "Ab Wheel",
+        "Farmer Carry"
+      ],
+
+      "primaryIsolationExercises": [
+        "Cable Crunch",
+        "Hanging Leg Raise",
+        "Pallof Press",
+        "Plank"
+      ],
+
+      "recommendedWeeklyVolume": "8-15 hard sets",
+
+      "trainingFrequency": "2-4 sessions/week",
+
+      "recoveryTime": "24-48 hours",
+
+      "coachingNotes": [
+        "Brace before every repetition.",
+        "Prioritize control over speed."
+      ]
+    }
+  }
+}

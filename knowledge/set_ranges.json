@@ -1,0 +1,198 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "compound": {
+    "BEGINNER": {
+      "STRENGTH": {
+        "recommended": "3",
+        "acceptable": "2-4",
+        "notes": "Emphasize technique and consistent progression."
+      },
+      "HYPERTROPHY": {
+        "recommended": "3",
+        "acceptable": "2-4",
+        "notes": "Moderate volume promotes learning while supporting growth."
+      },
+      "ENDURANCE": {
+        "recommended": "2-3",
+        "acceptable": "2-4",
+        "notes": "Prioritize movement quality."
+      },
+      "WEIGHT_LOSS": {
+        "recommended": "3",
+        "acceptable": "2-4",
+        "notes": "Focus on compound movements for energy expenditure."
+      },
+      "GENERAL_FITNESS": {
+        "recommended": "2-3",
+        "acceptable": "2-4",
+        "notes": "Build consistency before increasing volume."
+      }
+    },
+
+    "INTERMEDIATE": {
+      "STRENGTH": {
+        "recommended": "4-5",
+        "acceptable": "3-6",
+        "notes": "Additional volume supports continued strength gains."
+      },
+      "HYPERTROPHY": {
+        "recommended": "3-5",
+        "acceptable": "3-6",
+        "notes": "Higher volume is generally well tolerated."
+      },
+      "ENDURANCE": {
+        "recommended": "3-4",
+        "acceptable": "2-5",
+        "notes": "Balance fatigue and movement quality."
+      },
+      "WEIGHT_LOSS": {
+        "recommended": "3-4",
+        "acceptable": "3-5",
+        "notes": "Maintain workload while managing fatigue."
+      },
+      "GENERAL_FITNESS": {
+        "recommended": "3",
+        "acceptable": "2-4",
+        "notes": "Balanced weekly workload."
+      }
+    },
+
+    "ADVANCED": {
+      "STRENGTH": {
+        "recommended": "5-6",
+        "acceptable": "4-8",
+        "notes": "Experienced lifters benefit from higher training volume."
+      },
+      "HYPERTROPHY": {
+        "recommended": "4-6",
+        "acceptable": "3-8",
+        "notes": "Volume is the primary hypertrophy driver."
+      },
+      "ENDURANCE": {
+        "recommended": "3-5",
+        "acceptable": "3-6",
+        "notes": "Recovery capacity allows greater workload."
+      },
+      "WEIGHT_LOSS": {
+        "recommended": "4",
+        "acceptable": "3-5",
+        "notes": "Maintain muscle mass with sufficient volume."
+      },
+      "GENERAL_FITNESS": {
+        "recommended": "3-4",
+        "acceptable": "3-5",
+        "notes": "Avoid unnecessary fatigue."
+      }
+    }
+  },
+
+  "isolation": {
+    "BEGINNER": {
+      "recommended": "2",
+      "acceptable": "2-3",
+      "notes": "Isolation work supplements compound lifts."
+    },
+
+    "INTERMEDIATE": {
+      "recommended": "2-3",
+      "acceptable": "2-4",
+      "notes": "Additional isolation supports balanced development."
+    },
+
+    "ADVANCED": {
+      "recommended": "3-4",
+      "acceptable": "2-5",
+      "notes": "Advanced lifters often require more direct muscle volume."
+    }
+  },
+
+  "core": {
+    "BEGINNER": {
+      "recommended": "2",
+      "acceptable": "2-3",
+      "notes": "Focus on proper bracing and control."
+    },
+
+    "INTERMEDIATE": {
+      "recommended": "3",
+      "acceptable": "2-4",
+      "notes": "Progress stability and endurance."
+    },
+
+    "ADVANCED": {
+      "recommended": "3-4",
+      "acceptable": "3-5",
+      "notes": "Increase complexity before excessive volume."
+    }
+  },
+
+  "calves": {
+    "BEGINNER": {
+      "recommended": "2",
+      "acceptable": "2-3",
+      "notes": "Develop movement quality first."
+    },
+
+    "INTERMEDIATE": {
+      "recommended": "3",
+      "acceptable": "2-4",
+      "notes": "Moderate weekly volume."
+    },
+
+    "ADVANCED": {
+      "recommended": "4",
+      "acceptable": "3-5",
+      "notes": "Calves generally tolerate higher frequency and volume."
+    }
+  },
+
+  "carry": {
+    "BEGINNER": {
+      "recommended": "2",
+      "acceptable": "2-3",
+      "notes": "Learn posture and breathing."
+    },
+
+    "INTERMEDIATE": {
+      "recommended": "3",
+      "acceptable": "2-4",
+      "notes": "Increase loading gradually."
+    },
+
+    "ADVANCED": {
+      "recommended": "4",
+      "acceptable": "3-5",
+      "notes": "Heavy carries improve grip and trunk stiffness."
+    }
+  },
+
+  "explosive": {
+    "BEGINNER": {
+      "recommended": "2",
+      "acceptable": "2-3",
+      "notes": "Emphasize technique over volume."
+    },
+
+    "INTERMEDIATE": {
+      "recommended": "3",
+      "acceptable": "2-4",
+      "notes": "Maintain speed throughout every repetition."
+    },
+
+    "ADVANCED": {
+      "recommended": "3-5",
+      "acceptable": "3-6",
+      "notes": "Terminate the set once power output drops."
+    }
+  },
+
+  "generalRules": {
+    "compoundExercises": "Receive the majority of weekly training volume.",
+    "isolationExercises": "Supplement compound movements and address weak points.",
+    "avoidExcessiveVolume": "Increasing sets beyond recovery capacity reduces progress.",
+    "qualityOverQuantity": "Every working set should be performed with intent and proper technique.",
+    "warmupSets": "Warm-up sets are not counted as working sets."
+  }
+}
