@@ -38,7 +38,11 @@ const WHY = [
     },
 ];
 
-const PLAN_KEYWORDS = ['plan', 'schedule', 'program', 'routine', 'days a week', 'split'];
+const PLAN_KEYWORDS = [
+    'plan', 'schedule', 'program', 'routine', 'days a week', 'split',
+    'push pull legs', 'ppl', 'upper lower', 'bro split', 'full body workout'
+];
+
 const isPlanQuery = (q) => PLAN_KEYWORDS.some(kw => q.toLowerCase().includes(kw));
 
 export default function Hero() {
@@ -142,11 +146,16 @@ export default function Hero() {
                             {planResult.plan.map((day) => (
                                 <div key={day.day} className="hero-plan-day">
                                     <h3>Day {day.day} — {day.focus}</h3>
-                                    <div className="hero-result-list">
+                                    <div className="hero-plan-exercise-list">
                                         {day.exercises.map((ex) => (
-                                            <div key={ex.id} className="hero-result-card">
-                                                <h3>{ex.name}</h3>
-                                                <p className="hero-result-meta">{ex.category} &middot; {ex.equipment}</p>
+                                            <div key={ex.id} className="hero-plan-exercise">
+                                                <div className="hero-plan-exercise-header">
+                                                    <h4>{ex.name}</h4>
+                                                    <span className="hero-plan-prescription">
+                                                        {ex.prescription?.sets} sets &times; {ex.prescription?.reps} reps
+                                                    </span>
+                                                </div>
+                                                <p className="hero-plan-how">{ex.howItWorks}</p>
                                             </div>
                                         ))}
                                     </div>

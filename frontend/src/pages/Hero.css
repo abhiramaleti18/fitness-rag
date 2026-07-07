@@ -263,3 +263,42 @@
     font-size: 0.95rem;
     margin-bottom: 0.75rem;
 }
+
+.hero-plan-exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hero-plan-exercise {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+}
+
+.hero-plan-exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.hero-plan-exercise-header h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.hero-plan-prescription {
+    font-size: 0.78rem;
+    color: var(--red);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.hero-plan-how {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}

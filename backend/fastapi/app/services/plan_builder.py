@@ -1,14 +1,17 @@
 import random
 import re
 from app.core.database import exercises_collection
+from app.services.exercise_annotator import annotate_exercise
 
 STRENGTH_CATEGORIES = ["STRENGTH", "POWERLIFTING", "OLYMPIC_WEIGHTLIFTING"]
 
 
-def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set) -> dict | None:
+def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set, excluded_categories: list[str] = None) -> dict | None:
+    allowed_categories = [c for c in STRENGTH_CATEGORIES if not excluded_categories or c not in excluded_categories]
+
     query = {
         "primaryMuscles": slot_def["muscle"],
-        "category": {"$in": STRENGTH_CATEGORIES}
+        "category": {"$in": allowed_categories}
     }
     if slot_def.get("pattern"):
         query["movementPattern"] = slot_def["pattern"]
@@ -20,7 +23,6 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set)
     candidates = list(exercises_collection.find(query, {"_id": 0}))
     candidates = [c for c in candidates if c["name"] not in exclude_names]
 
-    # Apply keyword filtering if this slot targets a sub-muscle (e.g. "lateral raise")
     keywords = slot_def.get("keywords")
     if keywords:
         keyword_matches = [
@@ -29,8 +31,6 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set)
         ]
         if keyword_matches:
             candidates = keyword_matches
-        # if no keyword match exists in the data, fall back to any exercise for that muscle
-        # rather than leaving the slot empty
 
     if not candidates:
         return None
@@ -39,16 +39,19 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set)
     return candidates[0]
 
 
-def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None) -> dict:
+def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None) -> dict:
     selected = []
     seen_names = set()
+
+    print(f"DEBUG DAY: {day_def['label']} | excluded_categories={excluded_categories} | type={type(excluded_categories)}")
 
     for slot_def in day_def["slots"]:
         count = slot_def.get("count", 1)
         for _ in range(count):
-            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names)
+            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names, excluded_categories)
             if exercise:
-                selected.append(exercise)
+                print(f"DEBUG SLOT: {slot_def['muscle']} -> {exercise['name']} (category={exercise.get('category')})")
+                selected.append(annotate_exercise(exercise))
                 seen_names.add(exercise["name"])
 
     return {
@@ -57,8 +60,7 @@ def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = N
         "exercises": selected
     }
 
-
-def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None) -> list[dict]:
+def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None) -> list[dict]:
     from app.services.split_definitions import get_split_by_name, get_split_by_days
 
     split = get_split_by_name(query) or get_split_by_days(days)
@@ -66,7 +68,7 @@ def build_plan(query: str, days: int, equipment_filter: list[str] = None, level:
 
     plan = []
     for i, day_def in enumerate(day_defs):
-        day_result = _build_day(day_def, equipment_filter, level)
+        day_result = _build_day(day_def, equipment_filter, level, excluded_categories)
         day_result["day"] = i + 1
         plan.append(day_result)
 

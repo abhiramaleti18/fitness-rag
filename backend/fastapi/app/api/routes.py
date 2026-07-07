@@ -8,9 +8,12 @@ from app.services.response_formatter import format_response
 from app.core.database import exercises_collection
 from app.core.config import settings
 from app.services.query_classifier import is_plan_request, extract_days, extract_equipment
+from app.services.query_classifier import extract_excluded_categories
 from app.services.plan_builder import build_plan
-from app.services.query_classifier import is_plan_request, extract_days, extract_equipment, is_query_too_vague
-
+from app.services.query_classifier import (
+    is_plan_request, extract_days, extract_equipment,
+    is_query_too_vague, extract_excluded_categories, map_user_equipment_to_filter
+)
 router = APIRouter()
 
 
@@ -45,6 +48,7 @@ class PlanRequest(BaseModel):
     userContext: UserContext | None = None
 
 DEFAULT_EXCLUDED_CATEGORIES = ["STRETCHING", "CARDIO", "PLYOMETRICS"]
+
 
 @router.get("/health")
 def health_check():
@@ -82,7 +86,12 @@ def recommend(request: RecommendRequest):
                 "needsClarification": True
             }
 
-        results = vector_search(request.query, top_k=request.top_k, exclude_categories=DEFAULT_EXCLUDED_CATEGORIES)
+        excluded = list(DEFAULT_EXCLUDED_CATEGORIES) + extract_excluded_categories(request.query)
+        # Always exclude Olympic lifts from general recommendations unless explicitly requested
+        if "olympic" not in request.query.lower():
+            excluded.append("OLYMPIC_WEIGHTLIFTING")
+
+        results = vector_search(request.query, top_k=request.top_k, exclude_categories=excluded)
         context = build_context(results)
         messages = build_prompt(request.query, context, request.userContext)
         answer = get_completion(messages)
@@ -121,17 +130,18 @@ def plan(request: PlanRequest):
     try:
         days = extract_days(request.query)
         equipment_filter = extract_equipment(request.query)
+        excluded_categories = extract_excluded_categories(request.query)
 
-        # Fall back to the user's actual equipment access if the query didn't specify
         if not equipment_filter and request.userContext and request.userContext.equipmentAccess:
-            equipment_filter = [e.upper().replace(" ", "_") for e in request.userContext.equipmentAccess]
+            equipment_filter = map_user_equipment_to_filter(request.userContext.equipmentAccess)
 
         level = request.userContext.experienceLevel if request.userContext else None
-        plan_days = build_plan(request.query, days, equipment_filter, level)
+        plan_days = build_plan(request.query, days, equipment_filter, level, excluded_categories)
 
         return {
             "days": len(plan_days),
             "equipmentFilter": equipment_filter,
+            "excludedCategories": excluded_categories,
             "plan": plan_days
         }
     except Exception as e:

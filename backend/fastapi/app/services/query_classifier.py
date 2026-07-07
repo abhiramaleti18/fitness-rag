@@ -11,6 +11,14 @@ GOAL_KEYWORDS = [
     "strength", "hypertrophy", "muscle", "endurance", "fat loss", "tone", "bulk", "cut"
 ]
 
+EQUIPMENT_MAP = {
+    "BODYWEIGHT": ["BODY_WEIGHT", "NONE"],
+    "DUMBBELLS": ["DUMBBELL"],
+    "BARBELL": ["BARBELL"],
+    "RESISTANCE BANDS": ["RESISTANCE_BANDS"],
+    "FULL GYM": None,  # None means "no restriction" — full gym access implies everything is available
+}
+
 def is_plan_request(query: str) -> bool:
     q = query.lower()
     return any(kw in q for kw in PLAN_KEYWORDS)
@@ -49,3 +57,33 @@ def is_query_too_vague(query: str) -> bool:
     is_short_generic = len(q.split()) <= 6 and not has_muscle and not has_goal
 
     return is_short_generic and not has_muscle and not has_goal
+
+def extract_excluded_categories(query: str) -> list[str]:
+    q = query.lower()
+    excluded = []
+    if any(phrase in q for phrase in ["no olympic", "no olympic lifts", "without olympic", "avoid olympic"]):
+        excluded.append("OLYMPIC_WEIGHTLIFTING")
+    if any(phrase in q for phrase in ["no powerlifting", "avoid powerlifting"]):
+        excluded.append("POWERLIFTING")
+    return excluded
+
+def map_user_equipment_to_filter(equipment_access: list[str]) -> list[str] | None:
+    """
+    Converts a user's equipmentAccess profile list into a DB-matching filter.
+    If the user has 'full gym' access (or no specific list), no filtering is applied.
+    """
+    if not equipment_access:
+        return None
+
+    normalized = [e.strip().upper() for e in equipment_access]
+
+    if "FULL GYM" in normalized:
+        return None  # unrestricted — they have access to everything
+
+    allowed = set()
+    for item in normalized:
+        mapped = EQUIPMENT_MAP.get(item)
+        if mapped:
+            allowed.update(mapped)
+
+    return list(allowed) if allowed else None
