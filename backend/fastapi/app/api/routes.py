@@ -24,13 +24,6 @@ class SearchRequest(BaseModel):
     top_k: int | None = None
 
 
-class RecommendRequest(BaseModel):
-    query: str
-    top_k: int | None = None
-
-class PlanRequest(BaseModel):
-    query: str
-
 class UserContext(BaseModel):
     experienceLevel: str | None = None
     equipmentAccess: list[str] | None = None
@@ -94,7 +87,11 @@ def recommend(request: RecommendRequest):
         if "olympic" not in request.query.lower():
             excluded.append("OLYMPIC_WEIGHTLIFTING")
 
-        results = vector_search(request.query, top_k=request.top_k, exclude_categories=excluded)
+        equipment_filter = None
+        if request.userContext and request.userContext.equipmentAccess:
+            equipment_filter = map_user_equipment_to_filter(request.userContext.equipmentAccess)
+
+        results = vector_search(request.query, top_k=request.top_k, exclude_categories=excluded, equipment_filter=equipment_filter)
         context = build_context(results)
         messages = build_prompt(request.query, context, request.userContext)
         answer = get_completion(messages)

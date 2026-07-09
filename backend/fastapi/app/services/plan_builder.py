@@ -84,7 +84,7 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
     return candidates[0]
 
 
-def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None) -> dict:
+def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, goal: str = None) -> dict:
     selected = []
     seen_names = set()
 
@@ -93,7 +93,7 @@ def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = N
         for _ in range(count):
             exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names, excluded_categories, avoid_list, prefer_list)
             if exercise:
-                selected.append(annotate_exercise(exercise))
+                selected.append(annotate_exercise(exercise, goal=goal, level=level))
                 seen_names.add(exercise["name"])
 
     return {
@@ -103,7 +103,7 @@ def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = N
     }
 
 
-def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None) -> list[dict]:
+def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, goal: str = None) -> list[dict]:
     from app.services.split_definitions import get_split_by_name, get_split_by_days
 
     split = get_split_by_name(query) or get_split_by_days(days)
@@ -111,7 +111,7 @@ def build_plan(query: str, days: int, equipment_filter: list[str] = None, level:
 
     plan = []
     for i, day_def in enumerate(day_defs):
-        day_result = _build_day(day_def, equipment_filter, level, excluded_categories, avoid_list, prefer_list)
+        day_result = _build_day(day_def, equipment_filter, level, excluded_categories, avoid_list, prefer_list, goal)
         day_result["day"] = i + 1
         plan.append(day_result)
 

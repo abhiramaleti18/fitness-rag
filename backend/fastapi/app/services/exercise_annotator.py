@@ -1,18 +1,8 @@
-# Assigns sets/reps and a plain-language "how this works" explanation
-# based on the exercise's own movementPattern and category — deterministic,
-# not LLM-generated, so it can never vary or invent something wrong.
+# Assigns sets/reps/rest and a plain-language "how this works" explanation
+# based on the exercise's own movementPattern/mechanic plus the user's goal
+# and experience level — grounded in the knowledge base JSONs, not invented.
 
-REP_SCHEMES = {
-    # Compound, multi-joint movements — lower reps, more sets, strength focus
-    "compound": {"sets": "4", "reps": "5-8", "rest": "90-120 sec"},
-    # Isolation, single-joint movements — higher reps, hypertrophy focus
-    "isolation": {"sets": "3", "reps": "10-15", "rest": "45-60 sec"},
-}
-
-COMPOUND_PATTERNS = {
-    "HORIZONTAL_PUSH", "HORIZONTAL_PULL", "VERTICAL_PUSH", "VERTICAL_PULL",
-    "SQUAT", "HINGE"
-}
+from app.services.prescription_service import get_prescription
 
 MOVEMENT_EXPLANATIONS = {
     "HORIZONTAL_PUSH": "A pressing movement performed forward from the chest — builds pushing strength and primarily stimulates the chest, front shoulders, and triceps through a straight-line pressing motion.",
@@ -29,16 +19,17 @@ MOVEMENT_EXPLANATIONS = {
 }
 
 
-def annotate_exercise(exercise: dict) -> dict:
-    """Attach deterministic sets/reps/rest and a plain-language explanation to an exercise dict."""
+def annotate_exercise(exercise: dict, goal: str = None, level: str = None) -> dict:
+    """Attach knowledge-base-grounded sets/reps/rest and a plain-language
+    explanation to an exercise dict, tuned to the user's goal and level."""
     pattern = exercise.get("movementPattern", "UNKNOWN")
-    is_compound = pattern in COMPOUND_PATTERNS
-    scheme = REP_SCHEMES["compound"] if is_compound else REP_SCHEMES["isolation"]
+
+    prescription = get_prescription(exercise, goal=goal, level=level)
 
     exercise["prescription"] = {
-        "sets": scheme["sets"],
-        "reps": scheme["reps"],
-        "rest": scheme["rest"]
+        "sets": prescription["sets"],
+        "reps": prescription["reps"],
+        "rest": prescription["rest"]
     }
     exercise["howItWorks"] = MOVEMENT_EXPLANATIONS.get(
         pattern,
