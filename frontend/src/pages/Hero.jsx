@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import SearchBar from '../components/SearchBar';
@@ -40,16 +40,36 @@ const WHY = [
 
 const PLAN_KEYWORDS = [
     'plan', 'schedule', 'program', 'routine', 'days a week', 'split',
-    'push pull legs', 'ppl', 'upper lower', 'bro split', 'full body workout'
+    'push pull legs', 'ppl', 'upper lower', 'bro split', 'full body workout',
+    'workout'
 ];
 
-const isPlanQuery = (q) => PLAN_KEYWORDS.some(kw => q.toLowerCase().includes(kw));
+const PLAN_DAY_PATTERN = /\d+[\s-]*day/i;
+
+const isPlanQuery = (q) => PLAN_KEYWORDS.some(kw => q.toLowerCase().includes(kw)) || PLAN_DAY_PATTERN.test(q);
 
 export default function Hero() {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
     const [planResult, setPlanResult] = useState(null);
     const [error, setError] = useState('');
+    const [userContext, setUserContext] = useState(null);
+
+    useEffect(() => {
+        if (!localStorage.getItem('token')) return;
+        api.get('/auth/me')
+            .then(res => {
+                const u = res.data.user;
+                setUserContext({
+                    experienceLevel: u.experienceLevel,
+                    equipmentAccess: u.equipmentAccess,
+                    fitnessGoals: u.fitnessGoals,
+                    weight: u.weight,
+                    injuries: u.injuries
+                });
+            })
+            .catch(err => console.error('Failed to load profile for AI context', err));
+    }, []);
 
     const runQuery = async (query) => {
         if (!localStorage.getItem('token')) {
@@ -63,10 +83,10 @@ export default function Hero() {
 
         try {
             if (isPlanQuery(query)) {
-                const res = await api.post('/ai/plan', { query });
+                const res = await api.post('/ai/plan', { query, userContext });
                 setPlanResult(res.data);
             } else {
-                const res = await api.post('/ai/recommend', { query, top_k: 5 });
+                const res = await api.post('/ai/recommend', { query, top_k: 5, userContext });
                 setResult(res.data);
             }
         } catch (err) {

@@ -3,11 +3,21 @@ import re
 from app.core.database import exercises_collection
 from app.services.exercise_annotator import annotate_exercise
 from app.services.exercise_tiers import get_tiers_for_role, is_fundamental
+from app.services.home_exercise_tiers import get_home_tiers
 
 STRENGTH_CATEGORIES = ["STRENGTH", "POWERLIFTING", "OLYMPIC_WEIGHTLIFTING"]
 
-LEVEL_ORDER = ["beginner", "intermediate", "expert"]
+LEVEL_ORDER = ["beginner", "intermediate", "advanced"]
 
+HOME_EQUIPMENT_SET = {"BODY_WEIGHT", "NONE"}
+
+
+def _is_home_workout(equipment_filter: list[str] | None) -> bool:
+    """True only when the equipment filter is bodyweight-only — not for
+    dumbbell/barbell/etc. requests, and not for unrestricted full-gym plans."""
+    if not equipment_filter:
+        return False
+    return set(e.upper() for e in equipment_filter) <= HOME_EQUIPMENT_SET   
 
 def _allowed_levels(user_level: str) -> list[str] | None:
     """A user can do their own level and everything easier — never excludes foundational/easier lifts."""
@@ -17,8 +27,9 @@ def _allowed_levels(user_level: str) -> list[str] | None:
     return [lvl.upper() for lvl in LEVEL_ORDER[:max_index + 1]]
 
 
-def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None) -> dict | None:
+def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, has_pull_up_bar: bool = False) -> dict | None:
     allowed_categories = [c for c in STRENGTH_CATEGORIES if not excluded_categories or c not in excluded_categories]
+    home_workout = _is_home_workout(equipment_filter)
 
     query = {
         "primaryMuscles": slot_def["muscle"],
@@ -28,6 +39,8 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
         query["movementPattern"] = slot_def["pattern"]
     if equipment_filter:
         query["equipment"] = {"$in": [e.upper() for e in equipment_filter]}
+    if home_workout:
+        query["homeGymCompatible"] = True
 
     allowed_levels = _allowed_levels(level)
     if allowed_levels:
@@ -52,7 +65,10 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
 
     # --- Tier-based ranking (real coaching priority) ---
     role = slot_def.get("role")
-    tiers = get_tiers_for_role(role) if role else None
+    if home_workout:
+        tiers = get_home_tiers(has_pull_up_bar).get(role) if role else None
+    else:
+        tiers = get_tiers_for_role(role) if role else None
 
     if tiers:
         for tier_key in ["tier1", "tier2", "tier3"]:
@@ -84,14 +100,46 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
     return candidates[0]
 
 
-def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, goal: str = None) -> dict:
+def _get_warmup(day_def: dict, equipment_filter: list[str] = None, count: int = 2) -> list[dict]:
+    """Pulls 2 relevant dynamic stretches for the day's target muscles.
+    Uses homeGymCompatible when this is a home/bodyweight-only plan, same
+    ground truth used for the main lifts."""
+    home_workout = _is_home_workout(equipment_filter)
+    muscles = list({slot_def["muscle"] for slot_def in day_def["slots"]})
+
+    query = {"category": "STRETCHING", "primaryMuscles": {"$in": muscles}}
+    if home_workout:
+        query["homeGymCompatible"] = True
+
+    candidates = list(exercises_collection.find(query, {"_id": 0}))
+    random.shuffle(candidates)
+
+    picks = []
+    seen = set()
+    for c in candidates:
+        if c["name"] in seen:
+            continue
+        picks.append({
+            "name": c["name"],
+            "targetMuscle": c["primaryMuscles"][0] if c.get("primaryMuscles") else None,
+            "instructions": c.get("instructions", []),
+            "holdTime": "20-30 seconds per side"
+        })
+        seen.add(c["name"])
+        if len(picks) >= count:
+            break
+
+    return picks
+
+
+def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, goal: str = None, has_pull_up_bar: bool = False) -> dict:
     selected = []
     seen_names = set()
 
     for slot_def in day_def["slots"]:
         count = slot_def.get("count", 1)
         for _ in range(count):
-            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names, excluded_categories, avoid_list, prefer_list)
+            exercise = _fetch_for_slot(slot_def, equipment_filter, level, seen_names, excluded_categories, avoid_list, prefer_list, has_pull_up_bar)
             if exercise:
                 selected.append(annotate_exercise(exercise, goal=goal, level=level))
                 seen_names.add(exercise["name"])
@@ -99,11 +147,12 @@ def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = N
     return {
         "day": None,
         "focus": day_def["label"],
+        "warmup": _get_warmup(day_def, equipment_filter),
         "exercises": selected
     }
 
 
-def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, goal: str = None) -> list[dict]:
+def build_plan(query: str, days: int, equipment_filter: list[str] = None, level: str = None, excluded_categories: list[str] = None, avoid_list: set = None, prefer_list: set = None, goal: str = None, has_pull_up_bar: bool = False) -> list[dict]:
     from app.services.split_definitions import get_split_by_name, get_split_by_days
 
     split = get_split_by_name(query) or get_split_by_days(days)
@@ -111,7 +160,7 @@ def build_plan(query: str, days: int, equipment_filter: list[str] = None, level:
 
     plan = []
     for i, day_def in enumerate(day_defs):
-        day_result = _build_day(day_def, equipment_filter, level, excluded_categories, avoid_list, prefer_list, goal)
+        day_result = _build_day(day_def, equipment_filter, level, excluded_categories, avoid_list, prefer_list, goal, has_pull_up_bar)
         day_result["day"] = i + 1
         plan.append(day_result)
 

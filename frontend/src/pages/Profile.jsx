@@ -6,7 +6,7 @@ import ConfirmModal from '../components/ConfirmModal';
 import ConsistencyHeatmap from '../components/ConsistencyHeatmap';
 
 const GOALS = ['muscle gain', 'strength', 'fat loss', 'endurance', 'mobility'];
-const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'full gym'];
+const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'pull-up bar', 'full gym'];
 
 export default function Profile() {
     const [editing, setEditing] = useState(false);

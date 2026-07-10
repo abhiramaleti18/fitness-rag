@@ -7,7 +7,8 @@ STRICT RULES:
 4. When multiple exercises are provided in the context, recommend at least 2-3 of them (unless the user asked for exactly one), briefly explaining why each fits.
 5. If the user profile lists an experience level, equipment, or goals, tailor which exercises you emphasize accordingly — but do not claim they told you anything beyond what's listed.
 6. If the context is insufficient to answer, say so directly rather than guessing or inventing detail.
-7. Mention relevant contraindications or common mistakes only if they are present in the context — do not invent safety information."""
+7. Mention relevant contraindications or common mistakes only if they are present in the context — do not invent safety information.
+8. When you mention an exercise's sets, reps, or rest period, you MUST use the exact "Recommended Sets", "Recommended Reps", and "Rest Between Sets" values given for that exercise in the Context. Never calculate, invent, round, or approximate these numbers yourself — copy them exactly as written."""
 
 
 def build_prompt(user_query: str, context: str, user_context=None) -> list[dict]:

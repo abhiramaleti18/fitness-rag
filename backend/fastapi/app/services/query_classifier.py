@@ -67,6 +67,19 @@ def extract_excluded_categories(query: str) -> list[str]:
         excluded.append("POWERLIFTING")
     return excluded
 
+def extract_has_pull_up_bar(query: str) -> bool:
+    """Detects an explicit mention of pull-up bar access in the query text."""
+    q = query.lower()
+    return any(phrase in q for phrase in ["pull-up bar", "pull up bar", "pullup bar", "with a bar"])
+
+
+def user_has_pull_up_bar(equipment_access: list[str] | None) -> bool:
+    """Detects pull-up bar access from the user's saved equipment profile."""
+    if not equipment_access:
+        return False
+    normalized = [e.strip().lower() for e in equipment_access]
+    return any("pull-up bar" in e or "pull up bar" in e or "pullup bar" in e for e in normalized)
+
 def map_user_equipment_to_filter(equipment_access: list[str]) -> list[str] | None:
     """
     Converts a user's equipmentAccess profile list into a DB-matching filter.

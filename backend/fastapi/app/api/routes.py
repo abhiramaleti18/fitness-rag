@@ -12,7 +12,8 @@ from app.services.query_classifier import extract_excluded_categories
 from app.services.plan_builder import build_plan
 from app.services.query_classifier import (
     is_plan_request, extract_days, extract_equipment,
-    is_query_too_vague, extract_excluded_categories, map_user_equipment_to_filter
+    is_query_too_vague, extract_excluded_categories, map_user_equipment_to_filter,
+    extract_has_pull_up_bar, user_has_pull_up_bar
 )
 from app.services.constraint_service import get_active_constraints, get_avoid_list, get_prefer_list, get_coaching_notes
 
@@ -91,8 +92,11 @@ def recommend(request: RecommendRequest):
         if request.userContext and request.userContext.equipmentAccess:
             equipment_filter = map_user_equipment_to_filter(request.userContext.equipmentAccess)
 
+        primary_goal = request.userContext.fitnessGoals[0] if (request.userContext and request.userContext.fitnessGoals) else None
+        level = request.userContext.experienceLevel if request.userContext else None
+
         results = vector_search(request.query, top_k=request.top_k, exclude_categories=excluded, equipment_filter=equipment_filter)
-        context = build_context(results)
+        context = build_context(results, goal=primary_goal, level=level)
         messages = build_prompt(request.query, context, request.userContext)
         answer = get_completion(messages)
         return format_response(answer, results)
@@ -137,13 +141,19 @@ def plan(request: PlanRequest):
 
         level = request.userContext.experienceLevel if request.userContext else None
 
+        has_pull_up_bar = extract_has_pull_up_bar(request.query) or user_has_pull_up_bar(
+            request.userContext.equipmentAccess if request.userContext else None
+        )
+
         user_injuries = getattr(request.userContext, "injuries", None) if request.userContext else None
         active_constraints = get_active_constraints(request.query, user_injuries)
         avoid_list = get_avoid_list(active_constraints)
         prefer_list = get_prefer_list(active_constraints)
         coaching_notes = get_coaching_notes(active_constraints)
 
-        plan_days = build_plan(request.query, days, equipment_filter, level, excluded_categories, avoid_list, prefer_list)
+        primary_goal = request.userContext.fitnessGoals[0] if (request.userContext and request.userContext.fitnessGoals) else None
+
+        plan_days = build_plan(request.query, days, equipment_filter, level, excluded_categories, avoid_list, prefer_list, goal=primary_goal, has_pull_up_bar=has_pull_up_bar)
 
         return {
             "days": len(plan_days),
