@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import SearchBar from '../components/SearchBar';
 import api from '../api/api';
+import PlanDayCard from '../components/PlanDayCard';
 import './Hero.css';
 
 const PILLS = [
@@ -48,12 +49,24 @@ const PLAN_DAY_PATTERN = /\d+[\s-]*day/i;
 
 const isPlanQuery = (q) => PLAN_KEYWORDS.some(kw => q.toLowerCase().includes(kw)) || PLAN_DAY_PATTERN.test(q);
 
+const deriveSplitName = (q) => {
+    const cleaned = q.replace(/\b\d+[\s-]*day\b/gi, '').replace(/\bwith no equipment\b/gi, '').trim();
+    const words = cleaned.split(/\s+/).slice(0, 6);
+    const title = words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    return title || 'My Workout Split';
+};
+
 export default function Hero() {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
     const [planResult, setPlanResult] = useState(null);
     const [error, setError] = useState('');
     const [userContext, setUserContext] = useState(null);
+    const [lastQuery, setLastQuery] = useState('');
+    const [savingSplit, setSavingSplit] = useState(false);
+    const [splitName, setSplitName] = useState('');
+    const [showSaveForm, setShowSaveForm] = useState(false);
+    const [saveMessage, setSaveMessage] = useState('');
 
     useEffect(() => {
         if (!localStorage.getItem('token')) return;
@@ -80,11 +93,15 @@ export default function Hero() {
         setError('');
         setResult(null);
         setPlanResult(null);
+        setShowSaveForm(false);
+        setSaveMessage('');
+        setLastQuery(query);
 
         try {
             if (isPlanQuery(query)) {
                 const res = await api.post('/ai/plan', { query, userContext });
                 setPlanResult(res.data);
+                setSplitName(deriveSplitName(query));
             } else {
                 const res = await api.post('/ai/recommend', { query, top_k: 5, userContext });
                 setResult(res.data);
@@ -93,6 +110,39 @@ export default function Hero() {
             setError(err.response?.data?.message || 'Something went wrong. Try again.');
         } finally {
             setLoading(false);
+        }
+    };
+
+    const saveSplit = async () => {
+        if (!splitName.trim() || !planResult) return;
+        setSavingSplit(true);
+        setSaveMessage('');
+
+        try {
+            const days = planResult.plan.map((day) => ({
+                dayNumber: day.day,
+                focus: day.focus,
+                warmup: day.warmup || [],
+                exercises: day.exercises.map((ex) => ({
+                    exerciseName: ex.name,
+                    prescription: ex.prescription,
+                    howItWorks: ex.howItWorks,
+                    movementPattern: ex.movementPattern
+                }))
+            }));
+
+            await api.post('/splits', {
+                name: splitName.trim(),
+                sourceQuery: lastQuery,
+                days
+            });
+
+            setSaveMessage('Saved! View it in My Workout Splits.');
+            setShowSaveForm(false);
+        } catch (err) {
+            setSaveMessage(err.response?.data?.message || 'Failed to save split. Try again.');
+        } finally {
+            setSavingSplit(false);
         }
     };
 
@@ -164,23 +214,50 @@ export default function Hero() {
                         <div className="hero-result">
                             <p className="hero-plan-meta">{planResult.days}-day plan{planResult.equipmentFilter ? ' · bodyweight/home-friendly' : ''}</p>
                             {planResult.plan.map((day) => (
-                                <div key={day.day} className="hero-plan-day">
-                                    <h3>Day {day.day} — {day.focus}</h3>
-                                    <div className="hero-plan-exercise-list">
-                                        {day.exercises.map((ex) => (
-                                            <div key={ex.id} className="hero-plan-exercise">
-                                                <div className="hero-plan-exercise-header">
-                                                    <h4>{ex.name}</h4>
-                                                    <span className="hero-plan-prescription">
-                                                        {ex.prescription?.sets} sets &times; {ex.prescription?.reps} reps
-                                                    </span>
-                                                </div>
-                                                <p className="hero-plan-how">{ex.howItWorks}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                <PlanDayCard
+                                    key={day.day}
+                                    dayNumber={day.day}
+                                    focus={day.focus}
+                                    warmup={day.warmup}
+                                    exercises={day.exercises}
+                                />
                             ))}
+
+                            <div className="hero-save-split">
+                                {!showSaveForm && !saveMessage && (
+                                    <button className="hero-save-split-btn" onClick={() => setShowSaveForm(true)}>
+                                        Save as a new workout split
+                                    </button>
+                                )}
+
+                                {showSaveForm && (
+                                    <div className="hero-save-split-form">
+                                        <input
+                                            type="text"
+                                            value={splitName}
+                                            onChange={(e) => setSplitName(e.target.value)}
+                                            placeholder="Name this split"
+                                            className="hero-save-split-input"
+                                        />
+                                        <button
+                                            className="hero-save-split-btn"
+                                            onClick={saveSplit}
+                                            disabled={savingSplit || !splitName.trim()}
+                                        >
+                                            {savingSplit ? 'Saving...' : 'Save'}
+                                        </button>
+                                        <button
+                                            className="hero-save-split-cancel"
+                                            onClick={() => setShowSaveForm(false)}
+                                            disabled={savingSplit}
+                                        >
+                                            Cancel
+                                        </button>
+                                    </div>
+                                )}
+
+                                {saveMessage && <p className="hero-save-split-message">{saveMessage}</p>}
+                            </div>
                         </div>
                     )}
                     {!result && !planResult && !loading && (

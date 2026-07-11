@@ -1,0 +1,84 @@
+.plan-day-card {
+    margin-bottom: 1.75rem;
+}
+
+.plan-day-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.plan-day-warmup {
+    background: var(--surface-raised);
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1.2rem;
+    margin-bottom: 0.9rem;
+}
+
+.plan-day-warmup-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.plan-day-warmup-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+}
+
+.plan-day-warmup-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+}
+
+.plan-day-warmup-name {
+    color: var(--text);
+}
+
+.plan-day-warmup-hold {
+    color: var(--text-muted);
+}
+
+.plan-day-exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.plan-day-exercise {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+}
+
+.plan-day-exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.plan-day-exercise-header h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.plan-day-prescription {
+    font-size: 0.78rem;
+    color: var(--red);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.plan-day-how {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}

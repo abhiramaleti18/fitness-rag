@@ -1,21 +1,54 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ConfirmModal from '../components/ConfirmModal';
 import api from '../api/api';
 import './Logs.css';
 
 function emptyExercise() {
-    return { exerciseName: '', sets: [{ setNumber: 1, reps: '', weight: '' }], notes: '' };
+    return { exerciseName: '', sets: [{ setNumber: 1, reps: '', weight: '', repsHint: '' }], notes: '' };
+}
+
+function prefillFromSplitDay(splitExercises) {
+    return splitExercises.map(ex => {
+        const setCount = parseInt(ex.prescription?.sets, 10) || 1;
+        const repsHint = ex.prescription?.reps || '';
+        return {
+            exerciseName: ex.exerciseName,
+            notes: '',
+            sets: Array.from({ length: setCount }, (_, i) => ({
+                setNumber: i + 1,
+                reps: '',
+                weight: '',
+                repsHint
+            }))
+        };
+    });
 }
 
 export default function Logs() {
+    const location = useLocation();
     const [logs, setLogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
     const [dayLabel, setDayLabel] = useState('');
     const [date, setDate] = useState(() => new Date().toISOString().split('T')[0]);
-    const [exercises, setExercises] = useState([emptyExercise()]);
+    const [exercises, setExercises] = useState(() => {
+        if (location.state?.exercises?.length) {
+            return prefillFromSplitDay(location.state.exercises);
+        }
+        return [emptyExercise()];
+    });
+
+    useEffect(() => {
+        if (location.state?.dayLabel) {
+            setDayLabel(location.state.dayLabel);
+        }
+        if (location.state) {
+            window.history.replaceState({}, document.title);
+        }
+    }, []);
     const [saving, setSaving] = useState(false);
     const [saveError, setSaveError] = useState('');
 
@@ -203,7 +236,7 @@ export default function Logs() {
                                         <span className="logs-set-number">Set {setIndex + 1}</span>
                                         <input
                                             type="number"
-                                            placeholder="Reps"
+                                            placeholder={set.repsHint ? `Reps (target: ${set.repsHint})` : 'Reps'}
                                             value={set.reps}
                                             onChange={(e) => updateSet(exIndex, setIndex, 'reps', e.target.value)}
                                         />

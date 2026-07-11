@@ -1,0 +1,690 @@
+[
+  {
+    "id": "Standard_Push-Up",
+    "name": "Standard Push-Up",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "BEGINNER",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "CHEST"
+    ],
+    "secondaryMuscles": [
+      "TRICEPS",
+      "SHOULDERS",
+      "ABDOMINALS"
+    ],
+    "instructions": [
+      "Start in a high plank with hands just outside shoulder width, body in a straight line from head to heels.",
+      "Lower your chest toward the floor by bending your elbows to roughly 45 degrees from your torso.",
+      "Stop when your chest is a few inches from the floor.",
+      "Press back up to full arm extension.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "HORIZONTAL_PUSH",
+    "movementPatternDescription": "The foundational bodyweight pressing movement \u2014 hands under shoulders, body in a straight line.",
+    "goalTags": [
+      "HYPERTROPHY",
+      "GENERAL_FITNESS",
+      "ENDURANCE"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 3,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "BEGINNER",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [],
+    "coachingCues": [
+      "Keep your core braced the whole rep.",
+      "Don't let hips sag or pike up.",
+      "Full lockout at the top."
+    ],
+    "commonMistakes": [
+      "Flaring elbows straight out to the sides",
+      "Sagging hips",
+      "Partial range of motion"
+    ],
+    "alternatives": [
+      "Knee Push-Up",
+      "Wide Grip Push-Up"
+    ],
+    "progressions": [
+      "Diamond Push-Up",
+      "Deficit Push-Up"
+    ],
+    "regressions": [
+      "Knee Push-Up",
+      "Incline Push-Up"
+    ]
+  },
+  {
+    "id": "Diamond_Push-Up",
+    "name": "Diamond Push-Up",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "INTERMEDIATE",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "TRICEPS"
+    ],
+    "secondaryMuscles": [
+      "CHEST",
+      "SHOULDERS"
+    ],
+    "instructions": [
+      "Set up in a push-up position with hands close together under your chest, thumbs and index fingers forming a diamond shape.",
+      "Keep elbows tracking close to your body as you lower your chest toward your hands.",
+      "Press back up to full extension, squeezing the triceps at the top.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "HORIZONTAL_PUSH",
+    "movementPatternDescription": "A close-grip push-up with hands forming a diamond shape, shifting emphasis onto the triceps.",
+    "goalTags": [
+      "HYPERTROPHY",
+      "STRENGTH"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 4,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "INTERMEDIATE",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [],
+    "coachingCues": [
+      "Keep elbows tucked close, not flared.",
+      "Keep core braced, avoid sagging hips."
+    ],
+    "commonMistakes": [
+      "Hands too far forward",
+      "Flaring elbows out"
+    ],
+    "alternatives": [
+      "Close Grip Push-Up"
+    ],
+    "progressions": [
+      "Archer Push-Up"
+    ],
+    "regressions": [
+      "Standard Push-Up",
+      "Knee Push-Up"
+    ]
+  },
+  {
+    "id": "Knee_Push-Up",
+    "name": "Knee Push-Up",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "BEGINNER",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "CHEST"
+    ],
+    "secondaryMuscles": [
+      "TRICEPS",
+      "SHOULDERS"
+    ],
+    "instructions": [
+      "Kneel on a mat or soft surface, hands under shoulders, body in a straight line from head to knees.",
+      "Lower your chest toward the floor by bending your elbows.",
+      "Press back up to full arm extension.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "HORIZONTAL_PUSH",
+    "movementPatternDescription": "A push-up performed from the knees instead of the toes, reducing the load for beginners building toward a full push-up.",
+    "goalTags": [
+      "GENERAL_FITNESS"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 2,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "BEGINNER",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [],
+    "coachingCues": [
+      "Keep a straight line from head to knees, don't let hips sag.",
+      "Control the descent."
+    ],
+    "commonMistakes": [
+      "Letting hips sag or pike up",
+      "Partial range of motion"
+    ],
+    "alternatives": [
+      "Incline Push-Up"
+    ],
+    "progressions": [
+      "Standard Push-Up"
+    ],
+    "regressions": []
+  },
+  {
+    "id": "Pike_Push-Up",
+    "name": "Pike Push-Up",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "INTERMEDIATE",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "SHOULDERS"
+    ],
+    "secondaryMuscles": [
+      "TRICEPS"
+    ],
+    "instructions": [
+      "Start in a downward-dog-like position: hands and feet on the floor, hips raised high, forming an inverted V.",
+      "Bend your elbows to lower the top of your head toward the floor between your hands.",
+      "Press back up to the starting position, straightening your arms.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "VERTICAL_PUSH",
+    "movementPatternDescription": "A push-up performed with hips raised high, angling the torso closer to vertical to bias the shoulders over the chest.",
+    "goalTags": [
+      "STRENGTH",
+      "HYPERTROPHY"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 3,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "INTERMEDIATE",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [],
+    "coachingCues": [
+      "Keep hips high throughout.",
+      "Keep elbows tracking forward, not flared.",
+      "Look slightly forward, not straight down."
+    ],
+    "commonMistakes": [
+      "Letting hips drop toward the floor",
+      "Flaring elbows too wide"
+    ],
+    "alternatives": [
+      "Elevated Pike Push-Up",
+      "Box Pike Push-Up"
+    ],
+    "progressions": [
+      "Elevated Pike Push-Up",
+      "Wall Handstand Push-Up"
+    ],
+    "regressions": [
+      "Incline Pike Push-Up"
+    ]
+  },
+  {
+    "id": "Split_Squat",
+    "name": "Split Squat",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "BEGINNER",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "QUADRICEPS"
+    ],
+    "secondaryMuscles": [
+      "GLUTES",
+      "HAMSTRINGS"
+    ],
+    "instructions": [
+      "Stand in a staggered stance, one foot forward and one foot back, both feet planted on the floor.",
+      "Lower your body straight down by bending both knees until your rear knee nearly touches the floor.",
+      "Push through your front heel to return to the starting position.",
+      "Complete all repetitions on one side before switching legs."
+    ],
+    "images": [],
+    "movementPattern": "SQUAT",
+    "movementPatternDescription": "A stationary lunge \u2014 both feet planted in a staggered stance throughout the set, building single-leg strength and balance.",
+    "goalTags": [
+      "STRENGTH",
+      "HYPERTROPHY",
+      "GENERAL_FITNESS"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 3,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "BEGINNER",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [
+      "KNEE_PAIN"
+    ],
+    "coachingCues": [
+      "Keep your torso upright.",
+      "Keep most of your weight on the front leg.",
+      "Front knee should track over your toes, not cave inward."
+    ],
+    "commonMistakes": [
+      "Taking too short or too long a stance",
+      "Letting the front knee cave inward"
+    ],
+    "alternatives": [
+      "Bulgarian Split Squat",
+      "Bodyweight Squat"
+    ],
+    "progressions": [
+      "Bulgarian Split Squat"
+    ],
+    "regressions": [
+      "Bodyweight Squat"
+    ]
+  },
+  {
+    "id": "Side_Plank",
+    "name": "Side Plank",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "BEGINNER",
+    "mechanic": "ISOLATION",
+    "force": "STATIC",
+    "primaryMuscles": [
+      "ABDOMINALS"
+    ],
+    "secondaryMuscles": [
+      "SHOULDERS",
+      "GLUTES"
+    ],
+    "instructions": [
+      "Lie on your side and prop yourself up on your forearm, elbow directly under your shoulder.",
+      "Lift your hips off the floor so your body forms a straight line from head to feet.",
+      "Hold this position, keeping your core braced and hips level.",
+      "Maintain the hold for the target duration, then switch sides."
+    ],
+    "images": [],
+    "movementPattern": "CORE_FLEXION",
+    "movementPatternDescription": "A static hold on one side of the body, building lateral core (oblique) strength and stability.",
+    "goalTags": [
+      "GENERAL_FITNESS"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "LOW",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 3,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "BEGINNER",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "HIGH",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [
+      "SHOULDER_IMPINGEMENT"
+    ],
+    "coachingCues": [
+      "Keep hips lifted and stacked, don't let them sag or rotate.",
+      "Keep your neck neutral."
+    ],
+    "commonMistakes": [
+      "Letting hips drop toward the floor",
+      "Rotating the torso forward or back"
+    ],
+    "alternatives": [
+      "Copenhagen Plank",
+      "Bird Dog"
+    ],
+    "progressions": [
+      "Side Plank Shoulder Raise",
+      "Copenhagen Plank"
+    ],
+    "regressions": []
+  },
+  {
+    "id": "Crunch",
+    "name": "Crunch",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "BEGINNER",
+    "mechanic": "ISOLATION",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "ABDOMINALS"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "Lie on your back with knees bent, feet flat on the floor, hands lightly supporting your head.",
+      "Curl your shoulders and upper back up off the floor, flexing through your abdominals.",
+      "Pause briefly at the top, then lower back down with control.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "CORE_FLEXION",
+    "movementPatternDescription": "A classic spinal-flexion core exercise, curling the upper torso toward the pelvis.",
+    "goalTags": [
+      "GENERAL_FITNESS",
+      "HYPERTROPHY"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "MODERATE",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 2,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "BEGINNER",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [
+      "LOWER_BACK_PAIN"
+    ],
+    "coachingCues": [
+      "Lead with your chest, not your chin.",
+      "Keep your lower back on the floor.",
+      "Exhale as you curl up."
+    ],
+    "commonMistakes": [
+      "Pulling on the neck with your hands",
+      "Using momentum instead of controlled ab contraction"
+    ],
+    "alternatives": [
+      "Reverse Crunch",
+      "Dead Bug"
+    ],
+    "progressions": [],
+    "regressions": []
+  },
+  {
+    "id": "Sissy_Squat",
+    "name": "Sissy Squat",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "ADVANCED",
+    "mechanic": "ISOLATION",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "QUADRICEPS"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "Stand holding onto something stable for balance, feet hip-width apart.",
+      "Rise onto the balls of your feet and lean your torso back as you bend your knees, letting them travel forward.",
+      "Lower until you feel a deep stretch in your quads, keeping your body in a straight line from knees to head.",
+      "Reverse the motion, driving through your quads to return to standing.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "SQUAT",
+    "movementPatternDescription": "An advanced quad-isolation squat where the knees travel far forward and the torso leans back, maximizing quad stretch and tension.",
+    "goalTags": [
+      "HYPERTROPHY",
+      "STRENGTH"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 5,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "ADVANCED",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "HIGH",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [
+      "KNEE_PAIN"
+    ],
+    "coachingCues": [
+      "Keep a straight line from knees to shoulders throughout.",
+      "Move slowly, this is not a fast exercise.",
+      "Hold onto support until you're confident with balance."
+    ],
+    "commonMistakes": [
+      "Bending at the hips instead of staying rigid",
+      "Going too fast and losing control at the bottom"
+    ],
+    "alternatives": [
+      "Spanish Squat",
+      "Wall Sit"
+    ],
+    "progressions": [],
+    "regressions": [
+      "Spanish Squat",
+      "Wall Sit"
+    ]
+  },
+  {
+    "id": "Pull-Up",
+    "name": "Pull-Up",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "INTERMEDIATE",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "LATS"
+    ],
+    "secondaryMuscles": [
+      "BICEPS",
+      "MIDDLE_BACK",
+      "SHOULDERS"
+    ],
+    "instructions": [
+      "Grip a pull-up bar with hands slightly wider than shoulder width, palms facing away from you.",
+      "Hang with arms fully extended.",
+      "Pull yourself up until your chin clears the bar, driving your elbows down and back.",
+      "Lower back down with control to a full hang.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "VERTICAL_PULL",
+    "movementPatternDescription": "The classic vertical pulling movement \u2014 hanging from a bar and pulling the chin above it.",
+    "goalTags": [
+      "STRENGTH",
+      "HYPERTROPHY"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 4,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "INTERMEDIATE",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "Requires a pull-up bar.",
+    "contraindications": [],
+    "coachingCues": [
+      "Avoid swinging or kipping.",
+      "Drive elbows down, not just bending the arms.",
+      "Fully extend at the bottom each rep."
+    ],
+    "commonMistakes": [
+      "Using momentum",
+      "Partial range of motion",
+      "Shrugging instead of engaging the lats"
+    ],
+    "alternatives": [
+      "Chin-Up",
+      "Neutral Grip Pull-Up"
+    ],
+    "progressions": [],
+    "regressions": [
+      "Band Assisted Pull-Up",
+      "Jumping Pull-Up"
+    ]
+  },
+  {
+    "id": "Pistol_Squat",
+    "name": "Pistol Squat",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "ADVANCED",
+    "mechanic": "COMPOUND",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "QUADRICEPS"
+    ],
+    "secondaryMuscles": [
+      "GLUTES",
+      "HAMSTRINGS",
+      "ABDOMINALS"
+    ],
+    "instructions": [
+      "Stand on one leg, extending the other leg straight out in front of you.",
+      "Lower your hips down and back, bending the standing knee, while keeping the extended leg off the floor.",
+      "Descend as low as your mobility allows, ideally until your hips are near your heel.",
+      "Drive through your standing heel to return to standing.",
+      "Complete all repetitions on one side before switching legs."
+    ],
+    "images": [],
+    "movementPattern": "SQUAT",
+    "movementPatternDescription": "A single-leg squat performed with the non-working leg extended straight out in front \u2014 an advanced test of unilateral strength, balance, and mobility.",
+    "goalTags": [
+      "STRENGTH",
+      "HYPERTROPHY"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 5,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "ADVANCED",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "HIGH",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [
+      "KNEE_PAIN"
+    ],
+    "coachingCues": [
+      "Keep your standing heel planted, don't let it lift.",
+      "Keep your torso as upright as your mobility allows.",
+      "Use a wall or doorframe for balance assistance while learning."
+    ],
+    "commonMistakes": [
+      "Heel lifting off the floor",
+      "Falling forward at the bottom"
+    ],
+    "alternatives": [
+      "Bulgarian Split Squat"
+    ],
+    "progressions": [],
+    "regressions": [
+      "Bulgarian Split Squat",
+      "Split Squat"
+    ]
+  },
+  {
+    "id": "Standing_Calf_Raise",
+    "name": "Standing Calf Raise",
+    "equipment": "BODY_WEIGHT",
+    "category": "STRENGTH",
+    "level": "BEGINNER",
+    "mechanic": "ISOLATION",
+    "force": "PUSH",
+    "primaryMuscles": [
+      "CALVES"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "Stand with feet hip-width apart, holding onto a wall or chair for balance if needed.",
+      "Rise up onto the balls of both feet as high as possible.",
+      "Pause briefly at the top, squeezing the calves.",
+      "Lower back down with control until your heels nearly touch the floor.",
+      "Repeat for the recommended repetitions."
+    ],
+    "images": [],
+    "movementPattern": "CALF",
+    "movementPatternDescription": "A two-legged bodyweight calf raise performed standing, the foundational calf-building movement.",
+    "goalTags": [
+      "HYPERTROPHY",
+      "GENERAL_FITNESS"
+    ],
+    "tempo": "2-1-2-0",
+    "tempoDescription": "Controlled throughout, no bouncing.",
+    "recommendedRIR": "1-3",
+    "rirDescription": "Stop shy of technical failure to preserve form.",
+    "romImportance": "HIGH",
+    "romDescription": "Move through the fullest range your joints and stability allow.",
+    "fatigueScore": 2,
+    "fatigueDescription": "Moderate fatigue, recoverable within the session.",
+    "skillRequirement": "BEGINNER",
+    "skillDescription": "Requires some body awareness and control.",
+    "stability": "MODERATE",
+    "stabilityDescription": "Requires core and joint stabilization throughout.",
+    "homeGymCompatible": true,
+    "homeGymNotes": "No equipment required.",
+    "contraindications": [],
+    "coachingCues": [
+      "Rise straight up without letting your ankles roll.",
+      "Pause at the top for a full squeeze.",
+      "Lower all the way down for a full stretch."
+    ],
+    "commonMistakes": [
+      "Bouncing instead of controlled reps",
+      "Partial range of motion"
+    ],
+    "alternatives": [
+      "Single Leg Calf Raise"
+    ],
+    "progressions": [
+      "Single Leg Calf Raise"
+    ],
+    "regressions": []
+  }
+]

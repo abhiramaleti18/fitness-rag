@@ -22,7 +22,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, PyMongoError
 
 ROOT = Path(__file__).resolve().parents[1]
-DATASET = ROOT / "data" / "processed" / "home_exercises_v1.json"
+DATASET = ROOT / "data" / "processed" / "home_exercises_v2.json"
 
 load_dotenv(ROOT / ".env")
 

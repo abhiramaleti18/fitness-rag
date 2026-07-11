@@ -16,6 +16,8 @@ from app.services.query_classifier import (
     extract_has_pull_up_bar, user_has_pull_up_bar
 )
 from app.services.constraint_service import get_active_constraints, get_avoid_list, get_prefer_list, get_coaching_notes
+from app.services.split_analysis_service import analyze_split
+from app.services.split_analysis_prompt import build_split_analysis_prompt
 
 router = APIRouter()
 
@@ -43,6 +45,20 @@ class RecommendRequest(BaseModel):
 class PlanRequest(BaseModel):
     query: str
     userContext: UserContext | None = None
+
+
+class SplitExercise(BaseModel):
+    exerciseName: str
+
+
+class SplitDay(BaseModel):
+    dayNumber: int
+    focus: str | None = None
+    exercises: list[SplitExercise]
+
+
+class AnalyzeSplitRequest(BaseModel):
+    days: list[SplitDay]
 
 DEFAULT_EXCLUDED_CATEGORIES = ["STRETCHING", "CARDIO", "PLYOMETRICS"]
 
@@ -162,6 +178,24 @@ def plan(request: PlanRequest):
             "activeConstraints": active_constraints,
             "coachingNotes": coaching_notes,
             "plan": plan_days
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/analyze-split")
+def analyze_split_endpoint(request: AnalyzeSplitRequest):
+    try:
+        days = [d.dict() for d in request.days]
+        analysis = analyze_split(days)
+
+        messages = build_split_analysis_prompt(analysis["summary"])
+        report_text = get_completion(messages)
+
+        return {
+            "muscleCoverage": analysis["muscleCoverage"],
+            "movementPatternBalance": analysis["movementPatternBalance"],
+            "report": report_text
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

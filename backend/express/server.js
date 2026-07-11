@@ -30,6 +30,9 @@ app.use('/api/profile', profileRoutes);
 const workoutLogRoutes = require('./routes/workoutLogRoutes');
 app.use('/api/logs', workoutLogRoutes);
 
+const workoutSplitRoutes = require('./routes/workoutSplitRoutes');
+app.use('/api/splits', workoutSplitRoutes);
+
 mongoose.connect(process.env.EXPRESS_MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');

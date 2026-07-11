@@ -5,6 +5,7 @@ import './Sidebar.css';
 const NAV_ITEMS = [
     { to: '/', label: 'Home', icon: HomeIcon },
     { to: '/exercises', label: 'Exercises', icon: DumbbellIcon },
+    { to: '/splits', label: 'My Workout Splits', icon: SplitIcon },
     { to: '/logs', label: 'My Workouts', icon: LogIcon },
     { to: '/profile', label: 'Profile', icon: UserIcon },
 ];
@@ -79,6 +80,9 @@ function HomeIcon() {
 }
 function DumbbellIcon() {
     return <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 8v8M18 8v8M2 10v4M22 10v4M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+function SplitIcon() {
+    return <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4v6a2 2 0 002 2h6M20 4v6a2 2 0 01-2 2h-6M12 12v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 }
 function UserIcon() {
     return <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" /><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>;

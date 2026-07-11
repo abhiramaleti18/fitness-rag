@@ -1,0 +1,122 @@
+.splits-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.splits-header {
+    margin-bottom: 1.75rem;
+}
+
+.splits-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.35rem;
+}
+
+.splits-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.splits-loading,
+.splits-error {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.splits-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+}
+
+.splits-empty-hint {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    max-width: 420px;
+    margin: 0.5rem auto 1.25rem;
+}
+
+.splits-empty-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.splits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.splits-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+}
+
+.splits-card:hover {
+    border-color: var(--red);
+}
+
+.splits-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.splits-card-top h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.splits-card-delete {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.1rem 0.3rem;
+}
+
+.splits-card-delete:hover {
+    color: var(--red);
+}
+
+.splits-card-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0.4rem 0 0.75rem;
+}
+
+.splits-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.splits-card-tag {
+    font-size: 0.72rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    color: var(--text-muted);
+}
+
+.splits-card-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
