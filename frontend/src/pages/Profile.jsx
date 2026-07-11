@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PRESET_COLORS, saveAccentColor, resetAccentColor, getSavedAccentColor } from '../utils/theme';
 import Layout from '../components/Layout';
 import api from '../api/api';
 import './Profile.css';
@@ -11,6 +12,7 @@ const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'pu
 export default function Profile() {
     const [editing, setEditing] = useState(false);
     const [pendingDelete, setPendingDelete] = useState(null);
+    const [accentColor, setAccentColor] = useState(getSavedAccentColor());
     const [user, setUser] = useState(null);
     const [form, setForm] = useState({ weight: '', height: '', experienceLevel: 'beginner' });
     const [goals, setGoals] = useState([]);
@@ -121,6 +123,15 @@ export default function Profile() {
             setPendingDelete(null);
         }
     };
+    const handleAccentChange = (hex) => {
+        setAccentColor(hex);
+        saveAccentColor(hex);
+    };
+
+    const handleAccentReset = () => {
+        resetAccentColor();
+        setAccentColor(getSavedAccentColor());
+    };
 
     if (!user) {
         return (
@@ -212,6 +223,37 @@ export default function Profile() {
                             </button>
                         )}
                     </form>
+
+                    <div className="profile-card">
+                        <h2>Appearance</h2>
+                        <p className="profile-appearance-sub">Pick an accent color for the app.</p>
+
+                        <div className="accent-swatches">
+                            {PRESET_COLORS.map((c) => (
+                                <button
+                                    key={c.value}
+                                    type="button"
+                                    className={`accent-swatch ${accentColor.toLowerCase() === c.value.toLowerCase() ? 'accent-swatch-active' : ''}`}
+                                    style={{ background: c.value }}
+                                    onClick={() => handleAccentChange(c.value)}
+                                    aria-label={c.name}
+                                    title={c.name}
+                                />
+                            ))}
+
+                            <label className="accent-swatch accent-swatch-custom" title="Custom color">
+                                <input
+                                    type="color"
+                                    value={accentColor}
+                                    onChange={(e) => handleAccentChange(e.target.value)}
+                                />
+                            </label>
+                        </div>
+
+                        <button type="button" className="accent-reset" onClick={handleAccentReset}>
+                            Reset to default
+                        </button>
+                    </div>
 
                     <div className="profile-card">
                         <h2>Personal Records</h2>

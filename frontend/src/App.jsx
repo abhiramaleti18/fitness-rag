@@ -9,8 +9,13 @@ import Splits from './pages/Splits';
 import SplitDetail from './pages/SplitDetail';
 import CustomSplitBuilder from './pages/CustomSplitBuilder';
 import './App.css';
+import { useEffect } from 'react';
+import { initTheme } from './utils/theme';
 
 function App() {
+  useEffect(() => {
+        initTheme();
+    }, []);
   return (
     <BrowserRouter>
       <Routes>
