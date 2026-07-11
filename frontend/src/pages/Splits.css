@@ -120,3 +120,23 @@
     font-size: 0.75rem;
     color: var(--text-muted);
 }
+
+.splits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.splits-create-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}

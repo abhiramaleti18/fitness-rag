@@ -7,6 +7,7 @@ import Exercises from './pages/Exercises';
 import Logs from './pages/Logs';
 import Splits from './pages/Splits';
 import SplitDetail from './pages/SplitDetail';
+import CustomSplitBuilder from './pages/CustomSplitBuilder';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/splits" element={<Splits />} />
+        <Route path="/splits/new" element={<CustomSplitBuilder />} />
         <Route path="/splits/:id" element={<SplitDetail />} />
         <Route path="/logs" element={<Logs />} />
       </Routes>

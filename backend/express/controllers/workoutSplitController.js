@@ -30,7 +30,9 @@ exports.createSplit = async (req, res) => {
                     }))
                 };
 
-                const response = await axios.post(`${FASTAPI_URL}/api/analyze-split`, analysisPayload);
+                const response = await axios.post(`${FASTAPI_URL}/api/analyze-split`, analysisPayload, {
+                    timeout: 15000
+                });
 
                 aiReport = {
                     text: response.data.report,

@@ -1,0 +1,67 @@
+.exsearch-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.exsearch-input {
+    width: 100%;
+    padding: 0.55rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.exsearch-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 20;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.exsearch-loading,
+.exsearch-empty {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.exsearch-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    padding: 0.6rem 0.9rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    text-align: left;
+}
+
+.exsearch-item:last-child {
+    border-bottom: none;
+}
+
+.exsearch-item:hover {
+    background: var(--surface);
+}
+
+.exsearch-item-name {
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.exsearch-item-meta {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}

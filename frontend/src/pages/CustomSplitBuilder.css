@@ -1,0 +1,212 @@
+.csb-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.csb-page h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.35rem;
+}
+
+.csb-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.csb-name-input {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+}
+
+.csb-day {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.csb-day-header {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.csb-day-focus-input {
+    flex: 1;
+    padding: 0.55rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.88rem;
+}
+
+.csb-day-remove {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.csb-day-remove:hover {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.csb-exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.csb-exercise-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 0.7rem;
+}
+
+.csb-exercise-name {
+    flex: 1;
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.csb-small-input {
+    width: 60px;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+.csb-exercise-remove {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.1rem 0.3rem;
+}
+
+.csb-exercise-remove:hover {
+    color: var(--red);
+}
+
+.csb-add-day-btn {
+    background: transparent;
+    border: 1px dashed var(--border);
+    color: var(--text-muted);
+    border-radius: 10px;
+    padding: 0.7rem;
+    width: 100%;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.csb-add-day-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.csb-error {
+    color: var(--red);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.csb-save-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.csb-primary-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.65rem 1.3rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.csb-primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.csb-secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 8px;
+    padding: 0.65rem 1.3rem;
+    font-size: 0.88rem;
+    cursor: pointer;
+}
+
+.csb-saved {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.csb-saved-name {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.csb-report {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.csb-report h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.csb-report p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.csb-no-report {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.csb-saved-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}

@@ -41,8 +41,13 @@ export default function Splits() {
         <Layout>
             <div className="splits-page">
                 <div className="splits-header">
-                    <h1>My Workout Splits</h1>
-                    <p className="splits-sub">Splits you've saved from FitBot, ready to log against.</p>
+                    <div>
+                        <h1>My Workout Splits</h1>
+                        <p className="splits-sub">Splits you've saved from FitBot, ready to log against.</p>
+                    </div>
+                    <button className="splits-create-btn" onClick={() => navigate('/splits/new')}>
+                        + Create Custom Split
+                    </button>
                 </div>
 
                 {loading && <p className="splits-loading">Loading...</p>}
