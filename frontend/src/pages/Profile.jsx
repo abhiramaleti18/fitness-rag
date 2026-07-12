@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
-import { PRESET_COLORS, saveAccentColor, resetAccentColor, getSavedAccentColor } from '../utils/theme';
+import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import api from '../api/api';
 import './Profile.css';
 import ConfirmModal from '../components/ConfirmModal';
 import ConsistencyHeatmap from '../components/ConsistencyHeatmap';
+import { PRESET_COLORS, saveAccentColor, resetAccentColor, getSavedAccentColor } from '../utils/theme';
 
 const GOALS = ['muscle gain', 'strength', 'fat loss', 'endurance', 'mobility'];
 const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'pull-up bar', 'full gym'];
 
 export default function Profile() {
+    const navigate = useNavigate();
     const [editing, setEditing] = useState(false);
     const [pendingDelete, setPendingDelete] = useState(null);
     const [accentColor, setAccentColor] = useState(getSavedAccentColor());
@@ -24,6 +26,12 @@ export default function Profile() {
     const [prError, setPrError] = useState('');
     const [suggestions, setSuggestions] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+    };
 
     const loadProfile = async () => {
         try {
@@ -150,6 +158,7 @@ export default function Profile() {
             <div className="profile-page">
                 <h1 className="profile-title">Your Profile</h1>
                 <p className="profile-sub">Body stats and equipment help FitBot tailor what it recommends.</p>
+                <button className="profile-logout-btn" onClick={handleLogout}>Log out</button>
                 <ConsistencyHeatmap />
                 <div className="profile-grid">
                     <form onSubmit={handleSaveProfile} className="profile-card">
@@ -225,37 +234,6 @@ export default function Profile() {
                     </form>
 
                     <div className="profile-card">
-                        <h2>Appearance</h2>
-                        <p className="profile-appearance-sub">Pick an accent color for the app.</p>
-
-                        <div className="accent-swatches">
-                            {PRESET_COLORS.map((c) => (
-                                <button
-                                    key={c.value}
-                                    type="button"
-                                    className={`accent-swatch ${accentColor.toLowerCase() === c.value.toLowerCase() ? 'accent-swatch-active' : ''}`}
-                                    style={{ background: c.value }}
-                                    onClick={() => handleAccentChange(c.value)}
-                                    aria-label={c.name}
-                                    title={c.name}
-                                />
-                            ))}
-
-                            <label className="accent-swatch accent-swatch-custom" title="Custom color">
-                                <input
-                                    type="color"
-                                    value={accentColor}
-                                    onChange={(e) => handleAccentChange(e.target.value)}
-                                />
-                            </label>
-                        </div>
-
-                        <button type="button" className="accent-reset" onClick={handleAccentReset}>
-                            Reset to default
-                        </button>
-                    </div>
-
-                    <div className="profile-card">
                         <h2>Personal Records</h2>
 
                         <form onSubmit={handleAddPR} className="pr-form">
@@ -320,6 +298,36 @@ export default function Profile() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                    <div className="profile-card">
+                        <h2>Appearance</h2>
+                        <p className="profile-appearance-sub">Pick an accent color for the app.</p>
+
+                        <div className="accent-swatches">
+                            {PRESET_COLORS.map((c) => (
+                                <button
+                                    key={c.value}
+                                    type="button"
+                                    className={`accent-swatch ${accentColor.toLowerCase() === c.value.toLowerCase() ? 'accent-swatch-active' : ''}`}
+                                    style={{ background: c.value }}
+                                    onClick={() => handleAccentChange(c.value)}
+                                    aria-label={c.name}
+                                    title={c.name}
+                                />
+                            ))}
+
+                            <label className="accent-swatch accent-swatch-custom" title="Custom color">
+                                <input
+                                    type="color"
+                                    value={accentColor}
+                                    onChange={(e) => handleAccentChange(e.target.value)}
+                                />
+                            </label>
+                        </div>
+
+                        <button type="button" className="accent-reset" onClick={handleAccentReset}>
+                            Reset to default
+                        </button>
                     </div>
                 </div>
             </div>

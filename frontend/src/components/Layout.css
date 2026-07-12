@@ -7,3 +7,9 @@
     flex: 1;
     min-width: 0;
 }
+
+@media (max-width: 860px) {
+    .app-layout-content {
+        padding-bottom: 70px;
+    }
+}

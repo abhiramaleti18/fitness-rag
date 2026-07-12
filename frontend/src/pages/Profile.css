@@ -342,3 +342,20 @@
     color: var(--red);
     border-color: var(--red);
 }
+
+.profile-logout-btn {
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 8px;
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.profile-logout-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+}

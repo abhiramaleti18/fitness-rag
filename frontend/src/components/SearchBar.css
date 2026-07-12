@@ -37,6 +37,13 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 480px) {
+    .search-bar-input {
+        padding: 0.95rem 3.25rem 0.95rem 1.25rem;
+        font-size: 0.85rem;
+    }
+}
+
 .search-bar-input::placeholder {
     color: var(--text-faint);
 }

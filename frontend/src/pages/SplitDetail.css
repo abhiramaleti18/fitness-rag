@@ -112,3 +112,40 @@
     color: var(--text-muted);
     margin-top: 0.5rem;
 }
+
+.split-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.split-detail-edit-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.split-detail-edit-toggle:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.split-detail-edit-toggle-active {
+    background: var(--red);
+    border-color: var(--red);
+    color: white;
+}
+
+.split-detail-remove-error {
+    color: var(--red);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}

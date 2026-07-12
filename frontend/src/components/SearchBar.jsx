@@ -17,7 +17,7 @@ export default function SearchBar({ onSearch, loading }) {
                 type="text"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                placeholder="Ask for a workout, a movement, or how to fix your form..."
+                placeholder={window.innerWidth < 480 ? "Ask FitBot anything..." : "Ask for a workout, a movement, or how to fix your form..."}
                 className="search-bar-input"
                 autoFocus
             />

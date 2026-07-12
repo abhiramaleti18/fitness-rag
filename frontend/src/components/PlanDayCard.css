@@ -84,7 +84,6 @@
     line-height: 1.5;
 }
 .plan-day-swap-btn {
-    margin-top: 0.6rem;
     background: transparent;
     border: 1px solid var(--border);
     color: var(--text-muted);
@@ -97,4 +96,27 @@
 .plan-day-swap-btn:hover {
     border-color: var(--red);
     color: var(--red);
+}
+
+.plan-day-edit-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.plan-day-remove-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+    cursor: pointer;
+}
+
+.plan-day-remove-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+    background: var(--red-glow);
 }

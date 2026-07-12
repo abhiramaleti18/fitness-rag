@@ -71,6 +71,19 @@ export default function Sidebar() {
                     <ExpandIcon />
                 </button>
             )}
+
+            <nav className="mobile-tabbar">
+                {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
+                    <Link
+                        key={label}
+                        to={to}
+                        className={`mobile-tabbar-link ${location.pathname === to ? 'mobile-tabbar-link-active' : ''}`}
+                    >
+                        <Icon />
+                        <span>{label === 'My Workout Splits' ? 'Splits' : label}</span>
+                    </Link>
+                ))}
+            </nav>
         </>
     );
 }

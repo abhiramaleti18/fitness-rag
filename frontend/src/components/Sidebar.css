@@ -180,11 +180,52 @@
     to { opacity: 1; transform: translateX(0); }
 }
 
+.mobile-tabbar {
+    display: none;
+}
+
 @media (max-width: 860px) {
     .sidebar {
         display: none;
     }
     .sidebar-reopen {
         display: none;
+    }
+
+    .mobile-tabbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 62px;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        z-index: 30;
+        padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    .mobile-tabbar-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        color: var(--text-muted);
+        font-size: 0.62rem;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.4rem 0.6rem;
+        flex: 1;
+    }
+
+    .mobile-tabbar-link-active {
+        color: var(--red);
+    }
+
+    .mobile-tabbar-link-active svg path,
+    .mobile-tabbar-link-active svg circle {
+        stroke: var(--red);
     }
 }

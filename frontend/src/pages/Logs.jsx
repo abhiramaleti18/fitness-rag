@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ConfirmModal from '../components/ConfirmModal';
 import ExerciseProgressChart from '../components/ExerciseProgressChart';

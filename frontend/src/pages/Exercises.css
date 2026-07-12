@@ -219,3 +219,121 @@
         padding: 1.5rem;
     }
 }
+
+.ex-card {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.ex-card-add-btn {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ex-add-modal {
+    max-width: 420px;
+}
+
+.ex-add-status {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.ex-add-field {
+    margin-bottom: 1rem;
+}
+
+.ex-add-field label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.ex-add-field select {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.ex-add-row {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.ex-add-row input {
+    flex: 1;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+.ex-add-error {
+    color: var(--red);
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+}
+
+.ex-add-submit {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.ex-add-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ex-add-success {
+    text-align: center;
+}
+
+.ex-add-success p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+.ex-search-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.88rem;
+    margin: 1rem 0 1.25rem;
+}
+
+.ex-search-input::placeholder {
+    color: var(--text-faint);
+}
+
+.ex-search-input:focus {
+    outline: none;
+    border-color: var(--red-dim);
+}

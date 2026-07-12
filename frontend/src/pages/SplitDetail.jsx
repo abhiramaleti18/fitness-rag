@@ -14,6 +14,8 @@ export default function SplitDetail() {
     const [error, setError] = useState('');
     const [swapTarget, setSwapTarget] = useState(null); // { dayIndex, exIndex }
     const [swapping, setSwapping] = useState(false);
+    const [editMode, setEditMode] = useState(false);
+    const [removeError, setRemoveError] = useState('');
 
     useEffect(() => {
         api.get(`/splits/${id}`)
@@ -49,6 +51,29 @@ export default function SplitDetail() {
             setSwapping(false);
         }
     };
+    const handleRemove = async (dayIndex, exIndex) => {
+        setRemoveError('');
+
+        if (split.days[dayIndex].exercises.length <= 1) {
+            setRemoveError("Can't remove the last exercise in a day — swap it instead, or delete the whole split.");
+            return;
+        }
+
+        const updatedDays = split.days.map((d, di) => {
+            if (di !== dayIndex) return d;
+            return {
+                ...d,
+                exercises: d.exercises.filter((_, ei) => ei !== exIndex)
+            };
+        });
+
+        try {
+            const res = await api.put(`/splits/${id}`, { days: updatedDays });
+            setSplit(res.data.split);
+        } catch (err) {
+            setRemoveError('Failed to remove exercise. Try again.');
+        }
+    };
     if (loading) {
         return (
             <Layout>
@@ -74,13 +99,27 @@ export default function SplitDetail() {
                 <Link to="/splits" className="split-detail-back">&larr; My Workout Splits</Link>
 
                 <div className="split-detail-header">
-                    <h1>{split.name}</h1>
-                    <p className="split-detail-meta">
-                        {split.days.length} day{split.days.length !== 1 ? 's' : ''}
-                        {split.isCustom ? ' · custom' : ' · AI-generated'}
-                        {split.sourceQuery ? ` · from "${split.sourceQuery}"` : ''}
-                    </p>
+                    <div>
+                        <h1>{split.name}</h1>
+                        <p className="split-detail-meta">
+                            {split.days.length} day{split.days.length !== 1 ? 's' : ''}
+                            {split.isCustom ? ' · custom' : ' · AI-generated'}
+                            {split.sourceQuery ? ` · from "${split.sourceQuery}"` : ''}
+                        </p>
+                    </div>
+                    <button
+                        className={`split-detail-edit-toggle ${editMode ? 'split-detail-edit-toggle-active' : ''}`}
+                        onClick={() => {
+                            setEditMode(!editMode);
+                            setSwapTarget(null);
+                            setRemoveError('');
+                        }}
+                    >
+                        {editMode ? 'Done Editing' : 'Edit'}
+                    </button>
                 </div>
+
+                {removeError && <p className="split-detail-remove-error">{removeError}</p>}
 
                 {split.aiReport?.text && (
                     <div className="split-detail-report">
@@ -96,10 +135,11 @@ export default function SplitDetail() {
                             focus={day.focus}
                             warmup={day.warmup}
                             exercises={day.exercises}
-                            onSwapExercise={(exIndex) => setSwapTarget({ dayIndex, exIndex })}
+                            onSwapExercise={editMode ? (exIndex) => setSwapTarget({ dayIndex, exIndex }) : undefined}
+                            onRemoveExercise={editMode ? (exIndex) => handleRemove(dayIndex, exIndex) : undefined}
                         />
 
-                        {swapTarget?.dayIndex === dayIndex && (
+                        {editMode && swapTarget?.dayIndex === dayIndex && (
                             <div className="split-detail-swap-box">
                                 <p className="split-detail-swap-label">
                                     Replace "{day.exercises[swapTarget.exIndex].exerciseName}" with:
