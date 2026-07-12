@@ -1,6 +1,6 @@
 import './PlanDayCard.css';
 
-export default function PlanDayCard({ dayNumber, focus, warmup, exercises }) {
+export default function PlanDayCard({ dayNumber, focus, warmup, exercises, onSwapExercise }) {
     return (
         <div className="plan-day-card">
             <h3>Day {dayNumber} — {focus}</h3>
@@ -29,6 +29,11 @@ export default function PlanDayCard({ dayNumber, focus, warmup, exercises }) {
                             </span>
                         </div>
                         <p className="plan-day-how">{ex.howItWorks}</p>
+                        {onSwapExercise && (
+                            <button className="plan-day-swap-btn" onClick={() => onSwapExercise(i)}>
+                                Swap exercise
+                            </button>
+                        )}
                     </div>
                 ))}
             </div>

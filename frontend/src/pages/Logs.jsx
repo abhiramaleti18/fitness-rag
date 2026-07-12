@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ConfirmModal from '../components/ConfirmModal';
+import ExerciseProgressChart from '../components/ExerciseProgressChart';
 import api from '../api/api';
 import './Logs.css';
 
@@ -265,6 +265,7 @@ export default function Logs() {
                 </form>
 
                 <div className="logs-history">
+                    <ExerciseProgressChart />
                     <h2>History</h2>
 
                     {loading && <p className="logs-loading">Loading...</p>}

@@ -83,21 +83,53 @@ exports.getSplit = async (req, res) => {
     }
 };
 
-exports.renameSplit = async (req, res) => {
+exports.updateSplit = async (req, res) => {
     try {
-        const { name } = req.body;
+        const { name, days } = req.body;
+        const update = {};
 
-        if (!name || !name.trim()) {
-            return res.status(400).json({ message: 'A name is required' });
+        if (name !== undefined) {
+            if (!name.trim()) return res.status(400).json({ message: 'A name is required' });
+            update.name = name.trim();
+        }
+
+        if (days !== undefined) {
+            if (!days.length) return res.status(400).json({ message: 'At least one day is required' });
+            update.days = days;
+        }
+
+        const existing = await WorkoutSplit.findOne({ _id: req.params.id, userId: req.user.id });
+        if (!existing) return res.status(404).json({ message: 'Split not found' });
+
+        // Re-analyze custom splits whenever their exercises change, so the
+        // report reflects the edited split instead of the stale pre-edit one.
+        if (days !== undefined && existing.isCustom) {
+            try {
+                const analysisPayload = {
+                    days: days.map(d => ({
+                        dayNumber: d.dayNumber,
+                        focus: d.focus,
+                        exercises: d.exercises.map(ex => ({ exerciseName: ex.exerciseName }))
+                    }))
+                };
+                const response = await axios.post(`${FASTAPI_URL}/api/analyze-split`, analysisPayload, { timeout: 15000 });
+                update.aiReport = {
+                    text: response.data.report,
+                    muscleCoverage: response.data.muscleCoverage,
+                    movementPatternBalance: response.data.movementPatternBalance,
+                    generatedAt: new Date()
+                };
+            } catch (analysisError) {
+                console.error('Re-analysis failed:', analysisError.message);
+            }
         }
 
         const split = await WorkoutSplit.findOneAndUpdate(
             { _id: req.params.id, userId: req.user.id },
-            { name: name.trim() },
+            update,
             { new: true, runValidators: true }
         );
 
-        if (!split) return res.status(404).json({ message: 'Split not found' });
         res.status(200).json({ success: true, split });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });

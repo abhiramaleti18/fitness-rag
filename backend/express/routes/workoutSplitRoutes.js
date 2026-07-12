@@ -5,14 +5,14 @@ const {
     createSplit,
     getSplits,
     getSplit,
-    renameSplit,
+    updateSplit,
     deleteSplit
 } = require('../controllers/workoutSplitController');
 
 router.post('/', protect, createSplit);
 router.get('/', protect, getSplits);
 router.get('/:id', protect, getSplit);
-router.put('/:id', protect, renameSplit);
+router.put('/:id', protect, updateSplit);
 router.delete('/:id', protect, deleteSplit);
 
 module.exports = router;
