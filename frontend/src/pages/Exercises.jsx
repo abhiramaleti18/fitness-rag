@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import api from '../api/api';
 import './Exercises.css';
 
-const LEVELS = ['beginner', 'intermediate', 'expert'];
+const LEVELS = ['beginner', 'intermediate', 'advanced'];
 const PAGE_SIZE = 24;
 
 function formatLabel(str) {
@@ -175,7 +175,7 @@ export default function Exercises() {
                                 >
                                     <h3>{ex.name}</h3>
                                     <p className="ex-card-meta">{ex.category} &middot; {ex.equipment}</p>
-                                    <span className={`ex-level-badge ex-level-${ex.level}`}>{ex.level}</span>
+                                    <span className={`ex-level-badge ex-level-${(ex.level || '').toLowerCase()}`}>{ex.level}</span>
                                     <button
                                         className="ex-card-add-btn"
                                         onClick={(e) => { e.stopPropagation(); openAddToSplit(ex); }}

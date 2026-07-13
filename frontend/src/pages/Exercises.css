@@ -105,7 +105,7 @@
 
 .ex-level-beginner { color: #6ee7a8; }
 .ex-level-intermediate { color: #ffcf5c; }
-.ex-level-expert { color: var(--red); }
+.ex-level-advanced { color: var(--red); }
 
 .ex-pagination {
     display: flex;

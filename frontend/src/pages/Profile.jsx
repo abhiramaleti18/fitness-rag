@@ -9,6 +9,7 @@ import { PRESET_COLORS, saveAccentColor, resetAccentColor, getSavedAccentColor }
 
 const GOALS = ['muscle gain', 'strength', 'fat loss', 'endurance', 'mobility'];
 const EQUIPMENT = ['bodyweight', 'dumbbells', 'barbell', 'resistance bands', 'pull-up bar', 'full gym'];
+const INJURIES = ['shoulder pain', 'lower back pain', 'knee pain', 'elbow pain', 'wrist pain', 'limited overhead mobility'];
 
 export default function Profile() {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function Profile() {
     const [form, setForm] = useState({ weight: '', height: '', experienceLevel: 'beginner' });
     const [goals, setGoals] = useState([]);
     const [equipment, setEquipment] = useState([]);
+    const [injuries, setInjuries] = useState([]);
     const [saving, setSaving] = useState(false);
     const [saved, setSaved] = useState(false);
 
@@ -45,6 +47,7 @@ export default function Profile() {
             });
             setGoals(u.fitnessGoals || []);
             setEquipment(u.equipmentAccess || []);
+            setInjuries(u.injuries || []);
         } catch (err) {
             console.error('Failed to load profile', err);
         }
@@ -66,7 +69,8 @@ export default function Profile() {
             height: form.height ? Number(form.height) : null,
             experienceLevel: form.experienceLevel,
             fitnessGoals: goals,
-            equipmentAccess: equipment
+            equipmentAccess: equipment,
+            injuries: injuries
         });
         setUser(res.data.user);
         localStorage.setItem('user', JSON.stringify({ ...JSON.parse(localStorage.getItem('user')), ...res.data.user }));
@@ -221,6 +225,15 @@ export default function Profile() {
                                 {EQUIPMENT.map(e => (
                                     <button type="button" key={e} className={`chip ${equipment.includes(e) ? 'chip-active' : ''}`} onClick={() => toggle(equipment, setEquipment, e)}>
                                         {e}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <label>Injuries & Pain Constraints</label>
+                            <div className="chip-group">
+                                {INJURIES.map(i => (
+                                    <button type="button" key={i} className={`chip ${injuries.includes(i) ? 'chip-active' : ''}`} onClick={() => toggle(injuries, setInjuries, i)}>
+                                        {i}
                                     </button>
                                 ))}
                             </div>

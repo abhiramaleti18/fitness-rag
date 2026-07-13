@@ -2,7 +2,7 @@ const User = require('../models/User');
 
 exports.updateProfile = async (req, res) => {
     try {
-        const { weight, height, fitnessGoals, equipmentAccess, experienceLevel } = req.body;
+        const { weight, height, fitnessGoals, equipmentAccess, experienceLevel, injuries } = req.body;
 
         const updates = {};
         if (weight !== undefined) updates.weight = weight;
@@ -10,6 +10,7 @@ exports.updateProfile = async (req, res) => {
         if (fitnessGoals !== undefined) updates.fitnessGoals = fitnessGoals;
         if (equipmentAccess !== undefined) updates.equipmentAccess = equipmentAccess;
         if (experienceLevel !== undefined) updates.experienceLevel = experienceLevel;
+        if (injuries !== undefined) updates.injuries = injuries;
 
         const user = await User.findByIdAndUpdate(req.user.id, updates, {
             new: true,

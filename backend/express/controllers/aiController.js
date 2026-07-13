@@ -40,7 +40,8 @@ exports.recommend = async (req, res) => {
                 equipmentAccess: user.equipmentAccess,
                 fitnessGoals: user.fitnessGoals,
                 weight: user.weight,
-                recentPRs: user.personalRecords?.slice(-5) || []
+                recentPRs: user.personalRecords?.slice(-5) || [],
+                injuries: user.injuries
             }
         });
 
@@ -87,7 +88,8 @@ exports.plan = async (req, res) => {
             userContext: {
                 experienceLevel: user.experienceLevel,
                 equipmentAccess: user.equipmentAccess,
-                fitnessGoals: user.fitnessGoals
+                fitnessGoals: user.fitnessGoals,
+                injuries: user.injuries
             }
         });
 
