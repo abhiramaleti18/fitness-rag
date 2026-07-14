@@ -19,6 +19,16 @@ EQUIPMENT_MAP = {
     "FULL GYM": None,  # None means "no restriction" — full gym access implies everything is available
 }
 
+MOBILITY_KEYWORDS = [
+    "stretch", "stretches", "stretching", "mobility", "flexibility", "flexible",
+    "warm up", "warm-up", "cool down", "cool-down", "loosen", "tight", "tightness"
+]
+
+
+def is_mobility_query(query: str) -> bool:
+    q = query.lower()
+    return any(kw in q for kw in MOBILITY_KEYWORDS)
+
 def is_plan_request(query: str) -> bool:
     q = query.lower()
     return any(kw in q for kw in PLAN_KEYWORDS)

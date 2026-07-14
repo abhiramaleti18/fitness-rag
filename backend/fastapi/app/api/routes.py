@@ -13,8 +13,10 @@ from app.services.plan_builder import build_plan
 from app.services.query_classifier import (
     is_plan_request, extract_days, extract_equipment,
     is_query_too_vague, extract_excluded_categories, map_user_equipment_to_filter,
-    extract_has_pull_up_bar, user_has_pull_up_bar
+    extract_has_pull_up_bar, user_has_pull_up_bar, is_mobility_query
 )
+from app.services.mobility_service import search_stretches_by_keyword
+from app.services.context_builder import build_mobility_context
 from app.services.constraint_service import get_active_constraints, get_avoid_list, get_prefer_list, get_coaching_notes
 from app.services.split_analysis_service import analyze_split
 from app.services.split_analysis_prompt import build_split_analysis_prompt
@@ -91,6 +93,22 @@ def search(request: SearchRequest):
 @router.post("/recommend")
 def recommend(request: RecommendRequest):
     try:
+        if is_mobility_query(request.query):
+            stretches = search_stretches_by_keyword(request.query, limit=request.top_k or 5)
+
+            if not stretches:
+                return {
+                    "answer": "I don't have a specific stretch for that in my library yet — could you name a body part or joint (like shoulders, hips, or ankles)?",
+                    "recommendedExercises": [],
+                    "sources": [],
+                    "needsClarification": True
+                }
+
+            context = build_mobility_context(stretches)
+            messages = build_prompt(request.query, context, request.userContext)
+            answer = get_completion(messages)
+            return format_response(answer, stretches)
+
         if is_query_too_vague(request.query):
             return {
                 "answer": "Could you be a bit more specific? For example, tell me a muscle group (like chest, back, or legs), a goal (like building strength or muscle), or a particular exercise you want to know about.",
@@ -118,7 +136,6 @@ def recommend(request: RecommendRequest):
         return format_response(answer, results)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
 
 @router.get("/exercise/{exercise_id}")
 def get_exercise(exercise_id: str):

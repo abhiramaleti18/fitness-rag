@@ -36,3 +36,31 @@ Home Gym Compatible: {ex.get('homeGymCompatible')}"""
         blocks.append(block)
 
     return "\n\n---\n\n".join(blocks)
+
+def build_mobility_context(stretches: list[dict]) -> str:
+    """Same grounding principle as build_context, applied to stretches:
+    convert the curated stretch data into compact facts for the LLM to
+    narrate, rather than letting it invent hold times or cues."""
+    if not stretches:
+        return "No relevant stretches found in the knowledge base."
+
+    blocks = []
+    for s in stretches:
+        duration = s.get("hold") or (f"{s.get('reps')} reps, {s.get('sets')} sets" if s.get("reps") else "Not specified")
+        cues = "; ".join(s.get("coachingCues", [])[:3])
+        mistakes = "; ".join(s.get("commonMistakes", [])[:2])
+        contraindications = ", ".join(s.get("contraindications", [])) or "None listed"
+        equipment = ", ".join(s.get("equipment", [])) or "None"
+
+        block = f"""Stretch: {s.get('name')}
+Category: {s.get('category')} | Difficulty: {s.get('difficulty')}
+Targets: {', '.join(s.get('targets', []))}
+Duration/Volume: {duration}
+Helps With: {', '.join(s.get('helpsWith', []))}
+Coaching Cues: {cues}
+Common Mistakes: {mistakes}
+Contraindications: {contraindications}
+Equipment: {equipment}"""
+        blocks.append(block)
+
+    return "\n\n---\n\n".join(blocks)

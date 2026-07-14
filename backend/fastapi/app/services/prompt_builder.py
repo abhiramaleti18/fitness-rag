@@ -8,8 +8,8 @@ STRICT RULES:
 5. If the user profile lists an experience level, equipment, or goals, tailor which exercises you emphasize accordingly — but do not claim they told you anything beyond what's listed.
 6. If the context is insufficient to answer, say so directly rather than guessing or inventing detail.
 7. Mention relevant contraindications or common mistakes only if they are present in the context — do not invent safety information.
-8. When you mention an exercise's sets, reps, or rest period, you MUST use the exact "Recommended Sets", "Recommended Reps", and "Rest Between Sets" values given for that exercise in the Context. Never calculate, invent, round, or approximate these numbers yourself — copy them exactly as written."""
-
+8. When you mention an exercise's sets, reps, or rest period, you MUST use the exact "Recommended Sets", "Recommended Reps", and "Rest Between Sets" values given for that exercise in the Context. Never calculate, invent, round, or approximate these numbers yourself — copy them exactly as written.
+9. When discussing stretches or mobility work, use the exact "Duration/Volume" value given for that stretch in the Context (a hold time or rep/set count) — never invent a hold duration or rep count yourself."""
 
 def build_prompt(user_query: str, context: str, user_context=None) -> list[dict]:
     profile_line = ""

@@ -4,6 +4,7 @@ from app.core.database import exercises_collection
 from app.services.exercise_annotator import annotate_exercise
 from app.services.exercise_tiers import get_tiers_for_role, is_fundamental
 from app.services.home_exercise_tiers import get_home_tiers
+from app.services.mobility_service import get_stretches_for_muscles
 
 STRENGTH_CATEGORIES = ["STRENGTH", "POWERLIFTING", "OLYMPIC_WEIGHTLIFTING"]
 
@@ -100,13 +101,29 @@ def _fetch_for_slot(slot_def: dict, equipment_filter, level, exclude_names: set,
     return candidates[0]
 
 
-def _get_warmup(day_def: dict, equipment_filter: list[str] = None, count: int = 2) -> list[dict]:
-    """Pulls 2 relevant dynamic stretches for the day's target muscles.
-    Uses homeGymCompatible when this is a home/bodyweight-only plan, same
-    ground truth used for the main lifts."""
-    home_workout = _is_home_workout(equipment_filter)
+def _get_warmup(day_def: dict, equipment_filter: list[str] = None, has_pull_up_bar: bool = False, count: int = 2) -> list[dict]:
+    """Pulls warm-up stretches for the day's target muscles from the curated
+    mobility knowledge base (real coaching data — hold times, coaching cues,
+    contraindications), falling back to the exercise DB's generic STRETCHING
+    category only if a muscle has no match in the mobility library."""
     muscles = list({slot_def["muscle"] for slot_def in day_def["slots"]})
 
+    stretches = get_stretches_for_muscles(muscles, before_workout=True, has_pull_up_bar=has_pull_up_bar, limit=count)
+
+    if stretches:
+        return [
+            {
+                "name": s["name"],
+                "targetMuscle": s["targets"][0] if s.get("targets") else None,
+                "instructions": s.get("coachingCues", []),
+                "holdTime": s.get("hold") or (f"{s.get('reps')} reps" if s.get("reps") else "As prescribed")
+            }
+            for s in stretches
+        ]
+
+    # Fallback for muscles with no mobility-library match yet (e.g. abdominals,
+    # biceps only map loosely) — reuse the old DB-based lookup.
+    home_workout = _is_home_workout(equipment_filter)
     query = {"category": "STRETCHING", "primaryMuscles": {"$in": muscles}}
     if home_workout:
         query["homeGymCompatible"] = True
@@ -147,7 +164,7 @@ def _build_day(day_def: dict, equipment_filter: list[str] = None, level: str = N
     return {
         "day": None,
         "focus": day_def["label"],
-        "warmup": _get_warmup(day_def, equipment_filter),
+        "warmup": _get_warmup(day_def, equipment_filter, has_pull_up_bar),
         "exercises": selected
     }
 
