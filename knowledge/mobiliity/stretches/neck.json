@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+  "region": "NECK",
+
+  "stretches": [
+
+    {
+      "name": "Upper Trapezius Stretch",
+      "category": "STATIC",
+      "targets": [
+        "Upper Trapezius"
+      ],
+      "joint": [
+        "Neck"
+      ],
+      "difficulty": "BEGINNER",
+      "hold": "30-45 sec",
+      "sets": "2",
+      "beforeWorkout": false,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Neck Mobility",
+        "Posture"
+      ],
+      "helpsWith": [
+        "Neck stiffness",
+        "Desk posture",
+        "Tension headaches"
+      ],
+      "commonMistakes": [
+        "Shrugging the shoulder",
+        "Pulling excessively",
+        "Holding the breath"
+      ],
+      "contraindications": [
+        "Acute cervical injury"
+      ],
+      "progression": [
+        "Add gentle overpressure"
+      ],
+      "regression": [
+        "Reduce stretch intensity"
+      ],
+      "equipment": [],
+      "coachingCues": [
+        "Keep shoulders relaxed.",
+        "Lengthen through the neck.",
+        "Breathe slowly."
+      ],
+      "evidenceLevel": "HIGH",
+      "priority": "HIGH"
+    },
+
+    {
+      "name": "Levator Scapulae Stretch",
+      "category": "STATIC",
+      "targets": [
+        "Levator Scapulae"
+      ],
+      "joint": [
+        "Neck"
+      ],
+      "difficulty": "BEGINNER",
+      "hold": "30 sec",
+      "sets": "2",
+      "beforeWorkout": false,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Neck Rotation"
+      ],
+      "helpsWith": [
+        "Forward head posture",
+        "Upper neck tightness"
+      ],
+      "commonMistakes": [
+        "Twisting excessively",
+        "Pulling aggressively"
+      ],
+      "contraindications": [
+        "Recent cervical surgery"
+      ],
+      "progression": [
+        "Increase hold duration"
+      ],
+      "regression": [
+        "Decrease stretch angle"
+      ],
+      "equipment": [],
+      "coachingCues": [
+        "Rotate slightly toward the armpit.",
+        "Relax the shoulder."
+      ],
+      "evidenceLevel": "HIGH",
+      "priority": "HIGH"
+    },
+
+    {
+      "name": "Neck CARs",
+      "category": "DYNAMIC",
+      "targets": [
+        "Cervical Muscles"
+      ],
+      "joint": [
+        "Cervical Spine"
+      ],
+      "difficulty": "BEGINNER",
+      "reps": "5 each direction",
+      "sets": "2",
+      "beforeWorkout": true,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Joint Mobility",
+        "Neck Rotation"
+      ],
+      "helpsWith": [
+        "Joint stiffness",
+        "Movement preparation"
+      ],
+      "commonMistakes": [
+        "Moving too fast",
+        "Using momentum"
+      ],
+      "contraindications": [
+        "Acute neck injury"
+      ],
+      "progression": [
+        "Increase range of motion"
+      ],
+      "regression": [
+        "Perform partial circles"
+      ],
+      "equipment": [],
+      "coachingCues": [
+        "Move slowly.",
+        "Stay pain free.",
+        "Control every degree of movement."
+      ],
+      "evidenceLevel": "HIGH",
+      "priority": "VERY_HIGH"
+    },
+
+    {
+      "name": "Chin Tuck",
+      "category": "ACTIVE",
+      "targets": [
+        "Deep Neck Flexors"
+      ],
+      "joint": [
+        "Cervical Spine"
+      ],
+      "difficulty": "BEGINNER",
+      "hold": "5 sec",
+      "sets": "10",
+      "beforeWorkout": true,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Posture",
+        "Neck Stability"
+      ],
+      "helpsWith": [
+        "Forward head posture",
+        "Neck stability"
+      ],
+      "commonMistakes": [
+        "Looking downward",
+        "Tilting the head"
+      ],
+      "contraindications": [],
+      "progression": [
+        "Wall Chin Tuck"
+      ],
+      "regression": [],
+      "equipment": [],
+      "coachingCues": [
+        "Imagine making a double chin.",
+        "Keep eyes level."
+      ],
+      "evidenceLevel": "HIGH",
+      "priority": "VERY_HIGH"
+    },
+
+    {
+      "name": "Sternocleidomastoid Stretch",
+      "category": "STATIC",
+      "targets": [
+        "Sternocleidomastoid"
+      ],
+      "joint": [
+        "Neck"
+      ],
+      "difficulty": "BEGINNER",
+      "hold": "30 sec",
+      "sets": "2",
+      "beforeWorkout": false,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Neck Extension",
+        "Neck Rotation"
+      ],
+      "helpsWith": [
+        "Neck tightness",
+        "Poor posture"
+      ],
+      "commonMistakes": [
+        "Hyperextending the neck"
+      ],
+      "contraindications": [
+        "Cervical instability"
+      ],
+      "progression": [],
+      "regression": [],
+      "equipment": [],
+      "coachingCues": [
+        "Move gently.",
+        "Do not force end range."
+      ],
+      "evidenceLevel": "MODERATE",
+      "priority": "MEDIUM"
+    },
+
+    {
+      "name": "Scalene Stretch",
+      "category": "STATIC",
+      "targets": [
+        "Scalenes"
+      ],
+      "joint": [
+        "Neck"
+      ],
+      "difficulty": "INTERMEDIATE",
+      "hold": "30 sec",
+      "sets": "2",
+      "beforeWorkout": false,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Neck Mobility"
+      ],
+      "helpsWith": [
+        "Neck tightness",
+        "Elevated shoulders"
+      ],
+      "commonMistakes": [
+        "Holding the breath"
+      ],
+      "contraindications": [
+        "Thoracic outlet syndrome without medical clearance"
+      ],
+      "progression": [],
+      "regression": [],
+      "equipment": [],
+      "coachingCues": [
+        "Breathe deeply into the rib cage."
+      ],
+      "evidenceLevel": "MODERATE",
+      "priority": "MEDIUM"
+    },
+
+    {
+      "name": "Neck Flexion Stretch",
+      "category": "STATIC",
+      "targets": [
+        "Posterior Neck"
+      ],
+      "joint": [
+        "Neck"
+      ],
+      "difficulty": "BEGINNER",
+      "hold": "30 sec",
+      "sets": "2",
+      "beforeWorkout": false,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Neck Flexibility"
+      ],
+      "helpsWith": [
+        "Posterior neck stiffness"
+      ],
+      "commonMistakes": [
+        "Rounded upper back"
+      ],
+      "contraindications": [],
+      "progression": [],
+      "regression": [],
+      "equipment": [],
+      "coachingCues": [
+        "Keep shoulders down.",
+        "Relax the jaw."
+      ],
+      "evidenceLevel": "HIGH",
+      "priority": "MEDIUM"
+    },
+
+    {
+      "name": "Neck Extension Mobility",
+      "category": "ACTIVE",
+      "targets": [
+        "Anterior Neck"
+      ],
+      "joint": [
+        "Cervical Spine"
+      ],
+      "difficulty": "BEGINNER",
+      "reps": "10",
+      "sets": "2",
+      "beforeWorkout": true,
+      "afterWorkout": true,
+      "mobilityGoals": [
+        "Neck Extension"
+      ],
+      "helpsWith": [
+        "Restricted neck movement"
+      ],
+      "commonMistakes": [
+        "Moving too quickly"
+      ],
+      "contraindications": [
+        "History of dizziness with neck extension"
+      ],
+      "progression": [],
+      "regression": [],
+      "equipment": [],
+      "coachingCues": [
+        "Move slowly through a comfortable range."
+      ],
+      "evidenceLevel": "MODERATE",
+      "priority": "MEDIUM"
+    }
+
+  ]
+}

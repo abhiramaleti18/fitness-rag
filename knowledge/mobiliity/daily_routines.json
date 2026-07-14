@@ -1,0 +1,493 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "dailyRoutines":[
+
+    {
+
+      "name":"5 Minute Morning Mobility",
+
+      "goal":"Wake up the body and improve joint mobility.",
+
+      "duration":"5 min",
+
+      "frequency":"Daily",
+
+      "bestTime":"Morning",
+
+      "sequence":[
+
+        {
+          "exercise":"Cat Camel",
+          "duration":"45 sec"
+        },
+
+        {
+          "exercise":"Hip CARs",
+          "duration":"45 sec"
+        },
+
+        {
+          "exercise":"Shoulder CARs",
+          "duration":"45 sec"
+        },
+
+        {
+          "exercise":"Ankle CARs",
+          "duration":"45 sec"
+        },
+
+        {
+          "exercise":"World's Greatest Stretch",
+          "duration":"60 sec"
+        },
+
+        {
+          "exercise":"Deep Squat Hold",
+          "duration":"60 sec"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"10 Minute Morning Routine",
+
+      "goal":"Prepare the body for the day.",
+
+      "duration":"10 min",
+
+      "frequency":"Daily",
+
+      "bestTime":"Morning",
+
+      "sequence":[
+
+        {
+          "exercise":"Cat Camel",
+          "reps":"12"
+        },
+
+        {
+          "exercise":"Thread The Needle",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"Hip CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Shoulder CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"90/90 Hip Stretch",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Deep Squat Hold",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Wall Slides",
+          "reps":"12"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Desk Break Mobility",
+
+      "goal":"Reduce stiffness from prolonged sitting.",
+
+      "duration":"5 min",
+
+      "frequency":"Every 2-3 hours",
+
+      "bestTime":"Work Break",
+
+      "sequence":[
+
+        {
+          "exercise":"Neck CARs",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"Doorway Pec Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Thoracic Windmill",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Hip CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Standing Hamstring Stretch",
+          "hold":"30 sec"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Pre Upper Body Workout",
+
+      "goal":"Improve pressing and pulling performance.",
+
+      "duration":"8 min",
+
+      "frequency":"Upper Body Days",
+
+      "bestTime":"Pre Workout",
+
+      "sequence":[
+
+        {
+          "exercise":"Shoulder CARs",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"Dynamic Chest Opener",
+          "reps":"15"
+        },
+
+        {
+          "exercise":"Bench Lat Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Wall Slides",
+          "reps":"12"
+        },
+
+        {
+          "exercise":"Band External Rotation",
+          "reps":"15"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Pre Lower Body Workout",
+
+      "goal":"Improve squat and hinge mechanics.",
+
+      "duration":"10 min",
+
+      "frequency":"Lower Body Days",
+
+      "bestTime":"Pre Workout",
+
+      "sequence":[
+
+        {
+          "exercise":"Hip CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Knee To Wall Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Dynamic Hamstring Sweep",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"Cossack Squat",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Deep Squat Hold",
+          "hold":"30 sec"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Post Workout Cooldown",
+
+      "goal":"Improve recovery and reduce stiffness.",
+
+      "duration":"10 min",
+
+      "frequency":"After Every Workout",
+
+      "bestTime":"Post Workout",
+
+      "sequence":[
+
+        {
+          "exercise":"Standing Hamstring Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Doorway Pec Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Butterfly Stretch",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Child's Pose",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Foam Roller Thoracic Extension",
+          "hold":"30 sec"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Rest Day Recovery",
+
+      "goal":"Improve recovery and maintain mobility.",
+
+      "duration":"20 min",
+
+      "frequency":"Rest Days",
+
+      "bestTime":"Morning or Evening",
+
+      "sequence":[
+
+        {
+          "exercise":"Cat Camel",
+          "reps":"15"
+        },
+
+        {
+          "exercise":"Thread The Needle",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"90/90 Hip Stretch",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Frog Stretch",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Bench Lat Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Wall Gastrocnemius Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Deep Squat Hold",
+          "hold":"45 sec"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Evening Relaxation Routine",
+
+      "goal":"Reduce muscle tension before sleep.",
+
+      "duration":"15 min",
+
+      "frequency":"Night",
+
+      "bestTime":"Before Bed",
+
+      "sequence":[
+
+        {
+          "exercise":"Child's Pose",
+          "hold":"60 sec"
+        },
+
+        {
+          "exercise":"Open Book Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Doorway Pec Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Standing Quadriceps Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Seated Hamstring Stretch",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Butterfly Stretch",
+          "hold":"45 sec"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Runner Daily Mobility",
+
+      "goal":"Maintain lower-body mobility for running.",
+
+      "duration":"12 min",
+
+      "frequency":"Daily",
+
+      "bestTime":"Before or After Running",
+
+      "sequence":[
+
+        {
+          "exercise":"World's Greatest Stretch",
+          "reps":"6"
+        },
+
+        {
+          "exercise":"Hip CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Dynamic Hamstring Sweep",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"Heel Drops",
+          "reps":"15"
+        },
+
+        {
+          "exercise":"Wall Gastrocnemius Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Toe Walk",
+          "reps":"20 steps"
+        }
+
+      ]
+
+    },
+
+    {
+
+      "name":"Full Body Mobility",
+
+      "goal":"Maintain overall movement quality.",
+
+      "duration":"20 min",
+
+      "frequency":"2-3x/week",
+
+      "bestTime":"Anytime",
+
+      "sequence":[
+
+        {
+          "exercise":"Shoulder CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"Cat Camel",
+          "reps":"12"
+        },
+
+        {
+          "exercise":"Thread The Needle",
+          "reps":"10"
+        },
+
+        {
+          "exercise":"Hip CARs",
+          "reps":"8"
+        },
+
+        {
+          "exercise":"90/90 Hip Stretch",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Standing Hamstring Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Knee To Wall Stretch",
+          "hold":"30 sec"
+        },
+
+        {
+          "exercise":"Deep Squat Hold",
+          "hold":"45 sec"
+        },
+
+        {
+          "exercise":"Wall Angels",
+          "reps":"12"
+        }
+
+      ]
+
+    }
+
+  ]
+}

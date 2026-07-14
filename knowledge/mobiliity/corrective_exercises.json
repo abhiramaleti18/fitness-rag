@@ -1,0 +1,500 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "correctives":[
+
+    {
+
+      "name":"Wall Angels",
+
+      "targets":[
+        "Thoracic Spine",
+        "Shoulders",
+        "Lower Traps"
+      ],
+
+      "purpose":"Improve posture and overhead shoulder mobility.",
+
+      "recommendedFor":[
+        "Rounded shoulders",
+        "Poor overhead press",
+        "Desk posture"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"2-3",
+
+      "reps":"10-15",
+
+      "tempo":"Controlled",
+
+      "rest":"30 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Wall Angel Test",
+        "Overhead Reach Assessment"
+      ],
+
+      "pairedStretches":[
+        "Doorway Pec Stretch",
+        "Bench Lat Stretch",
+        "Foam Roller Thoracic Extension"
+      ],
+
+      "coachingCues":[
+        "Keep ribs down.",
+        "Maintain contact with the wall.",
+        "Move slowly."
+      ]
+
+    },
+
+    {
+
+      "name":"Band External Rotation",
+
+      "targets":[
+        "Rotator Cuff"
+      ],
+
+      "purpose":"Strengthen external rotators and improve shoulder stability.",
+
+      "recommendedFor":[
+        "Shoulder instability",
+        "Overhead athletes",
+        "Bench press imbalance"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"3",
+
+      "reps":"15",
+
+      "tempo":"2-1-2",
+
+      "rest":"30 sec",
+
+      "equipment":[
+        "Resistance Band"
+      ],
+
+      "pairedAssessments":[
+        "Apley Scratch Test"
+      ],
+
+      "pairedStretches":[
+        "Sleeper Stretch",
+        "Doorway Pec Stretch"
+      ],
+
+      "coachingCues":[
+        "Keep elbow tucked.",
+        "Rotate only at the shoulder."
+      ]
+
+    },
+
+    {
+
+      "name":"Face Pull",
+
+      "targets":[
+        "Rear Delts",
+        "Lower Traps",
+        "Rotator Cuff"
+      ],
+
+      "purpose":"Restore scapular balance and improve posture.",
+
+      "recommendedFor":[
+        "Rounded shoulders",
+        "Poor posture",
+        "Shoulder pain"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"3",
+
+      "reps":"15",
+
+      "tempo":"Controlled",
+
+      "rest":"45 sec",
+
+      "equipment":[
+        "Cable",
+        "Resistance Band"
+      ],
+
+      "pairedAssessments":[
+        "Wall Angel Test"
+      ],
+
+      "pairedStretches":[
+        "Doorway Pec Stretch",
+        "Bench Lat Stretch"
+      ],
+
+      "coachingCues":[
+        "Pull toward eyebrows.",
+        "Squeeze shoulder blades."
+      ]
+
+    },
+
+    {
+
+      "name":"Fire Hydrant",
+
+      "targets":[
+        "Glute Medius"
+      ],
+
+      "purpose":"Improve hip stability and knee tracking.",
+
+      "recommendedFor":[
+        "Knee valgus",
+        "Hip instability",
+        "Running"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"2-3",
+
+      "reps":"15",
+
+      "tempo":"Controlled",
+
+      "rest":"30 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Single Leg Balance Test",
+        "Deep Squat Assessment"
+      ],
+
+      "pairedStretches":[
+        "90/90 Hip Stretch",
+        "Hip CARs"
+      ],
+
+      "coachingCues":[
+        "Keep pelvis level.",
+        "Avoid rotating torso."
+      ]
+
+    },
+
+    {
+
+      "name":"Hip Airplane",
+
+      "targets":[
+        "Glute Medius",
+        "Hip Stabilizers"
+      ],
+
+      "purpose":"Develop hip control and balance.",
+
+      "recommendedFor":[
+        "Poor single-leg stability",
+        "Running mechanics"
+      ],
+
+      "difficulty":"ADVANCED",
+
+      "sets":"2",
+
+      "reps":"6 each side",
+
+      "tempo":"Slow",
+
+      "rest":"45 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Single Leg Balance Test"
+      ],
+
+      "pairedStretches":[
+        "Hip CARs",
+        "90/90 Hip Stretch"
+      ],
+
+      "coachingCues":[
+        "Rotate through the hip only.",
+        "Move under full control."
+      ]
+
+    },
+
+    {
+
+      "name":"Scapular Push-Up",
+
+      "targets":[
+        "Serratus Anterior"
+      ],
+
+      "purpose":"Improve scapular control and shoulder mechanics.",
+
+      "recommendedFor":[
+        "Winged scapula",
+        "Poor overhead pressing"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"3",
+
+      "reps":"12",
+
+      "tempo":"Controlled",
+
+      "rest":"45 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Overhead Reach Assessment"
+      ],
+
+      "pairedStretches":[
+        "Bench Lat Stretch",
+        "Doorway Pec Stretch"
+      ],
+
+      "coachingCues":[
+        "Move only the shoulder blades.",
+        "Keep elbows locked."
+      ]
+
+    },
+
+    {
+
+      "name":"Glute Bridge",
+
+      "targets":[
+        "Glutes",
+        "Posterior Chain"
+      ],
+
+      "purpose":"Restore hip extension strength.",
+
+      "recommendedFor":[
+        "Anterior pelvic tilt",
+        "Weak glutes",
+        "Poor hip drive"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"3",
+
+      "reps":"12",
+
+      "tempo":"2-2-2",
+
+      "rest":"45 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Thomas Test"
+      ],
+
+      "pairedStretches":[
+        "Couch Stretch",
+        "Hip Flexor Stretch"
+      ],
+
+      "coachingCues":[
+        "Squeeze glutes at the top.",
+        "Avoid arching the back."
+      ]
+
+    },
+
+    {
+
+      "name":"Bird Dog",
+
+      "targets":[
+        "Core",
+        "Multifidus",
+        "Glutes"
+      ],
+
+      "purpose":"Improve spinal stability.",
+
+      "recommendedFor":[
+        "Low back pain",
+        "Poor core stability"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"2",
+
+      "reps":"10 each side",
+
+      "tempo":"Slow",
+
+      "rest":"30 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Deep Squat Assessment"
+      ],
+
+      "pairedStretches":[
+        "Cat Camel"
+      ],
+
+      "coachingCues":[
+        "Don't rotate the hips.",
+        "Reach long."
+      ]
+
+    },
+
+    {
+
+      "name":"Heel Walk",
+
+      "targets":[
+        "Tibialis Anterior"
+      ],
+
+      "purpose":"Improve ankle stability and dorsiflexion strength.",
+
+      "recommendedFor":[
+        "Poor ankle mobility",
+        "Shin splints"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"2",
+
+      "reps":"20 steps",
+
+      "tempo":"Controlled",
+
+      "rest":"30 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Knee To Wall Test"
+      ],
+
+      "pairedStretches":[
+        "Knee To Wall Stretch"
+      ],
+
+      "coachingCues":[
+        "Lift toes throughout the walk."
+      ]
+
+    },
+
+    {
+
+      "name":"Toe Walk",
+
+      "targets":[
+        "Calves",
+        "Foot Stabilizers"
+      ],
+
+      "purpose":"Improve calf endurance and ankle stability.",
+
+      "recommendedFor":[
+        "Weak calves",
+        "Poor balance"
+      ],
+
+      "difficulty":"BEGINNER",
+
+      "sets":"2",
+
+      "reps":"20 steps",
+
+      "tempo":"Controlled",
+
+      "rest":"30 sec",
+
+      "equipment":[],
+
+      "pairedAssessments":[
+        "Knee To Wall Test"
+      ],
+
+      "pairedStretches":[
+        "Wall Gastrocnemius Stretch"
+      ],
+
+      "coachingCues":[
+        "Stay on the balls of your feet."
+      ]
+
+    },
+
+    {
+
+      "name":"Copenhagen Plank",
+
+      "targets":[
+        "Adductors",
+        "Core"
+      ],
+
+      "purpose":"Strengthen the groin and improve hip stability.",
+
+      "recommendedFor":[
+        "Groin weakness",
+        "Lateral instability"
+      ],
+
+      "difficulty":"ADVANCED",
+
+      "sets":"2",
+
+      "hold":"20-30 sec",
+
+      "rest":"45 sec",
+
+      "equipment":[
+        "Bench"
+      ],
+
+      "pairedAssessments":[
+        "Butterfly Assessment"
+      ],
+
+      "pairedStretches":[
+        "Butterfly Stretch",
+        "Frog Stretch"
+      ],
+
+      "coachingCues":[
+        "Keep the body straight.",
+        "Drive through the supporting leg."
+      ]
+
+    }
+
+  ]
+}

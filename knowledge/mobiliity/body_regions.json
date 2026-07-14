@@ -1,0 +1,556 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "regions": [
+
+    {
+
+      "name":"Neck",
+
+      "primaryJoint":"Cervical Spine",
+
+      "commonProblems":[
+        "Neck stiffness",
+        "Forward head posture",
+        "Reduced rotation",
+        "Upper trapezius tightness",
+        "Tension headaches"
+      ],
+
+      "commonCauses":[
+        "Poor desk posture",
+        "Phone usage",
+        "Weak deep neck flexors",
+        "Stress"
+      ],
+
+      "affectsExercises":[
+        "Back Squat",
+        "Front Squat",
+        "Overhead Press",
+        "Deadlift"
+      ],
+
+      "recommendedStretches":[
+        "Upper Trapezius Stretch",
+        "Levator Scapulae Stretch",
+        "Neck CARs",
+        "Chin Tuck",
+        "Scalene Stretch"
+      ],
+
+      "correctiveExercises":[
+        "Chin Tuck",
+        "Band Face Pull",
+        "Wall Angels"
+      ],
+
+      "assessmentTests":[
+        "Cervical Rotation Test",
+        "Forward Head Assessment"
+      ]
+
+    },
+
+    {
+
+      "name":"Shoulders",
+
+      "primaryJoint":"Glenohumeral Joint",
+
+      "commonProblems":[
+        "Poor overhead mobility",
+        "Rounded shoulders",
+        "Shoulder impingement",
+        "Limited external rotation",
+        "Weak scapular control"
+      ],
+
+      "commonCauses":[
+        "Tight pecs",
+        "Tight lats",
+        "Poor thoracic extension",
+        "Weak rotator cuff",
+        "Poor posture"
+      ],
+
+      "affectsExercises":[
+        "Bench Press",
+        "Overhead Press",
+        "Pull-Up",
+        "Lat Pulldown",
+        "Push-Up",
+        "Snatch",
+        "Clean and Jerk"
+      ],
+
+      "recommendedStretches":[
+        "PVC Pass Through",
+        "Wall Slides",
+        "Doorway Pec Stretch",
+        "Sleeper Stretch",
+        "Cross Body Shoulder Stretch",
+        "Shoulder CARs",
+        "Dead Hang"
+      ],
+
+      "correctiveExercises":[
+        "Band External Rotation",
+        "Band Internal Rotation",
+        "Face Pull",
+        "Scapular Push-Up",
+        "Wall Angels"
+      ],
+
+      "assessmentTests":[
+        "Overhead Reach Test",
+        "Apley Scratch Test",
+        "Shoulder Flexion Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Thoracic Spine",
+
+      "primaryJoint":"Thoracic Vertebrae",
+
+      "commonProblems":[
+        "Rounded upper back",
+        "Poor extension",
+        "Limited rotation",
+        "Poor posture"
+      ],
+
+      "commonCauses":[
+        "Desk work",
+        "Lack of movement",
+        "Poor breathing mechanics"
+      ],
+
+      "affectsExercises":[
+        "Bench Press",
+        "Front Squat",
+        "Back Squat",
+        "Overhead Press",
+        "Deadlift"
+      ],
+
+      "recommendedStretches":[
+        "Cat Camel",
+        "Thread The Needle",
+        "Open Book Stretch",
+        "Foam Roller Thoracic Extension",
+        "Thoracic Windmill"
+      ],
+
+      "correctiveExercises":[
+        "Wall Angels",
+        "Foam Roller Snow Angel",
+        "Bird Dog"
+      ],
+
+      "assessmentTests":[
+        "Thoracic Rotation Test",
+        "Wall Angel Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Chest",
+
+      "primaryJoint":"Shoulder",
+
+      "commonProblems":[
+        "Rounded shoulders",
+        "Limited shoulder extension",
+        "Tight pec minor",
+        "Poor posture"
+      ],
+
+      "commonCauses":[
+        "Excessive pressing",
+        "Desk posture",
+        "Lack of stretching"
+      ],
+
+      "affectsExercises":[
+        "Bench Press",
+        "Push-Up",
+        "Overhead Press"
+      ],
+
+      "recommendedStretches":[
+        "Doorway Pec Stretch",
+        "Corner Pec Stretch",
+        "Prayer Chest Stretch",
+        "Dynamic Chest Opener"
+      ],
+
+      "correctiveExercises":[
+        "Wall Slides",
+        "Band Pull Apart",
+        "Face Pull"
+      ],
+
+      "assessmentTests":[
+        "Shoulder Extension Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Lats",
+
+      "primaryJoint":"Shoulder",
+
+      "commonProblems":[
+        "Poor overhead mobility",
+        "Tight lats",
+        "Poor front rack position"
+      ],
+
+      "commonCauses":[
+        "High pulling volume",
+        "Limited stretching"
+      ],
+
+      "affectsExercises":[
+        "Pull-Up",
+        "Overhead Press",
+        "Front Squat",
+        "Snatch"
+      ],
+
+      "recommendedStretches":[
+        "Bench Lat Stretch",
+        "Prayer Stretch",
+        "Dead Hang",
+        "Wall Lat Stretch"
+      ],
+
+      "correctiveExercises":[
+        "Wall Slides",
+        "Band Pulldown Stretch"
+      ],
+
+      "assessmentTests":[
+        "Shoulder Flexion Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Wrists",
+
+      "primaryJoint":"Radiocarpal Joint",
+
+      "commonProblems":[
+        "Poor wrist extension",
+        "Pain during push-ups",
+        "Front rack discomfort"
+      ],
+
+      "commonCauses":[
+        "Limited mobility",
+        "Weak forearms",
+        "High keyboard usage"
+      ],
+
+      "affectsExercises":[
+        "Push-Up",
+        "Bench Press",
+        "Front Squat",
+        "Handstand",
+        "Clean"
+      ],
+
+      "recommendedStretches":[
+        "Prayer Stretch",
+        "Reverse Prayer Stretch",
+        "Palm Rocks",
+        "Wrist CARs"
+      ],
+
+      "correctiveExercises":[
+        "Fingertip Rocks",
+        "Quadruped Wrist Stretch"
+      ],
+
+      "assessmentTests":[
+        "Wrist Extension Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Hips",
+
+      "primaryJoint":"Hip",
+
+      "commonProblems":[
+        "Poor squat depth",
+        "Hip stiffness",
+        "Anterior pelvic tilt",
+        "Poor internal rotation"
+      ],
+
+      "commonCauses":[
+        "Sitting",
+        "Weak glutes",
+        "Tight hip flexors"
+      ],
+
+      "affectsExercises":[
+        "Squat",
+        "Deadlift",
+        "Lunge",
+        "Bulgarian Split Squat",
+        "Olympic Lifts"
+      ],
+
+      "recommendedStretches":[
+        "90/90 Hip Stretch",
+        "Hip CARs",
+        "World's Greatest Stretch",
+        "Couch Stretch",
+        "Deep Squat Hold",
+        "Cossack Squat"
+      ],
+
+      "correctiveExercises":[
+        "Fire Hydrant",
+        "Hip Airplane",
+        "Glute Bridge"
+      ],
+
+      "assessmentTests":[
+        "Deep Squat Test",
+        "Hip Internal Rotation Test",
+        "Thomas Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Hamstrings",
+
+      "primaryJoint":"Hip",
+
+      "commonProblems":[
+        "Poor toe touch",
+        "Limited hip hinge",
+        "Posterior chain tightness"
+      ],
+
+      "commonCauses":[
+        "Lack of flexibility",
+        "Sedentary lifestyle"
+      ],
+
+      "affectsExercises":[
+        "Deadlift",
+        "Romanian Deadlift",
+        "Good Morning"
+      ],
+
+      "recommendedStretches":[
+        "Standing Hamstring Stretch",
+        "Jefferson Curl",
+        "Dynamic Hamstring Sweep",
+        "Band Assisted Hamstring Stretch"
+      ],
+
+      "correctiveExercises":[
+        "Romanian Deadlift Pattern Stretch"
+      ],
+
+      "assessmentTests":[
+        "Toe Touch Test",
+        "Straight Leg Raise"
+      ]
+
+    },
+
+    {
+
+      "name":"Quadriceps",
+
+      "primaryJoint":"Knee",
+
+      "commonProblems":[
+        "Tight quadriceps",
+        "Anterior pelvic tilt",
+        "Limited knee flexion"
+      ],
+
+      "commonCauses":[
+        "Cycling",
+        "Running",
+        "High squat volume"
+      ],
+
+      "affectsExercises":[
+        "Squat",
+        "Lunge",
+        "Split Squat",
+        "Leg Press"
+      ],
+
+      "recommendedStretches":[
+        "Standing Quadriceps Stretch",
+        "Couch Stretch",
+        "Reverse Nordic Stretch"
+      ],
+
+      "correctiveExercises":[
+        "Reverse Nordic"
+      ],
+
+      "assessmentTests":[
+        "Heel To Glute Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Adductors",
+
+      "primaryJoint":"Hip",
+
+      "commonProblems":[
+        "Groin tightness",
+        "Poor lateral mobility",
+        "Limited squat width"
+      ],
+
+      "commonCauses":[
+        "Poor mobility",
+        "Running",
+        "Soccer"
+      ],
+
+      "affectsExercises":[
+        "Sumo Deadlift",
+        "Cossack Squat",
+        "Wide Squat"
+      ],
+
+      "recommendedStretches":[
+        "Butterfly Stretch",
+        "Frog Stretch",
+        "Adductor Rock Back",
+        "Side Lunge Stretch"
+      ],
+
+      "correctiveExercises":[
+        "Copenhagen Plank"
+      ],
+
+      "assessmentTests":[
+        "Butterfly Assessment"
+      ]
+
+    },
+
+    {
+
+      "name":"Calves",
+
+      "primaryJoint":"Ankle",
+
+      "commonProblems":[
+        "Heel lifting",
+        "Calf tightness",
+        "Poor squat depth"
+      ],
+
+      "commonCauses":[
+        "Running",
+        "Poor ankle mobility",
+        "Lack of stretching"
+      ],
+
+      "affectsExercises":[
+        "Squat",
+        "Lunge",
+        "Walking",
+        "Running",
+        "Jumping"
+      ],
+
+      "recommendedStretches":[
+        "Wall Gastrocnemius Stretch",
+        "Bent Knee Soleus Stretch",
+        "Heel Drops",
+        "Step Calf Drop Stretch"
+      ],
+
+      "correctiveExercises":[
+        "Toe Walk",
+        "Heel Walk"
+      ],
+
+      "assessmentTests":[
+        "Knee To Wall Test"
+      ]
+
+    },
+
+    {
+
+      "name":"Ankles",
+
+      "primaryJoint":"Talocrural Joint",
+
+      "commonProblems":[
+        "Poor dorsiflexion",
+        "Heel lifting",
+        "Ankle stiffness"
+      ],
+
+      "commonCauses":[
+        "Previous sprains",
+        "Tight calves",
+        "Sedentary lifestyle"
+      ],
+
+      "affectsExercises":[
+        "Squat",
+        "Front Squat",
+        "Overhead Squat",
+        "Lunge",
+        "Walking"
+      ],
+
+      "recommendedStretches":[
+        "Knee To Wall Stretch",
+        "Ankle CARs",
+        "Dorsiflexion Rock",
+        "Banded Ankle Mobilization"
+      ],
+
+      "correctiveExercises":[
+        "Heel Walk",
+        "Toe Walk",
+        "Tibialis Raise"
+      ],
+
+      "assessmentTests":[
+        "Knee To Wall Test",
+        "Single Leg Balance Test"
+      ]
+
+    }
+
+  ]
+}

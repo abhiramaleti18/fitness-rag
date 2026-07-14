@@ -1,0 +1,412 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "assessments":[
+
+    {
+
+      "name":"Deep Squat Assessment",
+
+      "difficulty":"BEGINNER",
+
+      "purpose":"Evaluate overall lower-body mobility and squat mechanics.",
+
+      "instructions":[
+        "Stand with feet shoulder-width apart.",
+        "Keep heels flat.",
+        "Squat as deep as possible.",
+        "Keep arms overhead."
+      ],
+
+      "goodResult":[
+        "Hips below knees",
+        "Heels remain on floor",
+        "Neutral spine maintained",
+        "Knees track over toes"
+      ],
+
+      "poorResult":[
+        "Heels lift",
+        "Rounded lower back",
+        "Excessive forward lean",
+        "Knees cave inward"
+      ],
+
+      "likelyCauses":[
+        "Poor ankle dorsiflexion",
+        "Hip mobility restrictions",
+        "Tight calves",
+        "Weak core stability"
+      ],
+
+      "affectedExercises":[
+        "Back Squat",
+        "Front Squat",
+        "Overhead Squat",
+        "Goblet Squat"
+      ],
+
+      "recommendedStretches":[
+        "90/90 Hip Stretch",
+        "Deep Squat Hold",
+        "Knee To Wall Stretch",
+        "Bent Knee Soleus Stretch",
+        "Butterfly Stretch"
+      ],
+
+      "recommendedCorrectives":[
+        "Hip CARs",
+        "Fire Hydrant",
+        "Toe Walk",
+        "Heel Walk"
+      ]
+
+    },
+
+    {
+
+      "name":"Overhead Reach Assessment",
+
+      "difficulty":"BEGINNER",
+
+      "purpose":"Evaluate shoulder flexion and thoracic extension.",
+
+      "instructions":[
+        "Stand against a wall.",
+        "Raise both arms overhead.",
+        "Keep ribs down."
+      ],
+
+      "goodResult":[
+        "Arms reach overhead",
+        "Lower back stays neutral",
+        "No shoulder pain"
+      ],
+
+      "poorResult":[
+        "Unable to reach overhead",
+        "Lower back arches",
+        "Shoulder pain"
+      ],
+
+      "likelyCauses":[
+        "Tight lats",
+        "Tight chest",
+        "Poor thoracic extension",
+        "Weak serratus anterior"
+      ],
+
+      "affectedExercises":[
+        "Overhead Press",
+        "Snatch",
+        "Push Press",
+        "Handstand"
+      ],
+
+      "recommendedStretches":[
+        "Bench Lat Stretch",
+        "Doorway Pec Stretch",
+        "Foam Roller Thoracic Extension",
+        "Wall Slides"
+      ],
+
+      "recommendedCorrectives":[
+        "Band External Rotation",
+        "Scapular Push-Up",
+        "Wall Angels"
+      ]
+
+    },
+
+    {
+
+      "name":"Knee To Wall Test",
+
+      "difficulty":"BEGINNER",
+
+      "purpose":"Measure ankle dorsiflexion.",
+
+      "instructions":[
+        "Stand facing a wall.",
+        "Place foot several centimeters away.",
+        "Touch knee to wall without lifting heel."
+      ],
+
+      "goodResult":[
+        "10-12 cm from wall",
+        "Heel remains planted"
+      ],
+
+      "poorResult":[
+        "Cannot reach wall",
+        "Heel lifts"
+      ],
+
+      "likelyCauses":[
+        "Tight calves",
+        "Restricted ankle capsule"
+      ],
+
+      "affectedExercises":[
+        "Squat",
+        "Lunge",
+        "Running"
+      ],
+
+      "recommendedStretches":[
+        "Knee To Wall Stretch",
+        "Wall Gastrocnemius Stretch",
+        "Bent Knee Soleus Stretch",
+        "Banded Ankle Mobilization"
+      ],
+
+      "recommendedCorrectives":[
+        "Toe Walk",
+        "Heel Walk"
+      ]
+
+    },
+
+    {
+
+      "name":"Thomas Test",
+
+      "difficulty":"INTERMEDIATE",
+
+      "purpose":"Assess hip flexor flexibility.",
+
+      "instructions":[
+        "Sit on edge of bench.",
+        "Lie back while hugging one knee.",
+        "Observe opposite leg."
+      ],
+
+      "goodResult":[
+        "Opposite thigh stays flat",
+        "Knee bends naturally"
+      ],
+
+      "poorResult":[
+        "Thigh rises",
+        "Leg straightens"
+      ],
+
+      "likelyCauses":[
+        "Tight hip flexors",
+        "Tight rectus femoris"
+      ],
+
+      "affectedExercises":[
+        "Squat",
+        "Sprint",
+        "Walking"
+      ],
+
+      "recommendedStretches":[
+        "Couch Stretch",
+        "Half Kneeling Hip Flexor Stretch"
+      ],
+
+      "recommendedCorrectives":[
+        "Glute Bridge",
+        "Fire Hydrant"
+      ]
+
+    },
+
+    {
+
+      "name":"Toe Touch Assessment",
+
+      "difficulty":"BEGINNER",
+
+      "purpose":"Assess hamstring and posterior chain flexibility.",
+
+      "instructions":[
+        "Stand with knees straight.",
+        "Reach toward toes."
+      ],
+
+      "goodResult":[
+        "Hands reach toes",
+        "Neutral spine"
+      ],
+
+      "poorResult":[
+        "Cannot reach toes",
+        "Rounded back"
+      ],
+
+      "likelyCauses":[
+        "Tight hamstrings",
+        "Poor hip hinge"
+      ],
+
+      "affectedExercises":[
+        "Deadlift",
+        "Romanian Deadlift"
+      ],
+
+      "recommendedStretches":[
+        "Standing Hamstring Stretch",
+        "Jefferson Curl",
+        "Band Assisted Hamstring Stretch"
+      ],
+
+      "recommendedCorrectives":[
+        "Romanian Deadlift Pattern Stretch"
+      ]
+
+    },
+
+    {
+
+      "name":"Wall Angel Test",
+
+      "difficulty":"BEGINNER",
+
+      "purpose":"Evaluate posture and shoulder mobility.",
+
+      "instructions":[
+        "Stand against a wall.",
+        "Keep head, upper back and hips touching.",
+        "Slide arms overhead."
+      ],
+
+      "goodResult":[
+        "Arms stay against wall",
+        "No pain"
+      ],
+
+      "poorResult":[
+        "Wrists leave wall",
+        "Back arches",
+        "Shoulders elevate"
+      ],
+
+      "likelyCauses":[
+        "Tight pecs",
+        "Poor thoracic mobility",
+        "Weak lower traps"
+      ],
+
+      "affectedExercises":[
+        "Bench Press",
+        "Overhead Press"
+      ],
+
+      "recommendedStretches":[
+        "Doorway Pec Stretch",
+        "Foam Roller Thoracic Extension",
+        "Bench Lat Stretch"
+      ],
+
+      "recommendedCorrectives":[
+        "Wall Angels",
+        "Band Pull Apart",
+        "Scapular Push-Up"
+      ]
+
+    },
+
+    {
+
+      "name":"Single Leg Balance Test",
+
+      "difficulty":"BEGINNER",
+
+      "purpose":"Assess balance and hip stability.",
+
+      "instructions":[
+        "Stand on one leg.",
+        "Hold for 30 seconds."
+      ],
+
+      "goodResult":[
+        "Stable balance",
+        "Minimal movement"
+      ],
+
+      "poorResult":[
+        "Frequent balance loss",
+        "Hip drops",
+        "Foot instability"
+      ],
+
+      "likelyCauses":[
+        "Weak glute medius",
+        "Poor ankle stability",
+        "Poor proprioception"
+      ],
+
+      "affectedExercises":[
+        "Running",
+        "Split Squat",
+        "Single Leg RDL"
+      ],
+
+      "recommendedStretches":[
+        "Hip CARs",
+        "Ankle CARs"
+      ],
+
+      "recommendedCorrectives":[
+        "Hip Airplane",
+        "Fire Hydrant",
+        "Heel Walk",
+        "Toe Walk"
+      ]
+
+    },
+
+    {
+
+      "name":"Apley Scratch Test",
+
+      "difficulty":"INTERMEDIATE",
+
+      "purpose":"Assess shoulder internal and external rotation.",
+
+      "instructions":[
+        "Reach one hand over the shoulder.",
+        "Reach the other behind the back.",
+        "Try to touch fingers."
+      ],
+
+      "goodResult":[
+        "Hands touch comfortably"
+      ],
+
+      "poorResult":[
+        "Large gap",
+        "Pain"
+      ],
+
+      "likelyCauses":[
+        "Tight lats",
+        "Poor rotator cuff mobility",
+        "Tight posterior capsule"
+      ],
+
+      "affectedExercises":[
+        "Bench Press",
+        "Overhead Press",
+        "Pull-Up"
+      ],
+
+      "recommendedStretches":[
+        "Sleeper Stretch",
+        "Bench Lat Stretch",
+        "Doorway Pec Stretch"
+      ],
+
+      "recommendedCorrectives":[
+        "Band External Rotation",
+        "Wall Slides"
+      ]
+
+    }
+
+  ]
+}

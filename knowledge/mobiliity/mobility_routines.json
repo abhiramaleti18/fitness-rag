@@ -1,0 +1,353 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-08",
+
+  "routines":[
+
+    {
+      "name":"Shoulder Mobility Routine",
+      "goal":"Improve overhead mobility and shoulder health.",
+      "difficulty":"BEGINNER",
+      "duration":"10 min",
+      "frequency":"3-5x/week",
+
+      "recommendedFor":[
+        "Poor overhead press",
+        "Rounded shoulders",
+        "Shoulder stiffness"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Shoulder CARs",
+          "sets":"2",
+          "reps":"8 each"
+        },
+        {
+          "exercise":"Bench Lat Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Doorway Pec Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Wall Slides",
+          "sets":"2",
+          "reps":"12"
+        },
+        {
+          "exercise":"Band External Rotation",
+          "sets":"2",
+          "reps":"15"
+        },
+        {
+          "exercise":"Wall Angels",
+          "sets":"2",
+          "reps":"10"
+        }
+      ]
+    },
+
+    {
+      "name":"Deep Squat Mobility",
+      "goal":"Improve squat depth and lower-body mobility.",
+      "difficulty":"BEGINNER",
+      "duration":"12 min",
+      "frequency":"4x/week",
+
+      "recommendedFor":[
+        "Poor squat depth",
+        "Heels lifting",
+        "Hip stiffness"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Hip CARs",
+          "sets":"2",
+          "reps":"8"
+        },
+        {
+          "exercise":"Knee To Wall Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"90/90 Hip Stretch",
+          "sets":"2",
+          "hold":"45 sec"
+        },
+        {
+          "exercise":"Butterfly Stretch",
+          "sets":"2",
+          "hold":"45 sec"
+        },
+        {
+          "exercise":"Deep Squat Hold",
+          "sets":"3",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Fire Hydrant",
+          "sets":"2",
+          "reps":"15"
+        }
+      ]
+    },
+
+    {
+      "name":"Runner Mobility Routine",
+      "goal":"Improve hip, ankle and posterior chain mobility.",
+      "difficulty":"BEGINNER",
+      "duration":"10 min",
+      "frequency":"Daily",
+
+      "recommendedFor":[
+        "Runners",
+        "Cyclists",
+        "Field sports"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"World's Greatest Stretch",
+          "sets":"2",
+          "reps":"6"
+        },
+        {
+          "exercise":"Dynamic Hamstring Sweep",
+          "sets":"2",
+          "reps":"10"
+        },
+        {
+          "exercise":"Standing Hip Openers",
+          "sets":"2",
+          "reps":"12"
+        },
+        {
+          "exercise":"Heel Drops",
+          "sets":"2",
+          "reps":"15"
+        },
+        {
+          "exercise":"Toe Walk",
+          "sets":"2",
+          "reps":"20 steps"
+        }
+      ]
+    },
+
+    {
+      "name":"Desk Worker Reset",
+      "goal":"Reverse prolonged sitting posture.",
+      "difficulty":"BEGINNER",
+      "duration":"8 min",
+      "frequency":"Daily",
+
+      "recommendedFor":[
+        "Office workers",
+        "Students",
+        "Programmers"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Cat Camel",
+          "sets":"2",
+          "reps":"12"
+        },
+        {
+          "exercise":"Thread The Needle",
+          "sets":"2",
+          "reps":"10"
+        },
+        {
+          "exercise":"Doorway Pec Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Couch Stretch",
+          "sets":"2",
+          "hold":"45 sec"
+        },
+        {
+          "exercise":"Wall Angels",
+          "sets":"2",
+          "reps":"10"
+        }
+      ]
+    },
+
+    {
+      "name":"Upper Body Warm-up",
+      "goal":"Prepare shoulders and upper back for training.",
+      "difficulty":"BEGINNER",
+      "duration":"8 min",
+      "frequency":"Before Upper Body Workouts",
+
+      "recommendedFor":[
+        "Push Day",
+        "Pull Day",
+        "Upper Body"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Shoulder CARs",
+          "sets":"2",
+          "reps":"8"
+        },
+        {
+          "exercise":"Dynamic Chest Opener",
+          "sets":"2",
+          "reps":"15"
+        },
+        {
+          "exercise":"Band Pull Apart",
+          "sets":"2",
+          "reps":"20"
+        },
+        {
+          "exercise":"Wall Slides",
+          "sets":"2",
+          "reps":"10"
+        },
+        {
+          "exercise":"Scapular Push-Up",
+          "sets":"2",
+          "reps":"12"
+        }
+      ]
+    },
+
+    {
+      "name":"Lower Body Warm-up",
+      "goal":"Prepare hips, knees and ankles.",
+      "difficulty":"BEGINNER",
+      "duration":"10 min",
+      "frequency":"Before Lower Body Workouts",
+
+      "recommendedFor":[
+        "Leg Day",
+        "Running",
+        "Sports"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Hip CARs",
+          "sets":"2",
+          "reps":"8"
+        },
+        {
+          "exercise":"Dynamic Hamstring Sweep",
+          "sets":"2",
+          "reps":"10"
+        },
+        {
+          "exercise":"Cossack Squat",
+          "sets":"2",
+          "reps":"8"
+        },
+        {
+          "exercise":"Knee To Wall Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Deep Squat Hold",
+          "sets":"2",
+          "hold":"30 sec"
+        }
+      ]
+    },
+
+    {
+      "name":"Back Pain Prevention",
+      "goal":"Improve spinal stability and hip mobility.",
+      "difficulty":"BEGINNER",
+      "duration":"10 min",
+      "frequency":"3x/week",
+
+      "recommendedFor":[
+        "General population",
+        "Office workers",
+        "Lifters"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Cat Camel",
+          "sets":"2",
+          "reps":"12"
+        },
+        {
+          "exercise":"Bird Dog",
+          "sets":"2",
+          "reps":"10"
+        },
+        {
+          "exercise":"Hip CARs",
+          "sets":"2",
+          "reps":"8"
+        },
+        {
+          "exercise":"Glute Bridge",
+          "sets":"3",
+          "reps":"12"
+        },
+        {
+          "exercise":"Standing Hamstring Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        }
+      ]
+    },
+
+    {
+      "name":"Front Rack Mobility",
+      "goal":"Improve front squat and clean position.",
+      "difficulty":"INTERMEDIATE",
+      "duration":"10 min",
+      "frequency":"3x/week",
+
+      "recommendedFor":[
+        "Olympic Weightlifting",
+        "Front Squats"
+      ],
+
+      "sequence":[
+        {
+          "exercise":"Wrist CARs",
+          "sets":"2",
+          "reps":"10"
+        },
+        {
+          "exercise":"Prayer Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Bench Lat Stretch",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Foam Roller Thoracic Extension",
+          "sets":"2",
+          "hold":"30 sec"
+        },
+        {
+          "exercise":"Wall Slides",
+          "sets":"2",
+          "reps":"10"
+        }
+      ]
+    }
+
+  ]
+}
