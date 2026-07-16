@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ConfirmModal from '../components/ConfirmModal';
 import ExerciseProgressChart from '../components/ExerciseProgressChart';
+import BodyWeightTracker from '../components/BodyWeightTracker';
 import api from '../api/api';
 import './Logs.css';
 
@@ -266,6 +267,7 @@ export default function Logs() {
                 </form>
 
                 <div className="logs-history">
+                    <BodyWeightTracker />
                     <ExerciseProgressChart />
                     <h2>History</h2>
 

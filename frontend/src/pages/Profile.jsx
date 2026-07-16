@@ -14,7 +14,8 @@ const INJURIES = ['shoulder pain', 'lower back pain', 'knee pain', 'elbow pain',
 export default function Profile() {
     const navigate = useNavigate();
     const [editing, setEditing] = useState(false);
-    const [pendingDelete, setPendingDelete] = useState(null);
+    const [personalRecords, setPersonalRecords] = useState([]);
+    const [loadingRecords, setLoadingRecords] = useState(true);
     const [accentColor, setAccentColor] = useState(getSavedAccentColor());
     const [user, setUser] = useState(null);
     const [form, setForm] = useState({ weight: '', height: '', experienceLevel: 'beginner' });
@@ -101,40 +102,12 @@ export default function Profile() {
         }
     };
 
-    const handleAddPR = async (e) => {
-        e.preventDefault();
-        setPrError('');
-
-        if (!prForm.exerciseName || !prForm.weight) {
-            setPrError('Exercise name and weight are required');
-            return;
-        }
-
-        try {
-            const res = await api.post('/profile/records', {
-                exerciseName: prForm.exerciseName,
-                weight: Number(prForm.weight),
-                reps: prForm.reps ? Number(prForm.reps) : 1
-            });
-            setUser({ ...user, personalRecords: res.data.personalRecords });
-            setPrForm({ exerciseName: '', weight: '', reps: '' });
-            setSuggestions([]);
-        } catch (err) {
-            setPrError(err.response?.data?.message || 'Failed to add record');
-        }
-    };
-
-    const confirmDeletePR = async () => {
-        if (!pendingDelete) return;
-        try {
-            const res = await api.delete(`/profile/records/${pendingDelete.id}`);
-            setUser({ ...user, personalRecords: res.data.personalRecords });
-        } catch (err) {
-            console.error('Failed to delete record', err);
-        } finally {
-            setPendingDelete(null);
-        }
-    };
+    useEffect(() => {
+        api.get('/logs/personal-records')
+            .then(res => setPersonalRecords(res.data.records || []))
+            .catch(err => console.error('Failed to load personal records', err))
+            .finally(() => setLoadingRecords(false));
+    }, []);
     const handleAccentChange = (hex) => {
         setAccentColor(hex);
         saveAccentColor(hex);
@@ -248,66 +221,24 @@ export default function Profile() {
 
                     <div className="profile-card">
                         <h2>Personal Records</h2>
-
-                        <form onSubmit={handleAddPR} className="pr-form">
-                            {prError && <p className="profile-error">{prError}</p>}
-
-                            <div className="pr-autocomplete">
-                                <input
-                                    placeholder="Exercise (e.g. Bench Press)"
-                                    value={prForm.exerciseName}
-                                    onChange={(e) => handleExerciseNameChange(e.target.value)}
-                                    onFocus={() => prForm.exerciseName.length >= 2 && setShowSuggestions(true)}
-                                    onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-                                />
-                                {showSuggestions && suggestions.length > 0 && (
-                                    <div className="pr-suggestions">
-                                        {suggestions.map((ex) => (
-                                            <button
-                                                key={ex.id}
-                                                type="button"
-                                                className="pr-suggestion-item"
-                                                onMouseDown={() => {
-                                                    setPrForm({ ...prForm, exerciseName: ex.name });
-                                                    setShowSuggestions(false);
-                                                }}
-                                            >
-                                                {ex.name}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="pr-form-row">
-                                <input
-                                    type="number"
-                                    step="0.5"
-                                    placeholder="Weight (kg)"
-                                    value={prForm.weight}
-                                    onChange={(e) => setPrForm({ ...prForm, weight: e.target.value })}
-                                />
-                                <input
-                                    type="number"
-                                    placeholder="Reps"
-                                    value={prForm.reps}
-                                    onChange={(e) => setPrForm({ ...prForm, reps: e.target.value })}
-                                />
-                                <button type="submit">Add</button>
-                            </div>
-                        </form>
+                        <p className="profile-appearance-sub">Automatically updated from your logged workouts.</p>
 
                         <div className="pr-list">
-                            {(!user.personalRecords || user.personalRecords.length === 0) && (
-                                <p className="profile-empty">No personal records yet — add your first lift above.</p>
+                            {loadingRecords && <p className="profile-empty">Loading...</p>}
+
+                            {!loadingRecords && personalRecords.length === 0 && (
+                                <p className="profile-empty">No records yet — log a workout and your best lifts will show up here.</p>
                             )}
-                            {user.personalRecords?.slice().reverse().map((pr) => (
-                                <div key={pr._id} className="pr-item">
+
+                            {!loadingRecords && personalRecords.map((pr) => (
+                                <div key={pr.exerciseName} className="pr-item">
                                     <div>
                                         <strong>{pr.exerciseName}</strong>
-                                        <span className="pr-item-detail">{pr.weight}kg &times; {pr.reps}</span>
+                                        <span className="pr-item-detail">
+                                            {pr.weight}kg &times; {pr.reps} &middot; est. 1RM {pr.oneRepMax}kg
+                                        </span>
                                     </div>
-                                    <button onClick={() => setPendingDelete({ id: pr._id, name: pr.exerciseName })} className="pr-delete" aria-label="Delete record">&times;</button>
+                                    <span className="pr-item-date">{new Date(pr.date).toLocaleDateString()}</span>
                                 </div>
                             ))}
                         </div>
@@ -344,13 +275,6 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            <ConfirmModal
-                open={!!pendingDelete}
-                title="Delete personal record?"
-                message={pendingDelete ? `This will permanently remove your record for "${pendingDelete.name}".` : ''}
-                onConfirm={confirmDeletePR}
-                onCancel={() => setPendingDelete(null)}
-            />
-        </Layout>
+            </Layout>
     );
 }

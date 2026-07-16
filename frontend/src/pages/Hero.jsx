@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import SearchBar from '../components/SearchBar';
 import api from '../api/api';
 import PlanDayCard from '../components/PlanDayCard';
+import WeeklySummary from '../components/WeeklySummary';
 import './Hero.css';
 
 const PILLS = [
@@ -165,6 +166,8 @@ export default function Hero() {
                                 </span>
                             ))}
                         </div>
+
+                        <WeeklySummary />
 
                         <div className="hero-search-wrap">
                             <SearchBar onSearch={runQuery} loading={loading} />

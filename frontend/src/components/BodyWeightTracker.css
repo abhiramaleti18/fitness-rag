@@ -1,0 +1,100 @@
+.bw-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.bw-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.bw-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.bw-latest {
+    font-size: 0.82rem;
+    color: var(--red);
+    font-weight: 700;
+}
+
+.bw-log-form {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.bw-log-form input {
+    flex: 1;
+    max-width: 160px;
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.bw-log-form button {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bw-log-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.bw-error {
+    color: var(--red);
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.bw-loading,
+.bw-empty-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.bw-recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.bw-recent-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.bw-recent-item button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.bw-recent-item button:hover {
+    color: var(--red);
+}

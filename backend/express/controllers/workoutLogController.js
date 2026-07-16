@@ -98,8 +98,113 @@ exports.getExerciseProgress = async (req, res) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
-// Distinct exercise names the user has actually logged — powers the
-// progress chart's exercise picker so they don't have to type an exact name.
+function toDayKey(date) {
+    const d = new Date(date);
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+}
+
+exports.getWeeklySummary = async (req, res) => {
+    try {
+        const now = new Date();
+        const startOfWeek = new Date(now);
+        const day = startOfWeek.getDay(); // 0 = Sunday
+        const diffToMonday = (day === 0 ? -6 : 1 - day);
+        startOfWeek.setDate(startOfWeek.getDate() + diffToMonday);
+        startOfWeek.setHours(0, 0, 0, 0);
+
+        const weekLogs = await WorkoutLog.find({
+            userId: req.user.id,
+            date: { $gte: startOfWeek }
+        });
+
+        const workoutsThisWeek = weekLogs.length;
+
+        let totalVolume = 0;
+        for (const log of weekLogs) {
+            for (const ex of log.exercises) {
+                for (const set of ex.sets) {
+                    totalVolume += (set.weight || 0) * (set.reps || 0);
+                }
+            }
+        }
+
+        const oneYearAgo = new Date();
+        oneYearAgo.setDate(oneYearAgo.getDate() - 365);
+        const allLogs = await WorkoutLog.find({
+            userId: req.user.id,
+            date: { $gte: oneYearAgo }
+        }).select('date');
+
+        const loggedDays = new Set(allLogs.map(l => toDayKey(l.date)));
+
+        let streak = 0;
+        const cursor = new Date();
+        cursor.setHours(0, 0, 0, 0);
+
+        if (!loggedDays.has(toDayKey(cursor))) {
+            cursor.setDate(cursor.getDate() - 1);
+        }
+
+        while (loggedDays.has(toDayKey(cursor))) {
+            streak++;
+            cursor.setDate(cursor.getDate() - 1);
+        }
+
+        res.status(200).json({
+            success: true,
+            workoutsThisWeek,
+            totalVolume: Math.round(totalVolume),
+            streak
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+exports.getPersonalRecords = async (req, res) => {
+    try {
+        const names = await WorkoutLog.distinct('exercises.exerciseName', { userId: req.user.id });
+        const records = [];
+
+        for (const name of names) {
+            const logs = await WorkoutLog.find({
+                userId: req.user.id,
+                'exercises.exerciseName': name
+            });
+
+            let best = null;
+
+            for (const log of logs) {
+                const entry = log.exercises.find(e => e.exerciseName === name);
+                if (!entry) continue;
+
+                for (const set of entry.sets) {
+                    const oneRepMax = set.weight * (1 + set.reps / 30);
+                    if (!best || oneRepMax > best.oneRepMax) {
+                        best = {
+                            weight: set.weight,
+                            reps: set.reps,
+                            date: log.date,
+                            oneRepMax: Math.round(oneRepMax)
+                        };
+                    }
+                }
+            }
+
+            if (best) {
+                records.push({ exerciseName: name, ...best });
+            }
+        }
+
+        records.sort((a, b) => a.exerciseName.localeCompare(b.exerciseName));
+        res.status(200).json({ success: true, records });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
 exports.getLoggedExerciseNames = async (req, res) => {
     try {
         const names = await WorkoutLog.distinct('exercises.exerciseName', { userId: req.user.id });
@@ -199,10 +304,9 @@ exports.getConsistency = async (req, res) => {
             date: { $gte: oneYearAgo }
         }).select('date');
 
-        // Count sessions per calendar day (YYYY-MM-DD)
         const counts = {};
         logs.forEach(log => {
-            const key = log.date.toISOString().split('T')[0];
+            const key = toDayKey(log.date);
             counts[key] = (counts[key] || 0) + 1;
         });
 

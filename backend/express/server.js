@@ -33,6 +33,9 @@ app.use('/api/logs', workoutLogRoutes);
 const workoutSplitRoutes = require('./routes/workoutSplitRoutes');
 app.use('/api/splits', workoutSplitRoutes);
 
+const bodyWeightRoutes = require('./routes/bodyWeightRoutes');
+app.use('/api/bodyweight', bodyWeightRoutes);
+
 mongoose.connect(process.env.EXPRESS_MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');
