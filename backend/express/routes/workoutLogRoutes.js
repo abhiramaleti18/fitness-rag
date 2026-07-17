@@ -13,5 +13,8 @@ router.get('/consistency', protect, getConsistency);
 router.get('/exercise-names', protect, getLoggedExerciseNames);
 router.get('/personal-records', protect, getPersonalRecords);
 router.get('/weekly-summary', protect, getWeeklySummary);
+router.get('/:id', protect, getLog);
+router.put('/:id', protect, updateLog);
+router.delete('/:id', protect, deleteLog);
 
 module.exports = router;

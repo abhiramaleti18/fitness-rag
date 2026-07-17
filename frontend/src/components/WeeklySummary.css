@@ -13,8 +13,11 @@
 
 .weekly-summary-stat {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 0.15rem;
 }
 
@@ -22,6 +25,7 @@
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text);
+    text-transform: uppercase;
 }
 
 .weekly-summary-label {

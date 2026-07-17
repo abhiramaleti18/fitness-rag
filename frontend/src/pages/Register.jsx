@@ -36,7 +36,7 @@ export default function Register() {
                 equipmentAccess: equipment
             });
             localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user', JSON.stringify(res.data.user));
+            localStorage.setItem('loginTime', Date.now().toString());
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Something went wrong');
