@@ -1,4 +1,4 @@
-# Fitness RAG
+# Fitbot
 
 An AI-powered fitness planning platform that combines a structured exercise knowledge base, scientific training guidelines, and Retrieval-Augmented Generation (RAG) to deliver safe, explainable, and personalized workout recommendations, plans, and split analysis.
 
