@@ -1,4 +1,5 @@
 import Sidebar from './Sidebar';
+import AppGuideChat from './AppGuideChat';
 import { SidebarProvider, useSidebar } from '../context/SidebarContext';
 import './Layout.css';
 
@@ -10,6 +11,7 @@ function LayoutInner({ children }) {
             <div className={`app-layout-content ${collapsed ? 'app-layout-content-centered' : ''}`}>
                 {children}
             </div>
+            <AppGuideChat />
         </div>
     );
 }

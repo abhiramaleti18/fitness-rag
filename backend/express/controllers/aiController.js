@@ -99,3 +99,17 @@ exports.plan = async (req, res) => {
         res.status(502).json({ message: 'AI service unavailable', error: error.message });
     }
 };
+
+exports.appGuide = async (req, res) => {
+    try {
+        const { question } = req.body;
+        if (!question) return res.status(400).json({ message: 'Question is required' });
+
+        const response = await axios.post(`${FASTAPI_URL}/api/app-guide`, { question });
+
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error('FastAPI app-guide error:', error.message);
+        res.status(502).json({ message: 'AI service unavailable', error: error.message });
+    }
+};

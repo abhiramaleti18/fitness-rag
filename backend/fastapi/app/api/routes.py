@@ -10,6 +10,7 @@ from app.core.config import settings
 from app.services.query_classifier import is_plan_request, extract_days, extract_equipment
 from app.services.query_classifier import extract_excluded_categories
 from app.services.plan_builder import build_plan
+from app.services.app_guide_prompt import build_app_guide_prompt
 from app.services.query_classifier import (
     is_plan_request, extract_days, extract_equipment,
     is_query_too_vague, extract_excluded_categories, map_user_equipment_to_filter,
@@ -61,6 +62,9 @@ class SplitDay(BaseModel):
 
 class AnalyzeSplitRequest(BaseModel):
     days: list[SplitDay]
+
+class AppGuideRequest(BaseModel):
+    question: str
 
 DEFAULT_EXCLUDED_CATEGORIES = ["STRETCHING", "CARDIO", "PLYOMETRICS"]
 
@@ -214,5 +218,19 @@ def analyze_split_endpoint(request: AnalyzeSplitRequest):
             "movementPatternBalance": analysis["movementPatternBalance"],
             "report": report_text
         }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@router.post("/app-guide")
+def app_guide(request: AppGuideRequest):
+    try:
+        if not request.question or not request.question.strip():
+            raise HTTPException(status_code=400, detail="Question is required")
+
+        messages = build_app_guide_prompt(request.question)
+        answer = get_completion(messages)
+        return {"answer": answer}
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
