@@ -1,4 +1,3 @@
-
 """
 normalize.py
 Fitness-RAG ETL Phase 2 - Dataset Normalization
@@ -58,7 +57,7 @@ CATEGORY = {
 LEVEL = {
     "beginner":"BEGINNER",
     "intermediate":"INTERMEDIATE",
-    "expert":"EXPERT",
+    "expert":"ADVANCED",
 }
 
 MECHANIC = {
